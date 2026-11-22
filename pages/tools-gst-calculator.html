@@ -1,0 +1,2588 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GST Calculator - Free Online GST Calculation Tool | DotERP</title>
+
+  <meta property="og:site_name" content="DotERP">
+
+  <meta name="twitter:description" content="Use DotERP free online GST calculator to compute GST inclusive/exclusive amounts, CGST, SGST, IGST, and total tax instantly.">
+
+  <meta name="twitter:title" content="GST Calculator - Free Online GST Calculation Tool | DotERP">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta property="og:url" content="https://www.doterp.com/pages/tools-gst-calculator.html">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:description" content="Use DotERP free online GST calculator to compute GST inclusive/exclusive amounts, CGST, SGST, IGST, and total tax instantly.">
+
+  <meta property="og:title" content="GST Calculator - Free Online GST Calculation Tool | DotERP">
+
+  <link rel="canonical" href="https://www.doterp.com/pages/tools-gst-calculator.html">
+
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <meta name="description" content="Use DotERP free online GST calculator to compute GST inclusive/exclusive amounts, CGST, SGST, IGST, and total tax instantly.">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+
+
+.gst-tool {
+
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    color: #1E2A38; background: #fff; font-size: 14px; line-height: 1.5;
+
+  }
+
+  .gst-tool a { text-decoration: none; color: inherit; }
+
+  .gst-tool img { max-width: 100%; display: block; }
+
+  .gst-tool .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+
+
+  /* ===== Utility bar ===== */
+
+  .utility-bar {
+
+    background: #FDF6D8; padding: 6px 0; font-size: 12px;
+
+  }
+
+  .utility-bar .gst-tool .container { display: flex; justify-content: space-between; align-items: center; }
+
+  .util-left { display: flex; align-items: center; gap: 18px; }
+
+  .util-logo { display: flex; align-items: baseline; gap: 6px; }
+
+  .util-logo .tally-script { font-family: 'Brush Script MT', cursive; font-size: 20px; color: #1E2A38; font-weight: 700; }
+
+  .util-logo small { font-size: 9px; color: #6b7280; letter-spacing: 0.5px; }
+
+  .company-dd { color: #1E2A38; cursor: pointer; }
+
+  .company-dd::after { content: " â"; color: #6b7280; }
+
+  .util-right { display: flex; gap: 22px; }
+
+  .util-right a { color: #1E2A38; }
+
+  .util-right a.active { color: #0F5470; font-weight: 600; border-bottom: 2px solid #F5A623; padding-bottom: 2px; }
+
+  .util-right a:hover { color: #0F5470; }
+
+
+
+  /* ===== Navbar ===== */
+
+  .navbar { background: #0F5470; color: #fff; padding: 10px 0; }
+
+  .navbar .gst-tool .container { display: flex; align-items: center; justify-content: space-between; }
+
+  .nav-links { display: flex; gap: 26px; align-items: center; flex: 1; }
+
+  .nav-links a { color: #fff; font-size: 14px; font-weight: 500; cursor: pointer; }
+
+  .nav-links a:hover { color: #F5A623; }
+
+  .nav-links a::after { content: " â"; font-size: 10px; opacity: 0.7; }
+
+  .nav-links a.no-chevron::after { content: ""; }
+
+  .nav-brand { text-align: center; color: #fff; padding: 0 30px; }
+
+  .nav-brand .brand-name { font-size: 22px; font-weight: 800; letter-spacing: 1px; line-height: 1; }
+
+  .nav-brand .brand-name span { color: #F5A623; }
+
+  .nav-brand small { font-size: 9px; letter-spacing: 2px; color: #D6E8F5; }
+
+  .nav-actions { display: flex; gap: 18px; align-items: center; flex: 1; justify-content: flex-end; }
+
+  .nav-actions .icon-btn { background: transparent; border: none; color: #fff; cursor: pointer; font-size: 16px; position: relative; }
+
+  .nav-actions .badge { position: absolute; top: -6px; right: -8px; background: #F5A623; color: #1A2B3C; font-size: 9px; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+  .nav-actions .login-link { color: #fff; font-size: 14px; }
+
+  .btn-download { background: #F5A623; color: #1A2B3C; border: none; padding: 8px 18px; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 13px; }
+
+  .btn-download:hover { background: #FFB300; }
+
+
+
+  /* ===== Hero ===== */
+
+  .hero {
+
+    background: linear-gradient(135deg, #DCEAF2, #CFE3EF);
+
+    padding: 60px 0 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+  }
+
+  .hero::before, .hero::after {
+
+    content: ""; position: absolute; pointer-events: none;
+
+    font-size: 200px; opacity: 0.07; color: #0F5470; font-weight: 700;
+
+  }
+
+  .hero::before { content: "%"; top: 30px; left: -10px; }
+
+  .hero::after { content: "₹"; bottom: 10px; right: 30px; font-size: 240px; }
+
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; position: relative; z-index: 2; }
+
+  .hero h1 { color: #1E2A38; font-size: 40px; font-weight: 700; line-height: 1.15; margin-bottom: 14px; }
+
+  .hero p { color: #55606B; font-size: 14px; line-height: 1.6; margin-bottom: 26px; max-width: 520px; }
+
+
+
+  /* ===== Calculator card ===== */
+
+  .calc-card {
+
+    background: #fff; border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(15,84,112,0.12);
+
+    padding: 28px;
+
+  }
+
+  .calc-card h3 { font-size: 18px; color: #1E2A38; margin-bottom: 18px; font-weight: 700; }
+
+  .calc-field-label { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
+
+  .amount-wrap { position: relative; margin-bottom: 18px; }
+
+  .amount-wrap .rupee { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #6b7280; font-size: 16px; }
+
+  .amount-input {
+
+    width: 100%; padding: 12px 14px 12px 34px;
+
+    border: 1px solid #D0D7DE; border-radius: 8px;
+
+    font-size: 15px; outline: none; background: #fff;
+
+    color: #000;
+
+    transition: border 0.2s;
+
+  }
+
+  .amount-input:focus { border-color: #0F5470; }
+
+
+
+  .radio-row { display: flex; gap: 20px; margin-bottom: 18px; }
+
+  .radio-pill { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; color: #1E2A38; }
+
+  .radio-pill input { accent-color: #0F5470; }
+
+
+
+  .rate-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
+
+  .rate-btn {
+
+    background: #fff; border: 1px solid #D0D7DE; border-radius: 8px;
+
+    padding: 10px 6px; font-size: 14px; color: #1E2A38;
+
+    cursor: pointer; font-weight: 600; transition: all 0.15s;
+
+  }
+
+  .rate-btn:hover { border-color: #0F5470; }
+
+  .rate-btn.active {
+
+    background: #0F5470; border-color: #0F5470;
+
+    color: #fff;
+
+  }
+
+
+
+  .select-wrap { margin-bottom: 22px; }
+
+  .select-input {
+
+    width: 100%; padding: 12px 14px;
+
+    border: 1px solid #D0D7DE; border-radius: 8px;
+
+    font-size: 14px; outline: none; background: #fff;
+
+    color: #1E2A38; cursor: pointer;
+
+    appearance: none;
+
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+
+    background-repeat: no-repeat;
+
+    background-position: right 14px center;
+
+    background-size: 12px;
+
+  }
+
+  .btn-calc {
+
+    width: 100%; background: #F5A623; color: #1A2B3C;
+
+    border: none; padding: 14px;
+
+    border-radius: 6px; font-weight: 700;
+
+    font-size: 15px; cursor: pointer;
+
+  }
+
+  .btn-calc:hover { background: #FFB300; }
+
+
+
+  /* ===== Invoice preview card ===== */
+
+  .preview-card {
+
+    background: #fff; border-radius: 12px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+    overflow: hidden;
+
+  }
+
+  .preview-card .pc-head {
+
+    padding: 14px 20px; border-bottom: 1px solid #E5E7EB;
+
+    font-size: 12px; color: #6b7280;
+
+  }
+
+  .preview-card .pc-.gst-tool { padding: 20px; }
+
+  .pc-row {
+
+    display: flex; justify-content: space-between;
+
+    align-items: center; padding: 8px 0;
+
+    font-size: 13px; border-bottom: 1px dashed #E5E7EB;
+
+  }
+
+  .pc-row:last-of-type { border-bottom: none; }
+
+  .pc-row .pc-label { color: #6b7280; }
+
+  .pc-row .pc-value { color: #1E2A38; font-weight: 600; }
+
+  .pc-caption {
+
+    font-size: 12px; color: #6b7280; margin-top: 14px;
+
+    text-align: center;
+
+  }
+
+  .pc-total-band {
+
+    background: #1D5B8C; color: #fff;
+
+    padding: 18px 20px; text-align: center;
+
+  }
+
+  .pc-total-band .pc-amount {
+
+    font-size: 28px; font-weight: 700; line-height: 1;
+
+  }
+
+  .pc-total-band .pc-amount-sub {
+
+    font-size: 11px; opacity: 0.8; margin-top: 4px;
+
+  }
+
+
+
+  /* ===== Section common ===== */
+
+  .gst-tool section { padding: 72px 0; }
+
+  .section-heading {
+
+    text-align: center; font-size: 30px; font-weight: 700;
+
+    color: #1E2A38; margin-bottom: 14px;
+
+  }
+
+  .section-sub {
+
+    text-align: center; color: #55606B; font-size: 14px;
+
+    max-width: 760px; margin: 0 auto 40px;
+
+  }
+
+
+
+  /* ===== Formula section ===== */
+
+  .formula-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  .formula-card {
+
+    background: #fff; border: 1px solid #E5E7EB;
+
+    border-radius: 10px; padding: 24px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+  }
+
+  .tag {
+
+    display: inline-block; padding: 4px 12px;
+
+    border-radius: 4px; font-size: 11px; font-weight: 700;
+
+    letter-spacing: 0.5px; text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+  }
+
+  .tag-yellow { background: #F5A623; color: #1A2B3C; }
+
+  .tag-navy { background: #1D5B8C; color: #fff; }
+
+  .formula-card h4 { font-size: 16px; color: #1E2A38; margin-bottom: 14px; font-weight: 700; }
+
+  .formula-box {
+
+    background: #FDF6DC; border-radius: 6px;
+
+    padding: 12px 14px; font-size: 14px;
+
+    color: #1E2A38; margin-bottom: 10px;
+
+    font-family: 'Courier New', monospace;
+
+  }
+
+  .formula-box:last-child { margin-bottom: 0; }
+
+
+
+  /* ===== Examples ===== */
+
+  .examples-band { background: #EAF1F5; }
+
+  .examples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+  .example-card {
+
+    background: #fff; border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    padding: 20px;
+
+  }
+
+  .ex-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+
+  .ex-num { font-size: 11px; color: #6b7280; letter-spacing: 0.5px; }
+
+  .example-card h5 { font-size: 15px; color: #1E2A38; margin-bottom: 12px; }
+
+  .ex-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+
+  .ex-row .l { color: #6b7280; }
+
+  .ex-row .v { color: #1E2A38; font-weight: 600; }
+
+  .ex-highlight {
+
+    background: #FDF6DC; border-radius: 6px;
+
+    padding: 10px 12px; margin-top: 10px;
+
+  }
+
+  .ex-highlight .ex-row:last-child .v { color: #0F5470; font-weight: 700; }
+
+
+
+  /* ===== CGST/SGST/IGST table ===== */
+
+  .gst-table-wrap { max-width: 820px; margin: 0 auto; }
+
+  .gst-table {
+
+    width: 100%; border-collapse: collapse;
+
+    border: 1px solid #E5E7EB; border-radius: 8px;
+
+    overflow: hidden;
+
+  }
+
+  .gst-table th {
+
+    background: #1D5B8C; color: #fff;
+
+    padding: 12px 16px; text-align: left;
+
+    font-size: 14px; font-weight: 600;
+
+  }
+
+  .gst-table td {
+
+    padding: 14px 16px; border-bottom: 1px solid #E5E7EB;
+
+    font-size: 14px; color: #1E2A38;
+
+  }
+
+  .gst-table td:first-child { font-weight: 600; }
+
+  .gst-table tr:last-child td { border-bottom: none; }
+
+  .badge-pill {
+
+    display: inline-block; padding: 3px 10px;
+
+    border-radius: 3px; font-size: 11px; font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+  }
+
+  .badge-navy { background: #1D5B8C; color: #fff; }
+
+  .badge-yellow { background: #F5A623; color: #1A2B3C; }
+
+
+
+  /* ===== Rate slabs ===== */
+
+  .rate-slabs { background: #FDF6DC; }
+
+  .slab-list { max-width: 900px; margin: 0 auto; }
+
+  .slab-row {
+
+    display: grid; grid-template-columns: 130px 1fr 80px;
+
+    gap: 24px; align-items: center;
+
+    padding: 36px 20px; border-bottom: 1px solid #E8DFB8;
+
+  }
+
+  .slab-row:last-child { border-bottom: none; }
+
+  .slab-pct {
+
+    font-size: 38px; font-weight: 700;
+
+    color: #1976D2; line-height: 1;
+
+  }
+
+  .slab-desc { font-size: 14px; color: #55606B; line-height: 1.6; }
+
+  .slab-icon {
+
+    width: 60px; height: 60px; border-radius: 50%;
+
+    border: 1.5px solid #0F5470;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 26px; color: #0F5470; margin-left: auto;
+
+  }
+
+
+
+  /* ===== Trial section ===== */
+
+  .trial-.gst-tool section { background: #EAF1F5; }
+
+  .trial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+
+  .trial-card {
+
+    background: #fff; border-radius: 12px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+
+    padding: 28px;
+
+  }
+
+  .trial-card h3 { font-size: 20px; color: #000; margin-bottom: 18px; font-weight: 700; }
+
+  .trial-card .tf {
+
+    margin-bottom: 12px;
+
+  }
+
+  .trial-card .tf input, .trial-card .tf select {
+
+    width: 100%; padding: 11px 14px;
+
+    border: 1px solid #C9CFD6; border-radius: 6px;
+
+    font-size: 13px; outline: none; background: #fff;
+
+    color: #000;
+
+  }
+
+  .trial-card .tf input::placeholder { color: #000; opacity: 1; }
+
+  .trial-card .tf input:focus { border-color: #0F5470; }
+
+  .trial-check { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #000; margin-bottom: 18px; }
+
+  .trial-check input { accent-color: #0F5470; }
+
+  .trial-check a { color: #0F5470; text-decoration: underline; }
+
+  .trial-submit {
+
+    background: #F5A623; color: #1A2B3C; border: none;
+
+    padding: 11px 28px; border-radius: 6px;
+
+    font-weight: 700; cursor: pointer; font-size: 14px;
+
+    display: block; margin: 0 auto;
+
+  }
+
+  .trial-submit:hover { background: #FFB300; }
+
+  .trial-benefits h3 { font-size: 26px; color: #1E2A38; margin-bottom: 22px; font-weight: 700; }
+
+  .benefit-list { list-style: none; }
+
+  .benefit-list li {
+
+    display: flex; gap: 12px; align-items: flex-start;
+
+    padding: 12px 0; font-size: 14px; color: #1E2A38;
+
+  }
+
+  .benefit-num {
+
+    width: 26px; height: 26px; border-radius: 50%;
+
+    background: #0F5470; color: #fff;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+
+  }
+
+
+
+  /* ===== Steps ===== */
+
+  .steps-.gst-tool section { background: #fff; }
+
+  .steps-section .section-heading, .steps-section .section-sub { text-align: left; }
+
+  .steps-section .section-sub { margin-left: 0; margin-right: 0; }
+
+  .steps-list { margin-top: 24px; }
+
+  .step-row {
+
+    display: grid; grid-template-columns: 50px 1fr 220px;
+
+    gap: 24px; align-items: center;
+
+    padding: 22px 0; border-bottom: 1px solid #E5E7EB;
+
+  }
+
+  .step-row:last-child { border-bottom: none; }
+
+  .step-num {
+
+    width: 36px; height: 36px; border-radius: 50%;
+
+    border: 1.5px solid #1976D2; color: #1976D2;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-weight: 700; font-size: 14px;
+
+  }
+
+  .step-text { font-size: 14px; color: #1E2A38; line-height: 1.6; }
+
+  .step-mock {
+
+    background: #DCEAF2; border-radius: 8px;
+
+    padding: 14px; font-size: 11px; color: #6b7280;
+
+    min-height: 70px;
+
+  }
+
+  .step-mock .mock-line {
+
+    background: #fff; border-radius: 4px;
+
+    height: 8px; margin-bottom: 6px;
+
+  }
+
+  .step-mock .mock-pill {
+
+    display: inline-block; background: #0F5470; color: #fff;
+
+    padding: 2px 8px; border-radius: 4px; font-size: 10px;
+
+  }
+
+  .step-mock .mock-btn {
+
+    background: #F5A623; color: #1A2B3C;
+
+    padding: 4px 10px; border-radius: 4px;
+
+    font-size: 10px; font-weight: 700; text-align: center;
+
+    margin-top: 4px;
+
+  }
+
+
+
+  /* ===== Benefits ===== */
+
+  .benefits-.gst-tool section { background: #FDF6DC; }
+
+  .benefits-list {
+
+    max-width: 700px; margin: 0 auto;
+
+  }
+
+  .benefits-list .b-item {
+
+    padding: 16px 0; border-bottom: 1px solid #EADFAF;
+
+    font-size: 14px; color: #1E2A38;
+
+    display: flex; align-items: center; gap: 10px;
+
+  }
+
+  .benefits-list .b-item:last-child { border-bottom: none; }
+
+  .benefits-list .b-item::before {
+
+    content: "â"; color: #0F5470; font-weight: 700;
+
+  }
+
+
+
+  /* ===== Tax components ===== */
+
+  .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+  .accordion { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden; }
+
+  .acc-item { border-bottom: 1px solid #E5E7EB; }
+
+  .acc-item:last-child { border-bottom: none; }
+
+  .acc-head {
+
+    padding: 16px 18px; display: flex; justify-content: space-between;
+
+    align-items: center; cursor: pointer;
+
+    font-size: 15px; font-weight: 600; color: #1E2A38;
+
+  }
+
+  .acc-toggle {
+
+    width: 24px; height: 24px; border-radius: 50%;
+
+    border: 1px solid #C9CFD6; color: #0F5470;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 16px; transition: transform 0.2s;
+
+  }
+
+  .acc-item.open .acc-toggle { transform: rotate(45deg); }
+
+  .acc-.gst-tool {
+
+    max-height: 0; overflow: hidden;
+
+    transition: max-height 0.3s ease;
+
+    padding: 0 18px;
+
+    font-size: 13px; color: #55606B; line-height: 1.6;
+
+  }
+
+  .acc-item.open .acc-.gst-tool { max-height: 200px; padding-bottom: 16px; }
+
+
+
+  /* Invoice mockup card */
+
+  .inv-mock {
+
+    background: #fff; border-radius: 12px;
+
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08); overflow: hidden;
+
+  }
+
+  .inv-mock .im-head {
+
+    background: #1D5B8C; color: #fff;
+
+    padding: 12px; text-align: center;
+
+    font-weight: 700; font-size: 14px;
+
+  }
+
+  .inv-mock .im-.gst-tool { padding: 14px; }
+
+  .im-tbl { width: 100%; font-size: 12px; border-collapse: collapse; }
+
+  .im-tbl th {
+
+    text-align: left; padding: 6px 8px;
+
+    color: #6b7280; font-weight: 600;
+
+    border-bottom: 1px solid #E5E7EB;
+
+  }
+
+  .im-tbl td { padding: 6px 8px; border-bottom: 1px solid #E5E7EB; color: #1E2A38; }
+
+  .im-tbl .ph { background: #F2F7FA; height: 12px; border-radius: 3px; }
+
+  .im-rows { margin-top: 12px; }
+
+  .im-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 12px; }
+
+  .im-row .l { color: #6b7280; }
+
+  .im-row .v { color: #1E2A38; font-weight: 600; }
+
+  .im-total {
+
+    background: #1D5B8C; color: #fff;
+
+    padding: 12px; text-align: center;
+
+    font-size: 14px; font-weight: 700;
+
+  }
+
+
+
+  /* ===== Manufacturer cost table ===== */
+
+  .manu-intro {
+
+    background: #FDF6DC; border-radius: 8px;
+
+    padding: 16px 20px; font-size: 13px;
+
+    color: #1E2A38; margin-bottom: 20px; line-height: 1.6;
+
+  }
+
+  .manu-intro b { color: #0F5470; }
+
+  .manu-table {
+
+    width: 100%; border-collapse: collapse;
+
+    border: 1px solid #E5E7EB; border-radius: 8px;
+
+    overflow: hidden;
+
+  }
+
+  .manu-table th {
+
+    background: #1D5B8C; color: #fff;
+
+    padding: 12px 14px; text-align: left;
+
+    font-size: 13px; font-weight: 600;
+
+  }
+
+  .manu-table td {
+
+    padding: 12px 14px; border-bottom: 1px solid #E5E7EB;
+
+    font-size: 13px; color: #1E2A38;
+
+  }
+
+  .manu-table tr.total td { font-weight: 700; background: #F2F7FA; }
+
+  .manu-table tr:last-child td { border-bottom: none; }
+
+  .final-price-pill {
+
+    display: inline-block; margin: 22px auto 0;
+
+    padding: 10px 24px; border: 1.5px solid #0F5470;
+
+    border-radius: 30px; color: #0F5470;
+
+    font-weight: 700; font-size: 15px;
+
+  }
+
+  .final-price-wrap { text-align: center; }
+
+  .manu-note {
+
+    background: #F2F7FA; border-radius: 8px;
+
+    padding: 14px 18px; font-size: 12px;
+
+    color: #55606B; margin-top: 18px; line-height: 1.6;
+
+  }
+
+
+
+  /* ===== Feature compare ===== */
+
+  .compare-.gst-tool section { background: #EAF1F5; }
+
+  .compare-card {
+
+    max-width: 880px; margin: 0 auto;
+
+    background: #fff; border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); overflow: hidden;
+
+  }
+
+  .compare-table { width: 100%; border-collapse: collapse; }
+
+  .compare-table th {
+
+    background: #1D5B8C; color: #fff;
+
+    padding: 14px 18px; text-align: center;
+
+    font-size: 14px;
+
+  }
+
+  .compare-table th:first-child { text-align: left; }
+
+  .compare-table td {
+
+    padding: 14px 18px; border-bottom: 1px solid #E5E7EB;
+
+    font-size: 14px; color: #1E2A38;
+
+  }
+
+  .compare-table td:first-child { text-align: left; }
+
+  .compare-table td:nth-child(2), .compare-table td:nth-child(3) { text-align: center; }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .icon-ok {
+
+    display: inline-flex; width: 22px; height: 22px;
+
+    background: #0F5470; color: #fff;
+
+    border-radius: 50%; align-items: center; justify-content: center;
+
+    font-size: 12px; font-weight: 700;
+
+  }
+
+  .icon-x {
+
+    display: inline-flex; width: 22px; height: 22px;
+
+    background: #E53935; color: #fff;
+
+    border-radius: 50%; align-items: center; justify-content: center;
+
+    font-size: 12px; font-weight: 700;
+
+  }
+
+
+
+  /* ===== Software cards ===== */
+
+  .software-.gst-tool section { background: #0E3A5C; padding: 70px 0; }
+
+  .software-section h2 {
+
+    color: #fff; text-align: center; font-size: 28px;
+
+    font-weight: 700; margin-bottom: 40px;
+
+  }
+
+  .software-grid {
+
+    display: grid; grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+
+  }
+
+  .soft-card {
+
+    background: #1D5B8C; border-radius: 12px;
+
+    padding: 40px 24px; text-align: center;
+
+    color: #fff;
+
+  }
+
+  .soft-icon {
+
+    width: 70px; height: 70px; border-radius: 50%;
+
+    background: #fff; margin: 0 auto 18px;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 30px; color: #F5A623;
+
+  }
+
+  .soft-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+
+  .soft-card p { font-size: 13px; opacity: 0.85; line-height: 1.5; margin-bottom: 16px; }
+
+  .soft-pill {
+
+    display: inline-block; background: rgba(255,255,255,0.15);
+
+    padding: 5px 14px; border-radius: 20px;
+
+    font-size: 12px;
+
+  }
+
+
+
+  /* ===== Insights ===== */
+
+  .insights-.gst-tool section { background: #fff; }
+
+  .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .insight-card {
+
+    background: #fff; border-radius: 10px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden;
+
+  }
+
+  .insight-thumb {
+
+    height: 160px;
+
+    background: linear-gradient(135deg, #DCEAF2, #CFE3EF);
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 50px; color: #0F5470; opacity: 0.5;
+
+  }
+
+  .insight-card .ic-.gst-tool { padding: 16px 18px; }
+
+  .insight-card .ic-tag {
+
+    font-size: 11px; color: #F5A623; font-weight: 700;
+
+    text-transform: uppercase; margin-bottom: 6px;
+
+  }
+
+  .insight-card h4 { font-size: 14px; color: #1E2A38; line-height: 1.4; }
+
+
+
+  /* ===== FAQ ===== */
+
+  .faq-.gst-tool section { background: #EAF1F5; }
+
+  .faq-list { max-width: 820px; margin: 0 auto; }
+
+  .faq-item {
+
+    background: #fff; border: 1px solid #E5E7EB;
+
+    border-radius: 8px; margin-bottom: 10px; overflow: hidden;
+
+  }
+
+  .faq-q {
+
+    padding: 16px 20px; display: flex;
+
+    justify-content: space-between; align-items: center;
+
+    cursor: pointer; font-size: 15px; font-weight: 600;
+
+    color: #1E2A38;
+
+  }
+
+  .faq-toggle {
+
+    width: 26px; height: 26px; border-radius: 50%;
+
+    border: 1px solid #C9CFD6; color: #0F5470;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 16px; transition: transform 0.2s;
+
+  }
+
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  .faq-item.open .faq-q { background: #F2F7FA; }
+
+  .faq-a {
+
+    max-height: 0; overflow: hidden;
+
+    transition: max-height 0.3s ease;
+
+    padding: 0 20px;
+
+    font-size: 13px; color: #55606B; line-height: 1.6;
+
+  }
+
+  .faq-item.open .faq-a { max-height: 250px; padding: 12px 20px 18px; }
+
+
+
+  /* ===== Footer ===== */
+
+  .footer { background: #0E3A5C; color: #B8C4CE; padding: 50px 0 20px; }
+
+  .footer-top {
+
+    display: grid; grid-template-columns: 1fr 1fr;
+
+    gap: 50px; margin-bottom: 36px;
+
+    padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  }
+
+  .footer-brand .fb-logo {
+
+    color: #fff; font-size: 22px; font-weight: 800; margin-bottom: 8px;
+
+  }
+
+  .footer-brand .fb-logo span { color: #F5A623; }
+
+  .footer-brand small { color: #D6E8F5; font-size: 10px; letter-spacing: 2px; }
+
+  .footer-brand h4 {
+
+    color: #F5A623; font-size: 20px; margin: 18px 0 10px;
+
+    font-weight: 700;
+
+  }
+
+  .footer-brand p { font-size: 13px; line-height: 1.6; }
+
+  .footer-trial {
+
+    background: rgba(255,255,255,0.05); border-radius: 10px;
+
+    padding: 22px;
+
+  }
+
+  .footer-trial h4 { color: #fff; font-size: 18px; margin-bottom: 14px; }
+
+  .footer-trial .tf { margin-bottom: 10px; }
+
+  .footer-trial input {
+
+    width: 100%; padding: 10px 12px;
+
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 6px; color: #fff; font-size: 13px; outline: none;
+
+  }
+
+  .footer-trial input::placeholder { color: #B8C4CE; }
+
+  .footer-trial .trial-submit { margin-top: 6px; }
+
+
+
+  .footer-grid {
+
+    display: grid; grid-template-columns: repeat(5, 1fr);
+
+    gap: 24px; margin-bottom: 30px;
+
+  }
+
+  .footer-col h5 {
+
+    color: #F5A623; font-size: 13px; margin-bottom: 12px;
+
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 8px; }
+
+  .footer-col ul li a { color: #B8C4CE; font-size: 12px; cursor: pointer; }
+
+  .footer-col ul li a:hover { color: #F5A623; }
+
+  .footer-bottom {
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    padding-top: 20px;
+
+    display: flex; justify-content: space-between; align-items: center;
+
+    font-size: 12px; flex-wrap: wrap; gap: 14px;
+
+  }
+
+  .footer-bottom .social { display: flex; gap: 10px; }
+
+  .footer-bottom .social a {
+
+    width: 28px; height: 28px; border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    display: flex; align-items: center; justify-content: center;
+
+    color: #B8C4CE; font-size: 12px; cursor: pointer;
+
+  }
+
+  .footer-bottom .social a:hover { background: #F5A623; color: #1A2B3C; border-color: #F5A623; }
+
+
+
+  /* ===== Toast ===== */
+
+  .toast {
+
+    position: fixed; bottom: 30px; right: 30px;
+
+    background: #0E3A5C; color: #fff;
+
+    padding: 14px 22px; border-radius: 6px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+
+    font-size: 13px; opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: opacity 0.3s, transform 0.3s;
+
+    z-index: 9999;
+
+  }
+
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+
+
+  /* ===== Responsive ===== */
+
+  @media (max-width: 900px) {
+
+    .hero-grid, .formula-grid, .examples-grid,
+
+    .trial-grid, .tax-grid, .footer-top { grid-template-columns: 1fr; }
+
+    .insights-grid, .software-grid { grid-template-columns: 1fr; }
+
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .step-row { grid-template-columns: 40px 1fr; }
+
+    .step-mock { display: none; }
+
+    .nav-links { display: none; }
+
+  }
+
+  @media (max-width: 640px) {
+
+    .rate-row { grid-template-columns: repeat(2, 1fr); }
+
+    .slab-row { grid-template-columns: 80px 1fr; }
+
+    .slab-icon { display: none; }
+
+    .hero h1 { font-size: 30px; }
+
+    .footer-grid { grid-template-columns: 1fr; }
+
+    .footer-bottom { flex-direction: column; }
+
+    .gst-tool section { padding: 50px 0; }
+
+    .util-right { display: none; }
+
+  }
+
+
+
+
+
+.gst-tool{background:#fff;color:#1E2A38}
+
+.gst-tool .utility-bar,.gst-tool .navbar{display:none!important}
+
+.gst-tool .container{max-width:1180px;margin:0 auto;padding:0 20px}
+
+.gst-tool section{padding:60px 0}
+
+.gst-tool .toast{position:fixed;z-index:99999}
+
+.gst-tool .hero{background:linear-gradient(180deg,#F2F7FA 0%,#fff 100%);padding:50px 0 60px}
+
+
+
+</style>
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "GST Calculator - Free Online GST Calculation Tool | DotERP", "url": "https://www.doterp.com/pages/tools-gst-calculator.html"}</script>
+
+</head>
+
+<body>
+
+<div class="pg" id="pg"></div><nav><div class="wrap"><button class="links mm-t" aria-expanded="false" aria-controls="mega">Products <i>▾</i></button><a class="links" href="pricing.html">Pricing</a><button class="links mm-t cm-t" aria-expanded="false" aria-controls="cmega">Community <i>▾</i></button><button class="links mm-t ch-t" aria-expanded="false" aria-controls="chmega">Customer Hub <i>▾</i></button><a class="links" href="compare.html">Compare</a><a class="links" href="blogs.html">DotERP blog</a><a class="logo" href="../index.html">Dot<b>ERP</b></a><span class="sp"></span><a class="links" href="login.html">Log In</a><a class="btn" href="download.html">Download</a></div>
+
+<div class="mega" id="mega"><div class="mg">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>DotERP</b><small>Our flagship business software</small></div></div><a href="product-overview.html">Product Overview</a><a href="whats-new.html">Whatâs New</a><a href="pricing.html#compare">Compare Plans<small>Find the right plan for your business</small></a><a href="free-trial.html">Instant Demo</a><div class="mb"><a class="btn" href="free-trial.html">Take a Free Trial</a><a class="btn o" href="pricing.html">Buy Now</a></div></div>
+
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Features</b><small>What you can do with DotERP</small></div></div><a href="taxation-compliance.html">Taxation &amp; Compliance</a><a href="accounting.html">Accounting</a><a href="inventory.html">Inventory</a><a href="banking.html">Banking</a><a href="connected-services.html">Connected Services</a><a class="all" href="features.html">View All Features ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â¤</span><div><b>Do More with DotERP</b><small>Extend and access it your way</small></div></div><a href="mobile-app.html">DotERP Mobile App</a><a href="server.html">DotERP Server</a><a href="business-reports.html">Business Reports</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">&lt;/&gt;</span><div><b>Developers</b><small>Build and integrate with DotERP</small></div></div><a href="developer-hub.html">Developer Hub</a><a href="customization.html">Customization &amp; Integration</a><a href="api-explorer.html">API Explorer</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>More from DotERP</b><small>Software for every business need</small></div></div><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="q2dot.html">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a class="all" href="products.html">View All Software ↗</a></div>
+
+</div></div>
+
+<div class="mega" id="pmega"><div class="mg c4">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>DotERP</b><small>Plans & pricing</small></div></div><a href="pricing.html#doterp">DotERP Pricing<small>Business management software</small></a><a href="pricing.html#compare"><b>Compare Plans</b><small>Compare features & pricing side by side</small></a><a href="free-trial.html">Free Trial<small>Try before you buy</small></a><a class="btn" href="pricing.html">View Pricing ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Other Products</b><small>Pricing by product</small></div></div><a href="pricing.html#UdyamApp">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="pricing.html#q2dot">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a href="products.html">All Products<small>Explore our software</small></a></div>
+
+<div class="mc"><div class="mh"><span class="ic">₹</span><div><b>Customer Plans</b><small>For existing customers</small></div></div><a href="pricing.html">Monthly Subscription</a><a href="pricing.html">Lifetime License</a><a href="login.html">Renew Subscription</a><a href="software-services.html">Software Services</a></div>
+
+<div class="spot"><div class="mh"><span class="ic">â</span><div><b>Need help?</b><small>Find the right plan</small></div></div><a href="contact.html"><b>Talk to Sales</b><small>Get plan recommendations for your business</small></a><a href="pricing.html#compare"><b>Compare</b><small>See plan differences at a glance</small></a><a href="free-trial.html"><b>Start Free Trial</b><small>Experience DotERP features first</small></a></div>
+
+</div></div><div class="mega" id="cmega"><div class="mg c4">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Learn</b><small>Grow your knowledge</small></div></div><a href="free-trial.html">Instant Demo</a><a href="blogs.html">Blogs</a><a href="learning-hub.html">Learning Hub</a><a href="roadmap.html">Product Roadmap</a><a href="first-60-minutes.html">First 60 Minutes in DotERP</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">✉</span><div><b>Connect</b><small>Engage with the ecosystem</small></div></div><a href="community.html">DotERP Community</a><a href="partners.html">Locate a Partner</a><a href="events.html">Events &amp; Webinars</a><a href="customer-stories.html">Customer Stories</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Featured</b><small>Recognitions &amp; programs</small></div></div><a href="awards.html">Awards &amp; Recognition</a><a href="startup-offer.html">Startup Offer</a><a href="partner-program.html">Partner Program</a><a href="careers.html">Careers</a></div>
+
+<div class="spot"><div class="mh"><span class="ic">â</span><div><b>Spotlight</b><small>Explore whatâs new</small></div></div><a href="first-60-minutes.html"><b>First 60 minutes in DotERP</b><small>New to DotERP? Experience everything right away</small></a><a href="customer-stories.html"><b>Customer stories</b><small>Real businesses, real outcomes</small></a><a href="blogs.html"><b>Tips and tutorials</b><small>Practical tips from our experts</small></a></div>
+
+</div></div>
+
+<div class="mega" id="chmega"><div class="mg ch">
+
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Plugins</b><small>Extend what DotERP can do</small></div></div><a class="btn" href="plugins.html">View all Plug-ins ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">₹</span><div><b>Customer Pricing</b><small>Plans for existing customers</small></div></div><a class="btn" href="customer-pricing.html">View Plans ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">☎</span><div><b>Reach Us</b><small>Talk to our support team</small></div></div><a href="help.html">❓ DotERP Help</a><a href="whatsapp.html">✆ WhatsApp</a><a href="call-us.html">☎ Call us</a><a href="email-us.html">✉ Email</a><a class="btn o" href="support.html">Support ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">↻</span><div><b>Subscriptions &amp; Services</b><small>Keep your DotERP up to date</small></div></div><a class="sr" href="software-services.html">DotERP Software Services<em>View Now ↗</em></a><a class="sr" href="pricing.html">DotERP Monthly Plan<em>View Now ↗</em></a></div>
+
+<div class="mng"><h4>Manage Subscriptions</h4><p>View, renew or upgrade your active DotERP subscriptions in one place.</p><a class="btn w" href="login.html">Manage my Subscriptions ↗</a></div>
+
+</div></div></nav>
+
+
+
+<div class="gst-tool">
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <div>
+
+        <h1>Calculate GST<br>Online Instantly</h1>
+
+        <p>Simplify GST calculations with instant GST-Inclusive, GST-Exclusive, CGST, SGST and IGST results. Enter the amount, choose the rate, and get a complete breakdown in seconds â no login required.</p>
+
+
+
+        <div class="calc-card">
+
+          <h3>GST Calculator</h3>
+
+
+
+          <label class="calc-field-label">Amount</label>
+
+          <div class="amount-wrap">
+
+            <span class="rupee">&#8377;</span>
+
+            <input type="number" class="amount-input" id="amount" placeholder="Enter amount" value="10000">
+
+          </div>
+
+
+
+          <label class="calc-field-label">GST Inclusion</label>
+
+          <div class="radio-row">
+
+            <label class="radio-pill"><input type="radio" name="inclusion" value="exclusive" checked> Exclusive of GST</label>
+
+            <label class="radio-pill"><input type="radio" name="inclusion" value="inclusive"> Inclusive of GST</label>
+
+          </div>
+
+
+
+          <label class="calc-field-label">GST Rate</label>
+
+          <div class="rate-row">
+
+            <button class="rate-btn" data-rate="5">5%</button>
+
+            <button class="rate-btn active" data-rate="18">18%</button>
+
+            <button class="rate-btn" data-rate="28">28%</button>
+
+            <button class="rate-btn" data-rate="40">40%</button>
+
+          </div>
+
+
+
+          <label class="calc-field-label">Supply Type</label>
+
+          <div class="select-wrap">
+
+            <select class="select-input" id="supplyType">
+
+              <option value="intra">Intra-state (CGST + SGST)</option>
+
+              <option value="inter">Inter-state (IGST)</option>
+
+            </select>
+
+          </div>
+
+
+
+          <button class="btn-calc" id="calcBtn">Calculate</button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="preview-card">
+
+        <div class="pc-head">INV-2026-001</div>
+
+        <div class="pc-body">
+
+          <div class="pc-row"><span class="pc-label">Taxable Value</span><span class="pc-value" id="pvTaxable">&#8377;0</span></div>
+
+          <div class="pc-row"><span class="pc-label">IGST</span><span class="pc-value" id="pvIgst">&#8377;0</span></div>
+
+          <div class="pc-row"><span class="pc-label">CGST</span><span class="pc-value" id="pvCgst">&#8377;0</span></div>
+
+          <div class="pc-row"><span class="pc-label">SGST/UTGST</span><span class="pc-value" id="pvSgst">&#8377;0</span></div>
+
+          <div class="pc-caption">Your gross price will be</div>
+
+        </div>
+
+        <div class="pc-total-band">
+
+          <div class="pc-amount" id="pvTotal">&#8377;0</div>
+
+          <div class="pc-amount-sub">Total Amount Payable</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== GST Calculation Formula ===== -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-heading">GST Calculation Formula</h2>
+
+    <p class="section-sub">Two simple formulas depending on whether your price already includes GST or not.</p>
+
+    <div class="formula-grid">
+
+      <div class="formula-card">
+
+        <span class="tag tag-yellow">EXCLUSIVE</span>
+
+        <h4>GST Exclusive Formula</h4>
+
+        <div class="formula-box">GST Amount = (Taxable Value Ã GST Rate) Ã· 100</div>
+
+        <div class="formula-box">Final Amount = Taxable Value + GST Amount</div>
+
+      </div>
+
+      <div class="formula-card">
+
+        <span class="tag tag-navy">INCLUSIVE</span>
+
+        <h4>GST Inclusive Formula</h4>
+
+        <div class="formula-box">Taxable Value = Inclusive Price Ã· (1 + GST Rate Ã· 100)</div>
+
+        <div class="formula-box">GST Amount = Inclusive Price â Taxable Value</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Examples ===== -->
+
+<section class="examples-band">
+
+  <div class="container">
+
+    <h2 class="section-heading">GST Calculation Examples</h2>
+
+    <p class="section-sub">See how the calculator handles different rates and inclusion modes.</p>
+
+    <div class="examples-grid">
+
+      <div class="example-card">
+
+        <div class="ex-top">
+
+          <span class="tag tag-yellow">EXCLUSIVE · 18%</span>
+
+          <span class="ex-num">EX. 01</span>
+
+        </div>
+
+        <h5>Standard slab â Example 1</h5>
+
+        <div class="ex-row"><span class="l">Original Amount</span><span class="v">&#8377;1,000</span></div>
+
+        <div class="ex-row"><span class="l">GST Rate</span><span class="v">18%</span></div>
+
+        <div class="ex-highlight">
+
+          <div class="ex-row"><span class="l">GST Amount</span><span class="v">&#8377;180</span></div>
+
+          <div class="ex-row"><span class="l">Final Amount</span><span class="v">&#8377;1,180</span></div>
+
+        </div>
+
+      </div>
+
+      <div class="example-card">
+
+        <div class="ex-top">
+
+          <span class="tag tag-navy">INCLUSIVE · 18%</span>
+
+          <span class="ex-num">EX. 02</span>
+
+        </div>
+
+        <h5>Inclusive price â Example 2</h5>
+
+        <div class="ex-row"><span class="l">Original Amount</span><span class="v">&#8377;1,180</span></div>
+
+        <div class="ex-row"><span class="l">GST Rate</span><span class="v">18%</span></div>
+
+        <div class="ex-highlight">
+
+          <div class="ex-row"><span class="l">Taxable Value</span><span class="v">&#8377;1,000</span></div>
+
+          <div class="ex-row"><span class="l">GST Amount</span><span class="v">&#8377;180</span></div>
+
+        </div>
+
+      </div>
+
+      <div class="example-card">
+
+        <div class="ex-top">
+
+          <span class="tag tag-yellow">EXCLUSIVE · 5%</span>
+
+          <span class="ex-num">EX. 03</span>
+
+        </div>
+
+        <h5>Essential slab â Example 3</h5>
+
+        <div class="ex-row"><span class="l">Original Amount</span><span class="v">&#8377;2,000</span></div>
+
+        <div class="ex-row"><span class="l">GST Rate</span><span class="v">5%</span></div>
+
+        <div class="ex-highlight">
+
+          <div class="ex-row"><span class="l">GST Amount</span><span class="v">&#8377;100</span></div>
+
+          <div class="ex-row"><span class="l">Final Amount</span><span class="v">&#8377;2,100</span></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== CGST/SGST/IGST table ===== -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-heading">Understanding CGST, SGST and IGST</h2>
+
+    <p class="section-sub">GST is split between Central and State governments depending on whether the supply is within a state or across states.</p>
+
+    <div class="gst-table-wrap">
+
+      <table class="gst-table">
+
+        <thead>
+
+          <tr><th>Tax Type</th><th>Applicable On</th><th>Collected By</th></tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr><td>CGST</td><td><span class="badge-pill badge-navy">INTRA-STATE</span></td><td>Central Government</td></tr>
+
+          <tr><td>SGST</td><td><span class="badge-pill badge-navy">INTRA-STATE</span></td><td>State Government</td></tr>
+
+          <tr><td>IGST</td><td><span class="badge-pill badge-yellow">INTER-STATE</span></td><td>Central Government</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Rate slabs ===== -->
+
+<section class="rate-slabs">
+
+  <div class="container">
+
+    <h2 class="section-heading">What are GST rates &amp; why they matter?</h2>
+
+    <p class="section-sub">GST in India is classified into four main rate slabs. The government periodically revises these â the latest revision was announced on 22 September 2025.</p>
+
+    <div class="slab-list">
+
+      <div class="slab-row">
+
+        <div class="slab-pct">0%</div>
+
+        <div class="slab-desc">Essential commodities like unbranded food grains, fresh fruits &amp; vegetables, books, and basic healthcare items to keep daily necessities affordable.</div>
+
+        <div class="slab-icon">&#127807;</div>
+
+      </div>
+
+      <div class="slab-row">
+
+        <div class="slab-pct">5%</div>
+
+        <div class="slab-desc">Mass-consumption items including packaged food, soaps, medicines, footwear up to ₹1,000, and some household essentials.</div>
+
+        <div class="slab-icon">&#128138;</div>
+
+      </div>
+
+      <div class="slab-row">
+
+        <div class="slab-pct">18%</div>
+
+        <div class="slab-desc">Standard rate for most goods and services â electronics, appliances, TVs, ACs, restaurants, IT services, and most FMCG products.</div>
+
+        <div class="slab-icon">&#128250;</div>
+
+      </div>
+
+      <div class="slab-row">
+
+        <div class="slab-pct">40%</div>
+
+        <div class="slab-desc">Sin goods and luxury items like tobacco, aerated drinks, luxury cars, and tobacco-related products (the highest slab).</div>
+
+        <div class="slab-icon">&#128142;</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Trial section ===== -->
+
+<section class="trial-section">
+
+  <div class="container">
+
+    <div class="trial-grid">
+
+      <div class="trial-card">
+
+        <h3>Get 7-days free trial</h3>
+
+        <div class="tf">
+
+          <select><option>I am*</option><option>Business Owner</option><option>Accountant</option><option>Student</option><option>DotERP Partner</option></select>
+
+        </div>
+
+        <div class="tf"><input type="text" placeholder="Name *"></div>
+
+        <div class="tf"><input type="tel" placeholder="Phone Number *"></div>
+
+        <div class="tf"><input type="email" placeholder="Email Id *"></div>
+
+        <div class="tf"><input type="text" placeholder="Pincode *"></div>
+
+        <label class="trial-check"><input type="checkbox"> I have read and accepted the <a href="#">T&amp;C</a></label>
+
+        <button class="trial-submit">Submit</button>
+
+      </div>
+
+      <div class="trial-benefits">
+
+        <h3>Achieve hassle-free GST compliant processes with DotERP</h3>
+
+        <ul class="benefit-list">
+
+          <li><span class="benefit-num">1</span><span>Quick Onboarding â get started in minutes with guided setup.</span></li>
+
+          <li><span class="benefit-num">2</span><span>GST Compliant E-Invoicing generated directly from vouchers.</span></li>
+
+          <li><span class="benefit-num">3</span><span>GSTR-2B and GSTR-2A Reconciliation with auto-matching.</span></li>
+
+          <li><span class="benefit-num">4</span><span>Accurate GST returns filing with real-time validation.</span></li>
+
+          <li><span class="benefit-num">5</span><span>Real-time tax liability tracking and accurate ITC claims.</span></li>
+
+          <li><span class="benefit-num">6</span><span>Multi-company, multi-user GST management from one place.</span></li>
+
+          <li><span class="benefit-num">7</span><span>Generate GST-ready invoices in standard formats instantly.</span></li>
+
+        </ul>
+
+        <a class="btn-download" href="free-trial.html" style="margin-top: 22px;display:inline-block;text-decoration:none;">Start Your Free Trial Now &#8594;</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Steps ===== -->
+
+<section class="steps-section">
+
+  <div class="container">
+
+    <h2 class="section-heading">How to Use the GST Calculator Online in 4 Easy Steps</h2>
+
+    <p class="section-sub">Follow these simple steps to compute GST in seconds.</p>
+
+    <div class="steps-list">
+
+      <div class="step-row">
+
+        <div class="step-num">1</div>
+
+        <div class="step-text">Enter the amount you want to calculate GST on. Choose whether it is Exclusive or Inclusive of GST.</div>
+
+        <div class="step-mock"><div class="mock-line"></div><div class="mock-line" style="width:60%"></div></div>
+
+      </div>
+
+      <div class="step-row">
+
+        <div class="step-num">2</div>
+
+        <div class="step-text">Select the applicable GST rate from 5%, 18%, 28% or 40% using the rate buttons.</div>
+
+        <div class="step-mock"><span class="mock-pill">18%</span></div>
+
+      </div>
+
+      <div class="step-row">
+
+        <div class="step-num">3</div>
+
+        <div class="step-text">Pick the supply type â Intra-state for CGST+SGST or Inter-state for IGST.</div>
+
+        <div class="step-mock"><div class="mock-line"></div></div>
+
+      </div>
+
+      <div class="step-row">
+
+        <div class="step-num">4</div>
+
+        <div class="step-text">Click Calculate to instantly see the GST breakup and total payable amount on the right.</div>
+
+        <div class="step-mock"><div class="mock-btn">Calculate</div></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Benefits ===== -->
+
+<section class="benefits-section">
+
+  <div class="container">
+
+    <h2 class="section-heading">Benefits of Using the GST Calculator for CGST and SGST Calculations</h2>
+
+    <div class="benefits-list">
+
+      <div class="b-item">Ensures accurate GST calculations and ITC alignment</div>
+
+      <div class="b-item">Reduces manual errors and rate misclassifications</div>
+
+      <div class="b-item">Saves time during billing and return preparation</div>
+
+      <div class="b-item">Applies the correct GST rate automatically per slab</div>
+
+      <div class="b-item">Makes invoices more professional with clear tax breakup</div>
+
+      <div class="b-item">Simplifies price breakdown for customers and auditors</div>
+
+      <div class="b-item">Useful for high-volume catalogs and batch invoicing</div>
+
+      <div class="b-item">Helps reconcile CGST, SGST and IGST in seconds</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Tax components ===== -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-heading">Different Tax Components under GST</h2>
+
+    <p class="section-sub">Understand how each component flows between Central and State governments.</p>
+
+    <div class="tax-grid">
+
+      <div class="accordion">
+
+        <div class="acc-item open">
+
+          <div class="acc-head">CGST (Central Goods and Services Tax) <span class="acc-toggle">+</span></div>
+
+          <div class="acc-body">Collected by the Central Government on intra-state supplies. The centre gets half of the GST paid on transactions within a state.</div>
+
+        </div>
+
+        <div class="acc-item open">
+
+          <div class="acc-head">SGST (State Goods and Services Tax) <span class="acc-toggle">+</span></div>
+
+          <div class="acc-body">Collected by the State Government on intra-state supplies. The state gets the other half of the GST paid on within-state transactions.</div>
+
+        </div>
+
+        <div class="acc-item">
+
+          <div class="acc-head">UTGST (Union Territory Goods and Services Tax) <span class="acc-toggle">+</span></div>
+
+          <div class="acc-body">Similar to SGST but applicable in Union Territories without legislature, collected by the UT administration.</div>
+
+        </div>
+
+        <div class="acc-item">
+
+          <div class="acc-head">IGST (Integrated Goods and Services Tax) <span class="acc-toggle">+</span></div>
+
+          <div class="acc-body">Collected by the Central Government on inter-state supplies and imports. The centre later settles the appropriate share with the destination state.</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="inv-mock">
+
+        <div class="im-head">ABC LTD</div>
+
+        <div class="im-body">
+
+          <table class="im-tbl">
+
+            <thead><tr><th>Item</th><th>Qty.</th><th>Price</th></tr></thead>
+
+            <tbody>
+
+              <tr><td><div class="ph"></div></td><td><div class="ph" style="width:30px"></div></td><td><div class="ph" style="width:50px"></div></td></tr>
+
+              <tr><td><div class="ph"></div></td><td><div class="ph" style="width:30px"></div></td><td><div class="ph" style="width:50px"></div></td></tr>
+
+            </tbody>
+
+          </table>
+
+          <div class="im-rows">
+
+            <div class="im-row"><span class="l">Total Price</span><span class="v">&#8377;80,000</span></div>
+
+            <div class="im-row"><span class="l">GST</span><span class="v">&#8377;8,000</span></div>
+
+            <div class="im-row"><span class="l">CGST 2.5%</span><span class="v">&#8377;4,000</span></div>
+
+            <div class="im-row"><span class="l">SGST/UTGST 2.5%</span><span class="v">&#8377;4,000</span></div>
+
+          </div>
+
+        </div>
+
+        <div class="im-total">Your gross price will be &#8377;84,000</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Manufacturer cost table ===== -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-heading">How the GST Calculator Helps with an Example</h2>
+
+    <p class="section-sub">A real-world supply chain showing how GST flows through each stage with input tax credit.</p>
+
+    <div class="manu-intro">A manufacturer sells goods to a logistics company, who then delivers to a retailer. <b>18% tax rate</b> is applicable on every stage. Each business pays only the net tax after claiming Input Tax Credit (ITC) on the tax already paid at the previous stage.</div>
+
+    <table class="manu-table">
+
+      <thead>
+
+        <tr><th>Particulars</th><th>Cost</th><th>Tax @18%</th><th>Tax Liability to Govt</th><th>Invoice Total</th></tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr><td>Manufacturer</td><td>&#8377;2,000</td><td>&#8377;360</td><td>&#8377;360</td><td>&#8377;2,360</td></tr>
+
+        <tr><td>Logistics company adds &#8377;500 for distribution</td><td>&#8377;2,500</td><td>&#8377;450</td><td>&#8377;90</td><td>&#8377;2,950</td></tr>
+
+        <tr><td>Marketing expense of &#8377;400 added by retailer</td><td>&#8377;2,900</td><td>&#8377;522</td><td>&#8377;72</td><td>&#8377;3,422</td></tr>
+
+        <tr class="total"><td>Total</td><td>&#8377;2,900</td><td>&#8377;1,332</td><td>&#8377;522</td><td>&#8377;3,422</td></tr>
+
+      </tbody>
+
+    </table>
+
+    <div class="final-price-wrap">
+
+      <div class="final-price-pill">Final Price to Consumer: &#8377;3,422</div>
+
+    </div>
+
+    <div class="manu-note">The total tax of ₹1,332 is shared between the three businesses based on value addition. The government ultimately receives ₹522 (net of input tax credit) â the same as a single 18% tax on the final consumer price of ₹2,900. This is how GST avoids the cascading tax-on-tax effect of the older regime.</div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Feature compare ===== -->
+
+<section class="compare-section">
+
+  <div class="container">
+
+    <h2 class="section-heading">Go Beyond Simple GST Calculation</h2>
+
+    <p class="section-sub">Discover the Advanced Online GST Calculator and what DotERP unlocks for your business.</p>
+
+    <div class="compare-card">
+
+      <table class="compare-table">
+
+        <thead>
+
+          <tr><th>Features</th><th>Free Online GST Calculator</th><th>DotERP for GST</th></tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr><td>Ease of Use</td><td><span class="icon-ok">&#10003;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>GST Compliance</td><td><span class="icon-ok">&#10003;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>Invoice Generation</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>Return Filing Assistance</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>Tax Tracking</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>Reporting and Analytics</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>Integration with Business Systems</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+          <tr><td>Cost</td><td><span class="icon-ok">&#10003;</span></td><td><span class="icon-ok">&#10003;</span></td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Software cards ===== -->
+
+<section class="software-section">
+
+  <div class="container">
+
+    <h2>Explore How DotERP Can Enhance Your Business Efficiency</h2>
+
+    <div class="software-grid">
+
+      <div class="soft-card">
+
+        <div class="soft-icon">&#128202;</div>
+
+        <h4>GST Software</h4>
+
+        <p>Generate GST-compliant invoices, file returns and reconcile ITC effortlessly.</p>
+
+        <span class="soft-pill">Learn More</span>
+
+      </div>
+
+      <div class="soft-card">
+
+        <div class="soft-icon">&#8377;</div>
+
+        <h4>Accounting Software</h4>
+
+        <p>Manage books of accounts, financial statements and budgets in real time.</p>
+
+        <span class="soft-pill">Learn More</span>
+
+      </div>
+
+      <div class="soft-card">
+
+        <div class="soft-icon">&#128260;</div>
+
+        <h4>Billing Software</h4>
+
+        <p>Create professional bills, track receivables and automate payment reminders.</p>
+
+        <span class="soft-pill">Learn More</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Insights ===== -->
+
+<section class="insights-section">
+
+  <div class="container">
+
+    <h2 class="section-heading">Explore our Latest Insights</h2>
+
+    <p class="section-sub">Stay updated with the latest in accounting, GST and business tech.</p>
+
+    <div class="insights-grid">
+
+      <div class="insight-card">
+
+        <div class="insight-thumb">&#129504;</div>
+
+        <div class="ic-body">
+
+          <div class="ic-tag">AI in Accounting</div>
+
+          <h4>AI in Bank Reconciliation: What It Can and Can't Do Today</h4>
+
+        </div>
+
+      </div>
+
+      <div class="insight-card">
+
+        <div class="insight-thumb">&#128187;</div>
+
+        <div class="ic-body">
+
+          <div class="ic-tag">Bank Statements</div>
+
+          <h4>How AI Processes Bank Statements: Benefits, Limitations, and Why You Should Review Before Import</h4>
+
+        </div>
+
+      </div>
+
+      <div class="insight-card">
+
+        <div class="insight-thumb">&#128176;</div>
+
+        <div class="ic-body">
+
+          <div class="ic-tag">Reconciliation</div>
+
+          <h4>Common Bank Reconciliation Problems and How to Resolve Them in DotERP</h4>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== FAQ ===== -->
+
+<section class="faq-section">
+
+  <div class="container">
+
+    <h2 class="section-heading">Frequently Asked Questions (FAQs)</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item open">
+
+        <div class="faq-q">What is a GST Calculator? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">A GST Calculator is a free online tool that helps you compute GST on a given amount. It shows the GST breakup into CGST, SGST and IGST based on whether the supply is intra-state or inter-state, and works for both GST-inclusive and GST-exclusive prices.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">What is the formula to calculate GST manually? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">For GST-exclusive amounts: GST = (Taxable Value Ã Rate) Ã· 100. For GST-inclusive amounts: Taxable Value = Price Ã· (1 + Rate Ã· 100), and GST = Price â Taxable Value.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">What is the difference between GST Inclusive and GST Exclusive? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">GST Exclusive means GST is added on top of the listed price. GST Inclusive means the listed price already contains GST, so you need to back-calculate the taxable value and the GST portion.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">How much is 18% GST on ₹1,000? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">18% GST on ₹1,000 is ₹180. So the final amount payable (GST-exclusive) is ₹1,180. If ₹1,000 is GST-inclusive, the taxable value is ₹847.46 and GST is ₹152.54.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">What are CGST and SGST? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">CGST is the Central GST collected by the Central Government, and SGST is the State GST collected by the State Government. Both apply on intra-state supplies and together equal the full GST rate.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">What is IGST? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">IGST is Integrated GST, collected by the Central Government on inter-state supplies and imports. The full GST rate is charged as IGST when goods or services move from one state to another.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">Which GST rates does this calculator support? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">The calculator supports the four main Indian GST slabs â 0%, 5%, 18% and 28% â plus 40% for sin goods and luxury items.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">Why should I use an online GST calculator? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">It eliminates manual calculation errors, saves time when preparing invoices or returns, and helps you present a clear tax breakup to customers and auditors.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">Can I generate GST invoices with this tool? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">The free calculator only computes GST. To generate GST-compliant invoices and file returns, you need a complete solution like DotERP.</div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <div class="faq-q">What is the difference between this free calculator and DotERP? <span class="faq-toggle">+</span></div>
+
+        <div class="faq-a">The free calculator is a single-purpose tool for quick GST math. DotERP adds invoice generation, return filing, ITC reconciliation, inventory, multi-company management and reporting.</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</div>
+
+<footer><div class="wrap">
+
+<div class="about"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP is a complete business management platform for billing, accounting, inventory, GST, payroll, and reporting. <a href="about.html" style="color:var(--acc)">Read More</a></span></div>
+
+<div class="cols">
+
+<div><h5>Our Products</h5><a href="product-overview.html">DotERP Service</a><a href="server.html">DotERP Server</a><a href="developer-hub.html">DotERP Developer</a><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b></a><a href="q2dot.html">Q2Dot</a><a href="dotcapital.html">DotCapital</a></div>
+
+<div><h5>Product Subscription</h5><a href="login.html">Renew Subscription</a><a href="pricing.html">Monthly Subscription</a><a href="pricing.html">Pricing &amp; Purchase</a><a href="download.html">Download DotERP</a></div>
+
+<div><h5>DotERP's Features</h5><a href="banking.html">Banking</a><a href="accounting.html">Credit &amp; Cashflow</a><a href="business-reports.html">Dashboards &amp; Reports</a><a href="inventory.html">Inventory Management</a><a href="features.html">Business Operations</a></div>
+
+<div><h5>Solutions for Startups</h5><a href="accounting.html">Invoicing and Accounting</a><a href="features.html">Payroll Management</a><a href="taxation-compliance.html">Taxation and Compliance</a></div>
+
+<div><h5>Solutions for SMBs</h5><a href="accounting.html">Accounting Software</a><a href="features.html">Billing Software</a><a href="inventory.html">Inventory Software</a><a href="taxation-compliance.html">GST Software</a></div>
+
+<div><h5>Free Business Tools</h5><a href="tools-invoice-generator.html">Invoice Generator</a><a href="tools-gst-calculator.html">GST Calculator</a><a href="tools-quotation-generator.html">Quotation Generator</a><a href="tools-cashflow-generator.html">Cashflow Generator</a></div>
+
+<div><h5>Get GST-Compliant</h5><a href="gst-registration.html">GST Registration</a><a href="gst-returns.html">File GST Returns</a><a href="gstr-1.html">GSTR 1</a><a href="gstr-3b.html">GSTR 3B</a></div>
+
+<div><h5>Contact Info</h5><a href="contact.html">Office No. 1, 33 Feet Road, New Industrial Area, Ballabgarh, Faridabad 121004</a><a href="call-us.html">Customer Care: 9718437209 & 9354412061</a><a href="email-us.html">support@doterp.example</a><a href="contact.html">Contact Us</a></div>
+
+<div><h5>Resources</h5><a href="blogs.html">Blogs</a><a href="learning-hub.html">Learning Hub</a><a href="customer-stories.html">Customer Stories</a><a href="help.html">FAQs</a></div>
+
+<div><h5>Our Network</h5><a href="partners.html">Partners</a><a href="careers.html">Careers</a><a href="events.html">Media &amp; News</a></div>
+
+</div>
+
+<div class="copy">Copyright © 2026 DotERP Solutions Pvt. Ltd. · · <a href="privacy.html" style="color:inherit">Privacy Policy</a> · <a href="terms.html" style="color:inherit">Terms of Use</a></div>
+
+</div></footer>
+
+<script src="../js/main.js"></script>
+
+<script>
+
+try{
+
+
+
+  // ===== Toast helper =====
+
+  const toast = document.getElementById('toast');
+
+  function showToast(msg) {
+
+    toast.textContent = msg;
+
+    toast.classList.add('show');
+
+    clearTimeout(toast._t);
+
+    toast._t = setTimeout(() => toast.classList.remove('show'), 2400);
+
+  }
+
+
+
+  // ===== Calculator =====
+
+  const amountEl = document.getElementById('amount');
+
+  const supplyEl = document.getElementById('supplyType');
+
+  const rateBtns = document.querySelectorAll('.rate-btn');
+
+  const inclusionEls = document.querySelectorAll('input[name="inclusion"]');
+
+
+
+  let currentRate = 18;
+
+
+
+  rateBtns.forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+      rateBtns.forEach(b => b.classList.remove('active'));
+
+      btn.classList.add('active');
+
+      currentRate = parseFloat(btn.dataset.rate);
+
+      calculate();
+
+    });
+
+  });
+
+
+
+  inclusionEls.forEach(el => el.addEventListener('change', calculate));
+
+  amountEl.addEventListener('input', calculate);
+
+  supplyEl.addEventListener('change', calculate);
+
+
+
+  function fmt(n) {
+
+    if (isNaN(n)) n = 0;
+
+    return '\u20B9' + n.toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+
+  }
+
+
+
+  function calculate() {
+
+    const amt = parseFloat(amountEl.value) || 0;
+
+    const inclusion = document.querySelector('input[name="inclusion"]:checked').value;
+
+    const supply = supplyEl.value;
+
+    const rate = currentRate;
+
+
+
+    let taxable, gstAmt;
+
+    if (inclusion === 'inclusive') {
+
+      taxable = amt / (1 + rate / 100);
+
+      gstAmt = amt - taxable;
+
+    } else {
+
+      taxable = amt;
+
+      gstAmt = (amt * rate) / 100;
+
+    }
+
+
+
+    const total = taxable + gstAmt;
+
+    let cgst = 0, sgst = 0, igst = 0;
+
+    if (supply === 'intra') {
+
+      cgst = gstAmt / 2;
+
+      sgst = gstAmt / 2;
+
+    } else {
+
+      igst = gstAmt;
+
+    }
+
+
+
+    document.getElementById('pvTaxable').textContent = fmt(taxable);
+
+    document.getElementById('pvIgst').textContent = fmt(igst);
+
+    document.getElementById('pvCgst').textContent = fmt(cgst);
+
+    document.getElementById('pvSgst').textContent = fmt(sgst);
+
+    document.getElementById('pvTotal').textContent = fmt(total);
+
+  }
+
+
+
+  document.getElementById('calcBtn').addEventListener('click', () => {
+
+    calculate();
+
+    const amt = parseFloat(amountEl.value) || 0;
+
+    showToast('GST calculated on ' + fmt(amt) + ' @ ' + currentRate + '%');
+
+  });
+
+
+
+  // initial calc
+
+  calculate();
+
+
+
+  // ===== Tax components accordion =====
+
+  document.querySelectorAll('.acc-head').forEach(h => {
+
+    h.addEventListener('click', () => {
+
+      h.parentElement.classList.toggle('open');
+
+    });
+
+  });
+
+
+
+  // ===== FAQ accordion =====
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+
+    q.addEventListener('click', () => {
+
+      q.parentElement.classList.toggle('open');
+
+    });
+
+  });
+
+
+
+  // ===== Trial form submit =====
+
+  document.querySelectorAll('.trial-submit').forEach(btn => {
+
+    btn.addEventListener('click', (e) => {
+
+      e.preventDefault();
+
+      showToast('Thank you! Your free trial request has been submitted.');
+
+    });
+
+  });
+
+
+
+  // ===== Nav download =====
+
+  var _dl=document.querySelector('.btn-download'); if(_dl) _dl.addEventListener('click', () => {
+
+    showToast('DotERP download will begin shortly');
+
+  });
+
+
+
+}catch(e){console.error('GST calc init error',e);}
+
+
+
+</script>
+
+</body>
+
+</html>
+

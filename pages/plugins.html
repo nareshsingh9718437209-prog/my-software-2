@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DotERP Plug-ins</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#fff8e8;--sky:#e3f1fb;--navy:#0f4c81;--ink:#14243a;--mut:#51627a;--acc:#f59e0b;--accink:#2a1a00;--card:#fff;--page:#fff;--line:#c9d8e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1a12;--sky:#10202f;--navy:#0b3558;--ink:#eef3f9;--mut:#a9b8ca;--card:#172a3d;--page:#0e1a27;--line:#2c4560;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1a12;--sky:#10202f;--navy:#0b3558;--ink:#eef3f9;--mut:#a9b8ca;--card:#172a3d;--page:#0e1a27;--line:#2c4560;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,Segoe UI,Arial,sans-serif;background:var(--page);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+nav{background:var(--navy);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:30}
+nav .wrap{display:flex;align-items:center;gap:20px;height:56px;font-size:14px}.logo{font-weight:700;font-size:22px;letter-spacing:-.5px}.logo b{color:var(--acc)}.sp{flex:1}
+.btn{display:inline-block;background:var(--acc);color:var(--accink);font-weight:600;font-size:13px;padding:10px 18px;border-radius:4px;border:0;cursor:pointer;font-family:inherit;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(245,158,11,.45)}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:rgba(255,255,255,.55);transform:skewX(-20deg)}.btn:hover:after{animation:shine .6s}
+.sub{background:var(--page);border-bottom:1px solid var(--line);position:relative;top:auto;z-index:1}.sub .wrap{display:flex;gap:30px;align-items:center;height:48px;font-size:14px;overflow-x:auto;white-space:nowrap}.sub a{font-weight:600;color:var(--mut);height:48px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:.25s}.sub a:hover{color:var(--navy)}.sub a.on{color:var(--ink);border-color:var(--acc)}.sub .n{margin-left:auto;font-size:12px;color:var(--mut)}
+.hero{padding:56px 0 20px}.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,40px);letter-spacing:-1px;animation:up .7s backwards}.hero p{margin:0;color:var(--mut);animation:up .7s .15s backwards}
+.bar{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:26px 0 24px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:99px;font:600 12px inherit;font-family:inherit;cursor:pointer;transition:.25s}.chips button:hover{transform:translateY(-2px)}.chips button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bar input{padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font:13px inherit;font-family:inherit;min-width:240px;transition:border-color .2s,box-shadow .2s}.bar input:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 3px rgba(245,158,11,.3)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:60px}
+.pc{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:30px 30px 26px;transition:transform .3s,box-shadow .3s;animation:up .5s backwards}.pc:hover{transform:translateY(-8px);box-shadow:0 16px 32px rgba(0,0,0,.16)}
+.pc:before{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(245,158,11,.2),transparent 60%);opacity:0;transition:opacity .3s}.pc:hover:before{opacity:1}.pc>*{position:relative}
+.tag{display:inline-block;background:var(--sky);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:14px}
+.pc h3{margin:0 0 8px;font-size:18px}.pc p{margin:0 0 12px;font-size:13.5px;color:var(--mut)}.pc a.l{color:var(--navy);font-weight:600;font-size:14px;transition:letter-spacing .25s}.pc a.l:hover{letter-spacing:.4px;color:var(--acc)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag,:root:not([data-theme="light"]) .pc a.l{color:#6bb7f0}}
+.none{display:none;text-align:center;color:var(--mut);padding:40px 0 80px}
+footer{background:var(--navy);color:#fff;padding:44px 0 20px;font-size:13px}footer .abt{border-bottom:1px solid #ffffff33;padding-bottom:18px;margin-bottom:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer .abt span{max-width:480px;opacity:.9}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 20px}.cols h5{margin:0 0 10px;color:var(--acc);font-size:14px}.cols a,.cols p{display:block;padding:3px 0;margin:0;opacity:.9;transition:transform .2s,color .2s}.cols a:hover{transform:translateX(5px);color:var(--acc)}.copy{margin-top:30px;border-top:1px solid #ffffff33;padding-top:16px;opacity:.8;text-align:center}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:var(--ink);color:var(--page);padding:12px 20px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:.35s;z-index:60}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}@keyframes shine{to{left:130%}}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){nav .wrap{height:auto;min-height:56px;flex-wrap:wrap;padding:8px 20px;gap:10px 14px}nav .sp{display:none}.sub .wrap{white-space:normal;height:auto;min-height:48px;gap:14px;padding:6px 20px;flex-wrap:wrap}.sub .wrap .n{display:none}.bar{flex-direction:column;align-items:stretch}.bar input{min-width:0;width:100%}.hero{padding:36px 0 12px}}
+@media(max-width:520px){.cols{grid-template-columns:1fr}.sub .wrap a{height:auto;padding:6px 0}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="../index.html">Dot<b>ERP</b></a><span class="sp"></span><a href="pricing.html">Pricing</a><a href="customer-pricing.html">Customer Hub</a><a class="btn" href="download.html">Download</a></div></nav>
+<div class="sub"><div class="wrap"><a href="customer-pricing.html">Customer Pricing</a><a class="on" href="#">Plugins</a><a href="whats-new.html">What’s New</a><span class="n">✦ Your subscription renews automatically. No missed renewals. Cancel anytime.</span></div></div>
+<header class="hero"><div class="wrap"><h1>Extend DotERP with powerful plug-ins</h1><p>Specialised capabilities built for DotERP. Pick what your business needs.</p>
+<div class="bar"><div class="chips" id="ch"></div><input id="q" type="search" placeholder="Search plug-ins" aria-label="Search plug-ins"></div></div></header>
+<main class="wrap"><div class="grid" id="g"></div><div class="none" id="no">No plug-ins match your search.</div></main>
+<footer><div class="wrap"><div class="abt"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP builds simple, GST-ready software for billing, accounting, inventory, and business management.</span></div>
+<div class="cols"><div><h5>Our Products</h5><a href="#">DotERP</a><a href="#">Udyam<b style="color:var(--acc)">App</b></a><a href="#">Q2Dot</a><a href="#">DotCapital</a></div>
+<div><h5>DotERP’s Features</h5><a href="accounting.html">Invoicing and Accounting</a><a href="taxation-compliance.html">Taxation and Compliance</a><a href="connected-services.html">Connected Services</a></div>
+<div><h5>Get Started</h5><a href="pricing.html">Pricing</a><a href="free-trial.html">Free Trial</a><a href="download.html">Download</a></div>
+<div><h5>Contact Info</h5><p>Office No. 1, 33 Feet Road, New Industrial Area, Ballabgarh, Faridabad 121004</p><p>Customer Care: 9718437209 & 9354412061</p><p>[support email]</p><a href="contact.html">Contact Us</a></div></div>
+<div class="copy">Copyright © 2026 DotERP [Company legal name] · Privacy Policy · Terms of Use</div></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+function $(i){return document.getElementById(i);}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;}
+var P=[['AI','AI Document Import','Import PDF bank statements, invoices and other documents into DotERP and turn them into transactions using AI.','Enable Now'],
+['Practice','Financial Statements','Generate financial statements for companies and other entities from your books.','Enable Now'],
+['Automation','Business Network Connect','Manage invoices, payments and reconciliations with buyers and suppliers from inside DotERP.','Enable Now'],
+['Automation','Marketplace Data Import','Import online sales, refund and settlement reports straight into DotERP.','Enable Now'],
+['Customization','Invoice Templates & Personalisation','Create invoice templates and personalise them to match your business.','Learn More']];
+var tags=['All'],cur='All';P.forEach(function(p){if(tags.indexOf(p[0])<0)tags.push(p[0]);});
+tags.forEach(function(t){var b=el('button',t==='All'?'on':'',t);b.onclick=function(){cur=t;[].forEach.call($('ch').children,function(x){x.classList.toggle('on',x===b);});draw();};$('ch').appendChild(b);});
+var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2400);}
+function draw(){var g=$('g'),q=$('q').value.trim().toLowerCase(),n=0;g.textContent='';
+P.forEach(function(p){if(cur!=='All'&&p[0]!==cur)return;if(q&&(p[1]+' '+p[2]).toLowerCase().indexOf(q)<0)return;
+var c=el('div','pc');c.style.animationDelay=(n++*.08)+'s';c.appendChild(el('span','tag',p[0]));c.appendChild(el('h3','',p[1]));c.appendChild(el('p','',p[2]));
+var a=el('a','l',p[3]);a.href='#';a.onclick=function(e){e.preventDefault();toast(p[3]==='Enable Now'?p[1]+' – enable request sent (preview only)':'[Link to details for '+p[1]+']');};c.appendChild(a);
+c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});g.appendChild(c);});
+$('no').style.display=n?'none':'block';}
+$('q').addEventListener('input',draw);draw();
+})();
+</script>
+</body>
+</html>

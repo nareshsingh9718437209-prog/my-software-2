@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>DotERP â Everything your business needs</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+<style>
+
+:root{--bg:#fff8e8;--sky:#e3f1fb;--navy:#0f4c81;--ink:#14243a;--mut:#51627a;--acc:#f59e0b;--accink:#2a1a00;--card:#fff;--line:#c9d8e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1a12;--sky:#10202f;--navy:#0b3558;--ink:#eef3f9;--mut:#a9b8ca;--card:#172a3d;--line:#2c4560;color-scheme:dark}}
+
+:root[data-theme="dark"]{--bg:#1d1a12;--sky:#10202f;--navy:#0b3558;--ink:#eef3f9;--mut:#a9b8ca;--card:#172a3d;--line:#2c4560;color-scheme:dark}
+
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,Segoe UI,Arial,sans-serif;background:var(--sky);color:var(--ink);line-height:1.55}
+
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.top{background:var(--bg);font-size:12px;border-bottom:1px solid var(--line)}
+
+.top .wrap{display:flex;justify-content:space-between;padding-top:8px;padding-bottom:8px;color:var(--mut)}
+
+.top .r a{margin-left:16px}.top .r a:first-child{color:var(--navy);font-weight:600;border-bottom:2px solid var(--navy)}
+
+nav{background:var(--navy);color:#fff}
+
+nav .wrap{display:flex;align-items:center;gap:22px;height:56px;font-size:14px}
+
+nav .logo{font-weight:700;font-size:22px;margin:0 auto;letter-spacing:-.5px}
+
+nav .logo b{color:var(--acc)}
+
+nav .sp{flex:1}
+
+.btn{display:inline-block;background:var(--acc);color:var(--accink);font-weight:600;font-size:14px;padding:9px 18px;border-radius:4px}
+
+.hero{background:var(--bg);padding:70px 0 90px;position:relative;overflow:hidden}
+
+.hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-60px;height:140px;background:var(--sky);transform:rotate(-3deg)}
+
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;position:relative;z-index:1}
+
+h1{font-size:clamp(34px,5vw,52px);line-height:1.1;margin:0 0 14px;letter-spacing:-1px}
+
+h1 span{color:var(--navy)}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h1 span{color:#6bb7f0}}
+
+.hero p{color:var(--mut);max-width:420px;margin:0 0 20px}
+
+.mock{background:var(--card);border:6px solid var(--navy);border-radius:10px;padding:34px 20px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.12);position:relative}
+
+.mock .n{font-size:34px;font-weight:700}.mock .n b{color:var(--acc)}
+
+.mock .tag{display:inline-block;background:#7fdcf0;color:#06323d;padding:2px 12px;font-weight:600;margin-top:8px}
+
+.price{position:absolute;right:-10px;bottom:-34px;background:var(--card);padding:10px 14px;border-radius:6px;text-align:left;font-size:11px;color:var(--mut);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+
+.price strong{display:block;font-size:22px;color:var(--ink)}
+
+h2{font-size:clamp(26px,3.5vw,36px);text-align:center;margin:0 0 40px;letter-spacing:-.5px}
+
+h2 u{text-decoration:none;background:linear-gradient(transparent 78%,var(--acc) 78%,var(--acc) 86%,transparent 86%) no-repeat left/0% 100%;transition:background-size .9s .35s ease}h2.go u{background-size:100% 100%}
+
+section{padding:70px 0}
+
+.acc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+
+details{border-bottom:1px solid var(--line);padding:16px 0;font-size:15px}
+
+details summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+
+details summary::after{content:"+";font-size:20px;line-height:1}details[open] summary::after{content:"â"}
+
+details p{color:var(--mut);margin:10px 0 0;font-size:14px}
+
+.ph{border:2px dashed var(--line);border-radius:10px;min-height:240px;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:13px;text-align:center;padding:20px}
+
+.cta{background:var(--navy);border-radius:8px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;color:#fff}
+
+.cta .l{background:var(--card);color:var(--ink);padding:22px;border-radius:6px}
+
+.cta .l h3{margin:0 0 8px;font-size:22px}.cta .l p{font-size:13px;color:var(--mut);margin:0 0 14px}
+
+.cta .rr h3{font-size:24px;margin:0 0 8px}.cta .rr p{font-size:13px;margin:0 0 14px;opacity:.9}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+.stat{border-left:2px solid var(--navy);padding-left:18px}
+
+.stat .v{font-size:34px;font-weight:700;color:var(--navy)}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .stat .v{color:#6bb7f0}}
+
+.pill{display:inline-block;background:var(--card);border:1px solid var(--line);color:var(--navy);font-size:12px;font-weight:600;padding:3px 12px;border-radius:99px;margin:6px 0 10px}
+
+.stat p{font-size:13px;color:var(--mut);margin:0}
+
+.band{background:var(--navy);color:#fff}
+
+.band h2{color:#fff}
+
+.quote{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:start;max-width:900px;margin:0 auto}
+
+.quote .ph{min-height:220px;background:#fff;color:#51627a;border-color:#9bb8d4}
+
+.quote blockquote{margin:0;font-size:19px;font-weight:500}
+
+.quote small{display:block;margin-top:14px;opacity:.85}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:740px;margin:0 auto}
+
+.card{background:var(--card);border-radius:6px;padding:22px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+
+.card h3{margin:0 0 4px;font-size:20px}.card h4{margin:0 0 10px;font-size:13px}
+
+.card p{font-size:13px;color:var(--mut);margin:0 0 18px}.card a{color:var(--acc);font-weight:600;font-size:13px}
+
+.card .ph{min-height:110px}
+
+footer{background:var(--navy);color:#fff;font-size:13px;padding:40px 0 20px}
+
+footer .about{border-bottom:1px solid #ffffff33;padding-bottom:18px;margin-bottom:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+footer .about span{max-width:480px;opacity:.9}
+
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 20px}
+
+.cols h5{margin:0 0 10px;color:var(--acc);font-size:14px}
+
+.cols a{display:block;padding:3px 0;opacity:.9}
+
+.copy{margin-top:34px;border-top:1px solid #ffffff33;padding-top:16px;opacity:.8}
+
+@media(max-width:760px){.hero .wrap,.acc,.cta,.quote,.two{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.cols{grid-template-columns:1fr 1fr}nav .links{display:none}.price{position:static;margin-top:14px;display:inline-block}.top .wrap span:first-child{display:none}}
+
+.slides{display:grid;position:relative;z-index:1}.slide{grid-area:1/1;opacity:0;visibility:hidden;transform:translateX(50px);transition:opacity .6s,transform .6s,visibility .6s}.slide.on{opacity:1;visibility:visible;transform:none}.slide.out{transform:translateX(-50px)}
+
+.ar{position:absolute;top:50%;z-index:3;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:var(--card);color:var(--navy);font-size:24px;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15)}.ar.l{left:12px}.ar.r{right:12px}
+
+.dots{position:absolute;left:0;right:0;bottom:28px;z-index:3;display:flex;justify-content:center;gap:8px}.dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}.dots button.on{background:var(--navy);width:26px;border-radius:6px}
+
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
+
+@media(max-width:760px){.ar{display:none}}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;transition:box-shadow .3s}nav.sc{box-shadow:0 6px 20px rgba(0,0,0,.25)}
+
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+@keyframes pop{from{opacity:0;transform:scale(.8) rotate(-3deg)}to{opacity:1;transform:none}}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,50px) scale(1.25)}}
+
+@keyframes shim{to{background-position:200% 0}}
+
+@keyframes fill{from{width:0}to{width:100%}}
+
+@keyframes shine{to{left:130%}}
+
+.hero:before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.4),transparent 70%);right:6%;top:-90px;animation:drift 9s ease-in-out infinite alternate}
+
+.hero h1 span{background:linear-gradient(90deg,#0f6fb8,#19b3d9,#0f6fb8) 0 0/200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shim 4s linear infinite}
+
+.slide.on h1{animation:up .7s .15s backwards}.slide.on p{animation:up .7s .3s backwards}.slide.on .btn{animation:up .7s .45s backwards}
+
+.slide.on .mock{animation:pop .8s .2s backwards,float 5s 1s ease-in-out infinite}.slide.on .price{animation:pop .6s 1s backwards}
+
+.btn{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(245,158,11,.45)}.btn:active{transform:none}
+
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:rgba(255,255,255,.55);transform:skewX(-20deg)}.btn:hover:after{animation:shine .6s}
+
+.dots button{position:relative;overflow:hidden;transition:width .3s,background .3s}.dots button.on:after{content:"";position:absolute;left:0;top:0;height:100%;background:var(--acc);animation:fill 5s linear forwards}
+
+.ar{transition:transform .2s,background .2s,color .2s}.ar:hover{background:var(--navy);color:#fff;transform:translateY(-50%) scale(1.12)}
+
+.card{transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-8px);box-shadow:0 14px 30px rgba(0,0,0,.18)}
+
+.stat{transition:border-color .3s,transform .3s}.stat:hover{border-color:var(--acc);transform:translateX(6px)}
+
+details summary{transition:color .2s,padding-left .2s}details summary:hover{color:var(--acc);padding-left:6px}details[open] p{animation:up .4s}
+
+.cols a{transition:transform .2s,color .2s}.cols a:hover{transform:translateX(5px);color:var(--acc)}
+
+.cta{transition:transform .3s}.cta:hover{transform:scale(1.01)}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.mm-t{background:none;border:0;border-bottom:3px solid transparent;color:#fff;font:inherit;cursor:pointer;height:56px;padding:0;transition:border-color .25s}.mm-t i{font-style:normal;display:inline-block;transition:transform .3s}.mm-t[aria-expanded=true]{border-color:var(--acc)}.mm-t[aria-expanded=true] i{transform:rotate(180deg)}
+
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--card);color:var(--ink);font-size:14px;box-shadow:0 24px 40px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .3s,visibility .3s}.mega.open{opacity:1;visibility:visible;transform:none}
+
+.mg{max-width:1100px;margin:0 auto;padding:36px 20px 40px;display:grid;grid-template-columns:repeat(5,1fr)}
+
+.mc{padding:0 18px;border-left:1px solid var(--line)}.mc:first-child{border-left:0;padding-left:0}
+
+.mega.open .mc{animation:up .5s backwards}.mega.open .mc:nth-child(2){animation-delay:.07s}.mega.open .mc:nth-child(3){animation-delay:.14s}.mega.open .mc:nth-child(4){animation-delay:.21s}.mega.open .mc:nth-child(5){animation-delay:.28s}.mc>a small{display:block;font-size:12px;opacity:.75;margin-top:2px}
+
+.mh{display:flex;gap:12px;align-items:center;margin-bottom:14px}.mh b{display:block;font-size:15px}.mh small{color:var(--mut);font-size:12px}
+
+.ic{width:34px;height:34px;border-radius:8px;background:var(--sky);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex:none}
+
+.mc>a:not(.btn){display:block;padding:9px 0;color:var(--mut);transition:color .2s,transform .2s}.mc>a:not(.btn):hover{color:var(--navy);transform:translateX(5px)}
+
+.mc>a.all{color:var(--navy);font-weight:600;margin-top:6px}
+
+.mb{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}.mb .btn{padding:9px 14px;font-size:13px}
+
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.o:hover{box-shadow:none;border-color:var(--acc)}
+
+@media(max-width:900px){.mg{grid-template-columns:1fr 1fr;gap:24px 0}.mc:nth-child(3),.mc:nth-child(5){border-left:0;padding-left:0}}
+
+.pg{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),#19b3d9);z-index:50}
+
+@keyframes mq{to{transform:translateX(-50%)}}@keyframes bgm{50%{background-position:100% 50%}}
+
+.mq{overflow:hidden;background:var(--navy);color:#fff;padding:14px 0;position:relative;z-index:2}.mq div{display:flex;width:max-content;animation:mq 30s linear infinite}.mq:hover div{animation-play-state:paused}.mq span{font-weight:600;white-space:nowrap;padding-right:48px}.mq span:before{content:"â¦";color:var(--acc);margin-right:12px}
+
+.band{background:linear-gradient(120deg,var(--navy),#0a6aa8,var(--navy));background-size:200% 200%;animation:bgm 14s ease infinite}
+
+.hero .wrap{perspective:1000px}.mock{rotate:0 1 0 var(--ry,0deg);translate:var(--tx,0) 0;transition:rotate .25s,translate .25s}
+
+.chip{position:absolute;background:var(--card);color:var(--ink);font-size:12px;font-weight:600;padding:6px 12px;border-radius:99px;box-shadow:0 6px 16px rgba(0,0,0,.18);animation:float 4s ease-in-out infinite;white-space:nowrap}.c1{left:-26px;top:18%}.c2{right:-22px;top:6%;animation-delay:-1.3s}.c3{left:8%;bottom:-18px;animation-delay:-2.2s}
+
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.fc{position:relative;overflow:hidden;border:1px solid var(--line)}.fc:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(245,158,11,.25),transparent 60%);opacity:0;transition:opacity .3s}.fc:hover:before{opacity:1}.fc>*{position:relative}.fc p{margin:0}
+
+.fc .ic{margin-bottom:12px;transition:transform .4s,background .3s,color .3s}.fc:hover .ic{transform:rotate(-8deg) scale(1.15);background:var(--acc);color:var(--accink)}
+
+.dash{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.12)}.dash .dh{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mut);margin-bottom:16px}.dash .dh b{color:var(--ink);font-size:20px}
+
+.bars{display:flex;align-items:flex-end;gap:10px;height:160px}.bars i{flex:1;height:var(--h);background:linear-gradient(var(--acc),#f7c35c);border-radius:6px 6px 0 0;transform:scaleY(0);transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.8,.2,1) calc(var(--i)*.09s)}.bars i:nth-child(even){background:linear-gradient(#19b3d9,#7fdcf0)}.dash.live .bars i{transform:none}
+
+.up{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:0;background:var(--acc);color:var(--accink);font-size:20px;cursor:pointer;opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s;z-index:30;box-shadow:0 6px 16px rgba(0,0,0,.25)}.up.show{opacity:1;transform:none;pointer-events:auto}.up.show:hover{transform:translateY(-4px)}
+
+@media(max-width:760px){.fg{grid-template-columns:1fr}.c1{left:-8px}.c2{right:-8px}}
+
+.pm{position:relative}.pmb{background:none;border:0;border-bottom:3px solid transparent;color:#fff;font:inherit;cursor:pointer;height:56px;padding:0;transition:border-color .25s}.pmb i{font-style:normal;display:inline-block;transition:transform .3s}.pm:hover .pmb,.pm:focus-within .pmb{border-color:var(--acc)}.pm:hover .pmb i,.pm:focus-within .pmb i{transform:rotate(180deg)}
+
+.pm .pd{position:absolute;top:100%;left:-10px;min-width:220px;background:var(--card);color:var(--ink);border-radius:0 0 8px 8px;box-shadow:0 18px 34px rgba(0,0,0,.25);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s}.pm:hover .pd,.pm:focus-within .pd{opacity:1;visibility:visible;transform:none}
+
+.pd a{display:block;padding:11px 14px;border-radius:6px;font-weight:600;transition:background .2s,padding-left .2s}.pd a:hover{background:var(--sky);padding-left:20px}.pd small{display:block;font-weight:400;color:var(--mut);font-size:12px}
+
+.mg.c4{grid-template-columns:repeat(3,1fr) 1.2fr;align-items:start}.mg.c4 .mc:nth-child(4){border-left:0}
+
+.spot{background:var(--sky);border-radius:10px;padding:20px;margin-left:8px;animation:up .5s .21s backwards}.spot a{display:block;padding:10px 0;border-top:1px solid var(--line);transition:transform .2s}.spot a:hover{transform:translateX(5px)}.spot a b{display:block;font-size:14px}.spot a small{display:block;font-size:12px;color:var(--mut)}
+
+@media(max-width:900px){.mg.c4{grid-template-columns:1fr 1fr}}
+
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="pg" id="pg"></div>
+
+<div class="top"><div class="wrap"><span>Company ▾</span><span class="r"><a href="#">DotERP</a><a href="#">DotCapital</a><a href="#">DotEducation</a></span></div></div>
+
+<nav><div class="wrap"><button class="links mm-t" aria-expanded="false" aria-controls="mega">Products <i>▾</i></button><div class="pm links"><button class="pmb">Pricing <i>▾</i></button><div class="pd"><a href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#doterp" target="_blank" rel="noopener">DotERP<small>Business management software</small></a><a href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#UdyamApp" target="_blank" rel="noopener">Udyam<b style="color:var(--acc)">App</b><small>[Short description]</small></a><a href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#q2dot" target="_blank" rel="noopener">Q2Dot<small>[Short description]</small></a></div></div><button class="links mm-t cm-t" aria-expanded="false" aria-controls="cmega">Community <i>▾</i></button><span class="links">Customer Hub ▾</span><a class="logo" href="#">Dot<b>ERP</b></a><span class="sp"></span><span class="links">Log In</span><a class="btn" href="https://claude.ai/artifact/CSWb774RYWoU6QKEbEVm6A" target="_blank" rel="noopener">Download</a></div>
+
+<div class="mega" id="mega"><div class="mg">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>DotERP</b><small>Our flagship business software</small></div></div><a href="#">Product Overview</a><a href="#">Whatâs New</a><a href="#">Instant Demo</a><div class="mb"><a class="btn" href="https://claude.ai/artifact/PmEpuPkhh1RLHgh9r51Fah#doterp" target="_blank" rel="noopener">Take a Free Trial</a><a class="btn o" href="#">Buy Now</a></div></div>
+
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Features</b><small>What you can do with DotERP</small></div></div><a href="https://claude.ai/artifact/QBmdiMQAvZFLVf9RV8ZoDh" target="_blank" rel="noopener">Taxation &amp; Compliance</a><a href="https://claude.ai/artifact/DtdFLD2EL3o8WpyfUa6tnw" target="_blank" rel="noopener">Accounting</a><a href="#">Inventory</a><a href="#">Banking</a><a href="https://claude.ai/artifact/TswNxZWuQ1WZDyRRtQcDM3" target="_blank" rel="noopener">Connected Services</a><a class="all" href="#">View All Features ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â¤</span><div><b>Do More with DotERP</b><small>Extend and access it your way</small></div></div><a href="#">DotERP Mobile App</a><a href="#">DotERP Server</a><a href="#">Business Reports</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">&lt;/&gt;</span><div><b>Developers</b><small>Build and integrate with DotERP</small></div></div><a href="#">Developer Hub</a><a href="#">Customization &amp; Integration</a><a href="#">API Explorer</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>More from DotERP</b><small>Software for every business need</small></div></div><a href="#">Udyam<b style="color:var(--acc)">App</b><small>[Short description]</small></a><a href="#">Q2Dot<small>[Short description]</small></a><a class="all" href="#">View All Software ↗</a></div>
+
+</div></div>
+
+<div class="mega" id="cmega"><div class="mg c4">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Learn</b><small>Grow your knowledge</small></div></div><a href="https://claude.ai/artifact/PmEpuPkhh1RLHgh9r51Fah" target="_blank" rel="noopener">Instant Demo</a><a href="#">Blogs</a><a href="#">Learning Hub</a><a href="#">Product Roadmap</a><a href="#">First 60 Minutes in DotERP</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">✉</span><div><b>Connect</b><small>Engage with the ecosystem</small></div></div><a href="#">DotERP Community</a><a href="#">Locate a Partner</a><a href="#">Events &amp; Webinars</a><a href="#">Customer Stories</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Featured</b><small>Recognitions &amp; programs</small></div></div><a href="#">[Program or award 1]</a><a href="#">Startup Offer</a><a href="#">Partner Program</a><a href="pages/careers.html">Careers</a></div>
+
+<div class="spot"><div class="mh"><span class="ic">â</span><div><b>Spotlight</b><small>Explore whatâs new</small></div></div><a href="#"><b>First 60 minutes in DotERP</b><small>New to DotERP? Experience everything right away</small></a><a href="#"><b>Customer stories</b><small>Real businesses, real outcomes</small></a><a href="#"><b>Tips and tutorials</b><small>Practical tips from our experts</small></a></div>
+
+</div></div></nav>
+
+
+
+<header class="hero"><div class="slides"><div class="slide on"><div class="wrap">
+
+<div><h1>Everything your business needs. <span>All in DotERP.</span></h1>
+
+<p>From billing to inventory to GST, manage it all with plans starting at ₹[price]/month.</p>
+
+<a class="btn" href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#doterp" target="_blank" rel="noopener">Buy Now</a></div>
+
+<div class="mock"><div class="n">Dot<b>ERP</b></div><div class="tag">Built for your business</div>
+
+<div class="price"><span>STARTER PLAN · 1 MONTH</span><strong>₹[price] / month</strong>+GST, single user</div></div>
+
+</div></div>
+
+<div class="slide"><div class="wrap">
+
+<div><h1>Billing and GST, <span>sorted in minutes.</span></h1><p>[Describe your invoicing and GST filing features in one line.]</p><a class="btn" href="#">Explore Billing</a></div>
+
+<div class="mock"><div class="n">Dot<b>ERP</b></div><div class="tag">GST-ready invoicing</div></div>
+
+</div></div>
+
+<div class="slide"><div class="wrap">
+
+<div><h1>Know your stock, <span>always.</span></h1><p>[Describe your inventory management features in one line.]</p><a class="btn" href="#">Explore Inventory</a></div>
+
+<div class="mock"><div class="n">Dot<b>ERP</b></div><div class="tag">Real-time inventory</div></div>
+
+</div></div>
+
+</div><button class="ar l" aria-label="Previous slide">â¹</button><button class="ar r" aria-label="Next slide">âº</button><div class="dots"></div></header>
+
+<div class="mq" aria-hidden="true"><div><span>Billing</span><span>GST Filing</span><span>e-Invoicing</span><span>Inventory</span><span>Payroll</span><span>Banking</span><span>Reports</span><span>Cloud Access</span><span>Billing</span><span>GST Filing</span><span>e-Invoicing</span><span>Inventory</span><span>Payroll</span><span>Banking</span><span>Reports</span><span>Cloud Access</span></div></div>
+
+<section><div class="wrap"><h2>All the tools, <u>in one place</u></h2><div class="fg">
+
+<div class="card fc"><span class="ic">₹</span><h3>Smart billing</h3><p>[Describe invoicing, quotes and payment reminders.]</p></div>
+
+<div class="card fc"><span class="ic">%</span><h3>GST and e-invoicing</h3><p>[Describe GST returns and e-invoice generation.]</p></div>
+
+<div class="card fc"><span class="ic">â¦</span><h3>Inventory control</h3><p>[Describe stock tracking and low-stock alerts.]</p></div>
+
+<div class="card fc"><span class="ic">â¬</span><h3>Banking and payments</h3><p>[Describe bank reconciliation and payment links.]</p></div>
+
+<div class="card fc"><span class="ic">↗</span><h3>Reports and dashboards</h3><p>[Describe live reports and business insights.]</p></div>
+
+<div class="card fc"><span class="ic">âº</span><h3>Payroll</h3><p>[Describe salary, attendance and compliance.]</p></div>
+
+</div></div></section>
+
+
+
+<section><div class="wrap">
+
+<h2>DotERP â <u>Run your business like a pro</u></h2>
+
+<div class="acc"><div>
+
+<details open><summary>Simple to learn, effortless to master</summary><p>[Describe how quickly a new user can start using DotERP and how it fits their way of working.]</p></details>
+
+<details><summary>Insights that drive decisions</summary><p>[Describe your dashboards, reports and analytics.]</p></details>
+
+<details><summary>Access anytime, securely everywhere</summary><p>[Describe cloud access, mobile access and security.]</p></details>
+
+</div><div class="dash"><div class="dh"><span>Sales this week</span><b>₹[amount]</b></div><div class="bars"><i style="--h:38%;--i:0"></i><i style="--h:62%;--i:1"></i><i style="--h:48%;--i:2"></i><i style="--h:80%;--i:3"></i><i style="--h:58%;--i:4"></i><i style="--h:92%;--i:5"></i><i style="--h:70%;--i:6"></i></div></div></div>
+
+</div></section>
+
+
+
+<div class="wrap"><div class="cta">
+
+<div class="l"><h3>Already an existing customer?</h3><p>Manage and renew your DotERP subscription and explore more solutions.</p><a class="btn" href="#">Visit Customer Hub</a></div>
+
+<div class="rr"><h3>Ready to fall in love with DotERP?</h3><p>Get the full DotERP experience for free.</p><a class="btn" href="https://claude.ai/artifact/PmEpuPkhh1RLHgh9r51Fah#doterp" target="_blank" rel="noopener">Take a Free Trial</a></div>
+
+</div></div>
+
+
+
+<section><div class="wrap"><h2><u>Trusted by</u> businesses like yours</h2>
+
+<div class="stats">
+
+<div class="stat"><div class="v">[XX]+</div><span class="pill">Businesses use DotERP</span><p>[Add your real customer count.]</p></div>
+
+<div class="stat"><div class="v">[XX]</div><span class="pill">Your key strength</span><p>[Add a real, verifiable claim.]</p></div>
+
+<div class="stat"><div class="v">[X] Years</div><span class="pill">Experience</span><p>[Add your real company history.]</p></div>
+
+</div></div></section>
+
+
+
+<section class="band"><div class="wrap"><h2>Built for businesses of all sizes</h2>
+
+<div class="quote"><div class="ph">Customer photo</div>
+
+<div><blockquote>â[Add a real customer testimonial here, with their permission.]â<small><strong>[Customer name]</strong><br>[Company / designation]</small></blockquote></div></div>
+
+<p style="text-align:right;margin:30px 0 0;font-size:13px">â 1/3 â</p>
+
+</div></section>
+
+
+
+<section><div class="wrap"><h2>More ways DotERP helps your business <u>thrive</u></h2>
+
+<div class="two">
+
+<div class="card"><h3>Dot<b style="color:var(--acc)">Capital</b></h3><h4>Grow without limits</h4><p>[Describe your business loan or financing offering.]</p><a href="#">Explore DotCapital</a><div class="ph" style="margin-top:16px">Illustration</div></div>
+
+<div class="card"><h3>Dot<b style="color:var(--acc)">Education</b></h3><h4>Building skills, empowering futures</h4><p>[Describe your training and certification courses.]</p><a href="#">Explore DotEducation</a><div class="ph" style="margin-top:16px">Illustration</div></div>
+
+</div></div></section>
+
+
+
+<footer><div class="wrap">
+
+<div class="about"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP builds simple, GST-ready software for billing, accounting, inventory, and business management. <a href="#" style="color:var(--acc)">Read More</a></span></div>
+
+<div class="cols">
+
+<div><h5>Our Products</h5><a href="#">DotERP Service</a><a href="#">DotERP Server</a><a href="#">DotERP Developer</a><a href="#">Udyam<b style="color:var(--acc)">App</b></a><a href="#">Q2Dot</a><a href="#">DotCapital</a></div>
+
+<div><h5>Product Subscription</h5><a href="#">Renew Subscription</a><a href="#">Monthly Subscription</a><a href="#">Pricing &amp; Purchase</a><a href="#">Download DotERP</a></div>
+
+<div><h5>DotERP's Features</h5><a href="#">Banking</a><a href="#">Credit &amp; Cashflow</a><a href="#">Dashboards &amp; Reports</a><a href="#">Inventory Management</a><a href="#">Business Operations</a></div>
+
+<div><h5>Solutions for Startups</h5><a href="#">Invoicing and Accounting</a><a href="#">Payroll Management</a><a href="#">Taxation and Compliance</a></div>
+
+<div><h5>Solutions for SMBs</h5><a href="#">Accounting Software</a><a href="#">Billing Software</a><a href="#">Inventory Software</a><a href="#">GST Software</a></div>
+
+<div><h5>Free Business Tools</h5><a href="#">Invoice Generator</a><a href="#">GST Calculator</a><a href="#">Quotation Generator</a><a href="#">Cashflow Generator</a></div>
+
+<div><h5>Get GST-Compliant</h5><a href="#">GST Registration</a><a href="#">File GST Returns</a><a href="#">GSTR 1</a><a href="#">GSTR 3B</a></div>
+
+<div><h5>Contact Info</h5><a href="#">Office No. 1, 33 Feet Road, New Industrial Area, Ballabgarh, Faridabad 121004</a><a href="#">Customer Care: 9718437209 & 9354412061</a><a href="#">[support email]</a><a href="pages/contact.html">Contact Us</a></div>
+
+<div><h5>Resources</h5><a href="#">Blogs</a><a href="#">Learning Hub</a><a href="#">Customer Stories</a><a href="#">FAQs</a></div>
+
+<div><h5>Our Network</h5><a href="pages/partners.html">Partners</a><a href="pages/careers.html">Careers</a><a href="pages/media-news.html">Media &amp; News</a></div>
+
+</div>
+
+<div class="copy">Copyright © 2026 DotERP [Company legal name] · · <a href="pages/privacy.html" style="color:inherit">Privacy Policy</a> · <a href="pages/terms.html" style="color:inherit">Terms of Use</a></div>
+
+</div></footer>
+
+<script>
+
+(function(){
+
+var h=document.querySelector('.hero'),s=h.querySelectorAll('.slide'),d=h.querySelector('.dots'),i=0,t,paused=false;
+
+s.forEach(function(_,k){var b=document.createElement('button');b.setAttribute('aria-label','Go to slide '+(k+1));b.onclick=function(){go(k);};d.appendChild(b);});
+
+function go(n){var o=s[i];o.classList.remove('on');o.classList.add('out');setTimeout(function(){o.classList.remove('out');},600);i=(n+s.length)%s.length;s[i].classList.add('on');[].forEach.call(d.children,function(b,k){b.classList.toggle('on',k===i);});reset();}
+
+function reset(){clearInterval(t);t=setInterval(function(){if(!paused)go(i+1);},5000);}
+
+h.querySelector('.ar.l').onclick=function(){go(i-1);};
+
+h.querySelector('.ar.r').onclick=function(){go(i+1);};
+
+h.addEventListener('mouseenter',function(){paused=true;});h.addEventListener('mouseleave',function(){paused=false;});
+
+d.children[0].classList.add('on');reset();
+
+})();
+
+</script>
+
+<script>
+
+(function(){
+
+var nv=document.querySelector('nav');addEventListener('scroll',function(){nv.classList.toggle('sc',scrollY>10);},{passive:true});
+
+var els=[].slice.call(document.querySelectorAll('section h2,.stat,.cta,.quote,.card,details,footer .cols>div'));
+
+if(!('IntersectionObserver' in window)){return;}
+
+els.forEach(function(e){e.classList.add('rv');e.style.transitionDelay=([].indexOf.call(e.parentNode.children,e)%4)*0.12+'s';});
+
+var io=new IntersectionObserver(function(a){a.forEach(function(x){if(!x.isIntersecting)return;var e=x.target;io.unobserve(e);e.classList.add('in');if(e.tagName==='H2')e.classList.add('go');setTimeout(function(){e.classList.remove('rv','in');e.style.transitionDelay='';},1300);});},{threshold:.15});
+
+els.forEach(function(e){io.observe(e);});
+
+})();
+
+</script>
+
+<script>
+
+(function(){
+
+var nv=document.querySelector('nav'),b=nv.querySelector('.mm-t'),m=document.getElementById('mega'),ct;
+
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
+
+b.addEventListener('click',function(e){e.stopPropagation();set(matchMedia('(hover:hover)').matches?true:!m.classList.contains('open'));});
+
+var fine=matchMedia('(hover:hover)').matches;
+
+if(fine){b.addEventListener('mouseenter',function(){clearTimeout(ct);set(true);});nv.addEventListener('mouseleave',function(){ct=setTimeout(function(){set(false);},200);});nv.addEventListener('mouseenter',function(){clearTimeout(ct);});}
+
+document.addEventListener('click',function(e){if(!nv.contains(e.target))set(false);});
+
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false);b.focus();}});
+
+})();
+
+</script>
+
+<script>
+
+(function(){
+
+var pg=document.getElementById('pg'),up=document.createElement('button');up.className='up';up.setAttribute('aria-label','Back to top');up.textContent='â';document.body.appendChild(up);up.onclick=function(){scrollTo({top:0,behavior:'smooth'});};
+
+addEventListener('scroll',function(){var h=document.documentElement,p=scrollY/(h.scrollHeight-innerHeight);pg.style.width=(p*100)+'%';up.classList.toggle('show',scrollY>500);},{passive:true});
+
+document.querySelectorAll('.mock').forEach(function(m){['GST â','Invoice sent','Stock updated'].forEach(function(t,j){var c=document.createElement('span');c.className='chip c'+(j+1);c.textContent=t;m.appendChild(c);});});
+
+var hw=document.querySelector('.hero');hw.addEventListener('mousemove',function(e){var r=hw.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5;hw.style.setProperty('--ry',(x*14)+'deg');hw.style.setProperty('--tx',(x*-14)+'px');});hw.addEventListener('mouseleave',function(){hw.style.setProperty('--ry','0deg');hw.style.setProperty('--tx','0px');});
+
+document.querySelectorAll('.fc').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+
+var d=document.querySelector('.dash');if(d){if('IntersectionObserver' in window){new IntersectionObserver(function(a,o){if(a[0].isIntersecting){d.classList.add('live');o.disconnect();}},{threshold:.3}).observe(d);}else{d.classList.add('live');}}
+
+})();
+
+</script>
+
+<script>
+
+(function(){
+
+var nv=document.querySelector('nav'),b=nv.querySelector('.cm-t'),m=document.getElementById('cmega'),p=nv.querySelector('.mm-t'),pm=document.getElementById('mega'),ct;
+
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(o){pm.classList.remove('open');p.setAttribute('aria-expanded',false);}}
+
+b.addEventListener('click',function(e){e.stopPropagation();set(matchMedia('(hover:hover)').matches?true:!m.classList.contains('open'));});
+
+if(matchMedia('(hover:hover)').matches){b.addEventListener('mouseenter',function(){clearTimeout(ct);set(true);});nv.addEventListener('mouseleave',function(){ct=setTimeout(function(){set(false);},200);});nv.addEventListener('mouseenter',function(){clearTimeout(ct);});p.addEventListener('mouseenter',function(){set(false);});}
+
+p.addEventListener('click',function(){set(false);});
+
+document.addEventListener('click',function(e){if(!nv.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+
+})();
+
+</script>
+
+</body>
+
+</html>
+

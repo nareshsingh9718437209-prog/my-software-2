@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Invoicing & Accounting – DotERP</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#fff8e8;--sky:#e3f1fb;--navy:#0f4c81;--ink:#14243a;--mut:#51627a;--acc:#f59e0b;--accink:#2a1a00;--card:#fff;--line:#c9d8e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1a12;--sky:#10202f;--navy:#0b3558;--ink:#eef3f9;--mut:#a9b8ca;--card:#172a3d;--line:#2c4560;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1a12;--sky:#10202f;--navy:#0b3558;--ink:#eef3f9;--mut:#a9b8ca;--card:#172a3d;--line:#2c4560;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,Segoe UI,Arial,sans-serif;background:var(--sky);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+nav{background:var(--navy);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+nav .wrap{display:flex;align-items:center;gap:22px;height:56px;font-size:14px}.logo{font-weight:700;font-size:22px;letter-spacing:-.5px}.logo b{color:var(--acc)}.sp{flex:1}
+.btn{display:inline-block;background:var(--acc);color:var(--accink);font-weight:600;font-size:13px;padding:9px 18px;border-radius:4px;border:0;cursor:pointer;font-family:inherit;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(245,158,11,.45)}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:rgba(255,255,255,.55);transform:skewX(-20deg)}.btn:hover:after{animation:shine .6s}
+.hero{background:var(--bg);height:340px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--hx,50%) var(--hy,40%),rgba(255,205,80,.4),transparent 62%);pointer-events:none}
+.hero h1{position:absolute;left:0;right:0;bottom:34px;text-align:center;margin:0;font-size:clamp(28px,4vw,42px);letter-spacing:-1px;z-index:2;animation:up .7s backwards}
+.ti{position:absolute;width:64px;height:64px;border:2px solid #f5b324;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#d98a00;font-size:26px;background:rgba(255,214,102,calc(.18 + var(--b,0)*.5));text-shadow:0 0 10px rgba(245,158,11,.9);scale:calc(1 + var(--b,0)*.25);transition:scale .3s,background .3s;animation:float 5s ease-in-out infinite,glow 3s ease-in-out infinite,on 1.4s backwards}
+.ti:before{content:"";position:absolute;inset:-28px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,60,.4),transparent 65%);z-index:-1;animation:halo 3s ease-in-out infinite}
+.band{background:linear-gradient(120deg,var(--navy),#0a6aa8,var(--navy));background-size:200% 200%;animation:bgm 14s ease infinite;color:#fff;padding:60px 0}
+h2.sh{text-align:center;font-size:clamp(26px,3.5vw,38px);margin:0 0 34px;letter-spacing:-.5px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ft{position:relative;overflow:hidden;background:var(--sky);color:var(--ink);border-radius:6px;padding:26px;transition:transform .3s,box-shadow .3s}.ft:hover{transform:translateY(-8px);box-shadow:0 16px 30px rgba(0,0,0,.3)}
+.ft:before{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(245,158,11,.25),transparent 60%);opacity:0;transition:opacity .3s}.ft:hover:before{opacity:1}.ft>*{position:relative}
+.ic{width:44px;height:44px;border-radius:10px;background:var(--card);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin-bottom:14px;transition:.3s}.ft:hover .ic{background:var(--acc);color:var(--accink);transform:rotate(-8deg) scale(1.12)}
+.ft h3{margin:0 0 8px;font-size:16px}.ft p{margin:0;font-size:13.5px;color:var(--mut)}
+.cta{padding:64px 0}.cta .in{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:34px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,.08)}.cta h2{margin:0 0 8px}.cta p{margin:0 0 18px;color:var(--mut)}.cta .btn{margin:4px}.cta .btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.s{padding:64px 0}.cr{background:var(--bg)}.alt{background:var(--sky)}
+.demo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.dc{background:var(--sky);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}.dc:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(0,0,0,.14)}.dc h3{margin:0 0 8px;font-size:15px}.dc p{font-size:13px;color:var(--mut);margin:0 0 16px}.dc .btn{width:max-content;margin-top:auto}
+.ad{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}.ad ul{list-style:none;padding:0;margin:0}.ad li{padding:12px 0 12px 26px;position:relative;font-size:14px;transition:transform .25s}.ad li:hover{transform:translateX(6px)}.ad li:before{content:"»";position:absolute;left:0;color:var(--navy);font-weight:700}
+.pl{background:var(--card);border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.16);overflow:hidden;font-size:11px}.pl .h{background:var(--navy);color:#fff;padding:8px 12px;display:flex;justify-content:space-between}.pl .r{display:grid;grid-template-columns:.3fr 1.6fr 1fr 1fr 1fr;gap:10px;padding:11px 12px;border-bottom:1px solid var(--line);animation:up .5s backwards}.pl .r span{height:9px;border-radius:4px;background:var(--line)}.pl .r.y{background:rgba(245,158,11,.25)}.pl .r:nth-child(3){animation-delay:.1s}.pl .r:nth-child(4){animation-delay:.2s}.pl .r:nth-child(5){animation-delay:.3s}.pl .r:nth-child(6){animation-delay:.4s}.pl .r:nth-child(7){animation-delay:.5s}
+footer{background:var(--navy);color:#fff;padding:44px 0 20px;font-size:13px}footer .abt{border-bottom:1px solid #ffffff33;padding-bottom:18px;margin-bottom:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer .abt span{max-width:480px;opacity:.9}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 20px}.cols h5{margin:0 0 10px;color:var(--acc);font-size:14px}.cols a,.cols p{display:block;padding:3px 0;margin:0;opacity:.9;transition:transform .2s,color .2s}.cols a:hover{transform:translateX(5px);color:var(--acc)}.copy{margin-top:30px;border-top:1px solid #ffffff33;padding-top:16px;opacity:.8;text-align:center}
+@media(max-width:860px){.demo,.ad{grid-template-columns:1fr}.cols{grid-template-columns:1fr 1fr}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}@keyframes float{50%{transform:translateY(-12px)}}@keyframes bgm{50%{background-position:100% 50%}}@keyframes shine{to{left:130%}}
+@keyframes glow{0%,100%{box-shadow:0 0 10px 2px rgba(245,158,11,.4),0 0 30px 8px rgba(245,158,11,.18),inset 0 0 10px rgba(255,214,102,.5)}50%{box-shadow:0 0 22px 6px rgba(245,158,11,.8),0 0 64px 20px rgba(245,158,11,.38),inset 0 0 16px rgba(255,214,102,.8)}}
+@keyframes halo{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes on{0%{opacity:.12;filter:grayscale(1) brightness(.6)}10%{opacity:1;filter:none}16%{opacity:.2}26%{opacity:1}32%{opacity:.35}48%{opacity:1}100%{opacity:1}}
+@media(max-width:860px){.g3{grid-template-columns:1fr}.ti:nth-child(n+7){display:none}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="https://claude.ai/artifact/CTT2A7TvzeMLjwWHQ3JZQx" target="_blank" rel="noopener">Dot<b>ERP</b></a><span class="sp"></span><a href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#doterp" target="_blank" rel="noopener">Pricing</a><a class="btn" href="https://claude.ai/artifact/CSWb774RYWoU6QKEbEVm6A" target="_blank" rel="noopener">Download</a></div></nav>
+<header class="hero" id="hero"><h1>Invoicing &amp; Accounting</h1></header>
+<section class="band"><div class="wrap"><h2 class="sh">Invoicing &amp; Accounting</h2><div class="g3" id="g"></div></div></section>
+<section class="s cr"><div class="wrap"><h2 class="sh">Experience DotERP firsthand, no installation required</h2><div class="demo" id="demo"></div></div></section>
+<section class="s alt"><div class="wrap"><h2 class="sh">Additional invoicing &amp; accounting features in DotERP</h2><div class="ad"><ul id="ad"></ul><div class="pl"><div class="h"><b>Price list</b><span>[Company name]</span></div><div class="r"><span></span><span></span><span></span><span></span><span></span></div><div class="r y"><span></span><span></span><span></span><span></span><span></span></div><div class="r"><span></span><span></span><span></span><span></span><span></span></div><div class="r"><span></span><span></span><span></span><span></span><span></span></div><div class="r y"><span></span><span></span><span></span><span></span><span></span></div><div class="r"><span></span><span></span><span></span><span></span><span></span></div></div></div></div></section>
+<section class="cta"><div class="wrap"><div class="in"><h2>See it in action</h2><p>Try DotERP free and set up your first invoice in minutes.</p><a class="btn" href="https://claude.ai/artifact/PmEpuPkhh1RLHgh9r51Fah" target="_blank" rel="noopener">Take a Free Trial</a><a class="btn o" href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#doterp" target="_blank" rel="noopener">View Pricing</a></div></div></section>
+<footer><div class="wrap"><div class="abt"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP builds simple, GST-ready software for billing, accounting, inventory, and business management.</span></div>
+<div class="cols"><div><h5>Our Products</h5><a href="#">DotERP</a><a href="#">Udyam<b style="color:var(--acc)">App</b></a><a href="#">Q2Dot</a><a href="#">DotCapital</a></div>
+<div><h5>DotERP’s Features</h5><a href="https://claude.ai/artifact/DtdFLD2EL3o8WpyfUa6tnw" target="_blank" rel="noopener">Invoicing and Accounting</a><a href="https://claude.ai/artifact/QBmdiMQAvZFLVf9RV8ZoDh" target="_blank" rel="noopener">Taxation and Compliance</a><a href="https://claude.ai/artifact/TswNxZWuQ1WZDyRRtQcDM3" target="_blank" rel="noopener">Connected Services</a><a href="#">Inventory Management</a></div>
+<div><h5>Get Started</h5><a href="https://claude.ai/artifact/Xfw5ysgZ2vSsHX74a1kH1i#doterp" target="_blank" rel="noopener">Pricing</a><a href="https://claude.ai/artifact/PmEpuPkhh1RLHgh9r51Fah" target="_blank" rel="noopener">Free Trial</a><a href="https://claude.ai/artifact/CSWb774RYWoU6QKEbEVm6A" target="_blank" rel="noopener">Download</a></div>
+<div><h5>Contact Info</h5><p>Office No. 1, 33 Feet Road, New Industrial Area, Ballabgarh, Faridabad 121004</p><p>Customer Care: 9718437209 & 9354412061</p><p>[support email]</p><a href="pages/contact.html">Contact Us</a></div></div>
+<div class="copy">Copyright © 2026 DotERP [Company legal name] · <a href="pages/privacy.html" style="color:inherit">Privacy Policy</a> · <a href="pages/terms.html" style="color:inherit">Terms of Use</a></div></div></footer>
+<script>
+(function(){
+function $(i){return document.getElementById(i);}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;}
+var T=['▤','◔','⌂','⚙','✓','⇄','☰','₹','⌕','⬚','✎'],hp=[[10,38],[27,8],[27,40],[27,70],[43,24],[43,52],[56,6],[58,38],[72,12],[72,48],[84,30]];
+hp.forEach(function(p,i){var t=el('div','ti',T[i]);t.style.left=p[0]+'%';t.style.top=p[1]+'%';t.style.animationDelay=(i*.5)+'s,'+(i*.3)+'s,'+(i*.22)+'s';$('hero').appendChild(t);});
+var H=$('hero');H.addEventListener('mousemove',function(e){var r=H.getBoundingClientRect();H.style.setProperty('--hx',(e.clientX-r.left)+'px');H.style.setProperty('--hy',(e.clientY-r.top)+'px');H.querySelectorAll('.ti').forEach(function(t){var b=t.getBoundingClientRect(),d=Math.hypot(e.clientX-(b.left+b.width/2),e.clientY-(b.top+b.height/2));t.style.setProperty('--b',Math.max(0,1-d/220).toFixed(2));});});H.addEventListener('mouseleave',function(){H.querySelectorAll('.ti').forEach(function(t){t.style.setProperty('--b',0);});});
+var F=[['▤','Invoice templates and personalisation','Add your logo, address and terms to invoices and purchase orders. Pick a template and keep the same look across every sales and purchase document.'],
+['%','GST-compliant invoices in seconds','Create, print and email invoices with the right tax details. Generate e-invoices and e-way bills from the same entry.'],
+['⇄','Flexible purchase and sales cycles','Work the way your business does, order-based or direct. Manage sales orders, debit and credit notes and payments in one flow.'],
+['☰','Multiple billing formats','Choose the format that suits products or services, so billing stays quick and error-free for every transaction.'],
+['$','Multi-currency support','Record invoices, quotations and payments in foreign currencies. Exchange gains and losses are calculated for you.'],
+['₹','Multiple price levels','Set different price lists for wholesalers, retailers or key customers, with quantity-based rates and discounts.'],
+['▣','Payment QR code and link on invoices','Add a QR code or payment link to a single invoice, or to many invoices at once.'],
+['⌂','Multiple addresses','Keep several addresses for your company and for each party, and pick the right one on invoices and reports.']];
+F.forEach(function(f){var c=el('div','ft');c.appendChild(el('span','ic',f[0]));c.appendChild(el('h3','',f[1]));c.appendChild(el('p','',f[2]));c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});$('g').appendChild(c);});
+[['Automated voucher creation','Import bank statements and create entries to finish your accounting faster.'],['Invoice personalisation','Shape your invoices the way your business works.'],['Invoice management','Track supplier invoices in real time and keep tax credit claims smooth.']].forEach(function(d){var c=el('div','dc');c.appendChild(el('h3','',d[0]));c.appendChild(el('p','',d[1]));var b=el('a','btn','Start Demo ↗');b.href='#';c.appendChild(b);$('demo').appendChild(c);});
+['Work on several tasks at once without losing your progress','Receivables and payables update on their own when you save an invoice','Preset tax and other ledgers and build billing templates to cut repeat entry','Record post-dated transactions and follow them in a separate register','Capture offers such as buy-one-get-one or free samples with actual and billed quantities'].forEach(function(t){$('ad').appendChild(el('li','',t));});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);setTimeout(function(){x.target.classList.remove('rv','in');x.target.style.transitionDelay='';},1300);}});},{threshold:.1});document.querySelectorAll('.ft,.dc,.ad li,.pl,.s h2,.cta .in').forEach(function(e,j){e.classList.add('rv');e.style.transitionDelay=(j%3)*.1+'s';io.observe(e);});}
+})();
+</script>
+</body>
+</html>

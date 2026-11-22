@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Events & Webinars - DotERP</title>
+<meta property="og:site_name" content="DotERP">
+<meta name="description" content="Join DotERP events and webinars on product features, GST compliance, billing, inventory, and business best practices.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://www.doterp.com/pages/events.html">
+<meta property="og:title" content="Events & Webinars - DotERP">
+<meta property="og:description" content="Register for live DotERP webinars and events on GST, billing, inventory, and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.doterp.com/pages/events.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Events & Webinars - DotERP">
+<meta name="twitter:description" content="Register for live DotERP webinars and events on GST, billing, inventory, and more.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.ev-hero{padding:56px 0 36px;background:linear-gradient(180deg,#fff8e8 0%,#eaf4ff 100%)}
+.ev-hero h1{margin:0 0 10px;font-size:clamp(30px,4.5vw,46px)} .ev-hero p{color:var(--mut);margin:0;max-width:700px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.tab{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 14px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer}
+.tab.active{background:#0f4c81;color:#fff;border-color:#0f4c81}
+.filters{display:grid;grid-template-columns:1.2fr 1fr auto;gap:10px;margin-bottom:16px}
+.filters input,.filters select{padding:11px 12px;border:1px solid var(--line);border-radius:8px;font:inherit}
+.filters button{border:0;border-radius:8px;padding:11px 14px;background:var(--acc);color:var(--accink);font:inherit;font-weight:700;cursor:pointer}
+.ev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ev-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 8px 18px rgba(0,0,0,.05)}
+.ev-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.ev-date{background:#eef6ff;color:#0f4c81;border:1px solid #cfe3f7;border-radius:10px;padding:8px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.ev-card h3{margin:0 0 6px;font-size:20px}
+.ev-meta{color:var(--mut);font-size:13px;margin:0 0 10px}
+.ev-tags{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+.ev-tags span{font-size:12px;background:#fff8e8;border:1px solid #f4d58a;color:#7a5200;border-radius:999px;padding:4px 9px}
+.ev-actions{display:flex;gap:8px;flex-wrap:wrap}
+.ev-actions button,.ev-actions a{font:inherit;font-size:13px;font-weight:600;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+.ev-actions .primary{background:#0f4c81;color:#fff;border-color:#0f4c81}
+.empty{display:none;margin-top:14px;padding:16px;border:1px dashed var(--line);border-radius:10px;color:var(--mut);background:#fff}
+.modal{position:fixed;inset:0;background:rgba(12,28,46,.55);display:none;align-items:center;justify-content:center;z-index:10000;padding:18px}
+.modal.open{display:flex}
+.modal-box{width:100%;max-width:460px;background:#fff;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.28);overflow:hidden}
+.modal-head{padding:14px 16px;background:#0f4c81;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.modal-head h3{margin:0;font-size:18px}.modal-head button{background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+.modal-body{padding:16px}
+.modal-body form{display:grid;gap:10px}
+.modal-body input,.modal-body select{padding:10px 12px;border:1px solid var(--line);border-radius:8px;font:inherit}
+.modal-body button[type=submit]{border:0;border-radius:8px;padding:11px 14px;background:var(--acc);color:var(--accink);font:inherit;font-weight:700;cursor:pointer}
+.note{font-size:13px;color:var(--mut);margin:0 0 8px}
+.toast{position:fixed;right:16px;bottom:16px;background:#0f4c81;color:#fff;padding:12px 14px;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.2);opacity:0;transform:translateY(8px);pointer-events:none;transition:.25s;z-index:9999}
+.toast.show{opacity:1;transform:none}
+@media(max-width:900px){.ev-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.filters{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="pg" id="pg"></div><nav><div class="wrap"><button class="links mm-t" aria-expanded="false" aria-controls="mega">Products <i>▾</i></button><a class="links" href="pricing.html">Pricing</a><button class="links mm-t cm-t" aria-expanded="false" aria-controls="cmega">Community <i>▾</i></button><button class="links mm-t ch-t" aria-expanded="false" aria-controls="chmega">Customer Hub <i>▾</i></button><a class="links" href="compare.html">Compare</a><a class="links" href="blogs.html">DotERP blog</a><a class="logo" href="../index.html">Dot<b>ERP</b></a><span class="sp"></span><a class="links" href="login.html" data-login-link>Log In</a><a class="btn" href="download.html">Download</a></div>
+<div class="mega" id="mega"><div class="mg"><div class="mc"><div class="mh"><span class="ic">◆</span><div><b>DotERP</b><small>Our flagship business software</small></div></div><a href="product-overview.html">Product Overview</a><a href="free-trial.html">Instant Demo</a><a class="btn" href="pricing.html">Buy Now</a></div><div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Features</b></div></div><a href="accounting.html">Accounting</a><a href="inventory.html">Inventory</a><a href="taxation-compliance.html">GST &amp; Compliance</a></div><div class="mc"><div class="mh"><span class="ic">◇</span><div><b>More</b></div></div><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b></a><a href="q2dot.html">Q2Dot</a></div></div></div>
+<div class="mega" id="pmega"><div class="mg c4"><div class="mc"><div class="mh"><span class="ic">◆</span><div><b>Pricing</b></div></div><a href="pricing.html">View Pricing</a><a href="compare.html">Compare</a></div></div></div>
+<div class="mega" id="cmega"><div class="mg c4"><div class="mc"><div class="mh"><span class="ic">✉</span><div><b>Connect</b><small>Engage with the ecosystem</small></div></div><a href="community.html">DotERP Community</a><a href="partners.html">Locate a Partner</a><a href="events.html">Events &amp; Webinars</a><a href="customer-stories.html">Customer Stories</a></div></div></div>
+<div class="mega" id="chmega"><div class="mg ch"><div class="mc"><div class="mh"><span class="ic">☎</span><div><b>Reach Us</b></div></div><a href="help.html">DotERP Help</a><a href="support.html">Support</a></div><div class="mng"><h4>Manage Subscriptions</h4><a class="btn w" href="login.html" data-login-link>Manage my Subscriptions ↗</a></div></div></div></nav>
+
+<header class="ev-hero"><div class="wrap">
+  <h1>Events &amp; <span style="color:var(--navy)">Webinars</span></h1>
+  <p>Join live product demos, GST sessions, and expert webinars to learn how to get more out of DotERP. Register in one click.</p>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="upcoming" type="button">Upcoming</button>
+    <button class="tab" data-tab="past" type="button">Past / Recordings</button>
+  </div>
+  <div class="filters">
+    <input id="search" type="text" placeholder="Search events, topics, speakers...">
+    <select id="topic"><option value="">All Topics</option><option>Product Demo</option><option>GST & Compliance</option><option>Billing & Invoicing</option><option>Inventory</option><option>Accounting</option></select>
+    <button type="button" id="apply">Search</button>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="ev-grid" id="evGrid"></div>
+  <div class="empty" id="empty">No events found for the selected filters.</div>
+</div></section>
+
+<div class="modal" id="regModal" aria-hidden="true"><div class="modal-box"><div class="modal-head"><h3 id="regTitle">Register for Event</h3><button type="button" id="regClose" aria-label="Close">×</button></div><div class="modal-body"><p class="note" id="regMeta"></p><form id="regForm"><input id="regName" type="text" placeholder="Full Name" required><input id="regEmail" type="email" placeholder="Email Address" required><input id="regPhone" type="tel" placeholder="Phone Number" required><select id="regRole"><option>Business Owner</option><option>Accountant</option><option>Manager</option><option>Student</option><option>Other</option></select><button type="submit">Confirm Registration</button></form></div></div></div>
+
+<footer><div class="wrap"><div class="about"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP is a complete business management platform for billing, accounting, inventory, GST, payroll, and reporting.</span></div><div class="copy">Copyright © 2026 DotERP Solutions Pvt. Ltd. · <a href="privacy.html" style="color:inherit">Privacy Policy</a> · <a href="terms.html" style="color:inherit">Terms of Use</a></div></div></footer>
+<div class="toast" id="toast"></div>
+<script src="../js/main.js"></script>
+<script>
+(function(){
+  var events=[
+    {id:1,type:'upcoming',title:'DotERP Product Walkthrough: Billing to Reports',date:'20 Nov 2026',time:'11:00 AM IST',mode:'Live Webinar',topic:'Product Demo',speaker:'DotERP Product Team',desc:'End-to-end demo of invoicing, inventory, GST, and business reports.'},
+    {id:2,type:'upcoming',title:'GST Compliance Made Easy with DotERP',date:'25 Nov 2026',time:'3:00 PM IST',mode:'Live Webinar',topic:'GST & Compliance',speaker:'Compliance Experts',desc:'Learn GST-ready invoicing, returns preparation, and compliance checks.'},
+    {id:3,type:'upcoming',title:'Smart Inventory & Reorder Management',date:'02 Dec 2026',time:'12:00 PM IST',mode:'Live Webinar',topic:'Inventory',speaker:'Solutions Team',desc:'Track stock, set reorder levels, and reduce stockouts using DotERP.'},
+    {id:4,type:'upcoming',title:'Faster Billing & Receivables Collection',date:'08 Dec 2026',time:'4:00 PM IST',mode:'Live Webinar',topic:'Billing & Invoicing',speaker:'Customer Success Team',desc:'Improve billing workflows and follow up on receivables efficiently.'},
+    {id:5,type:'past',title:'Getting Started: First 60 Minutes in DotERP',date:'10 Oct 2026',time:'Recording',mode:'On-demand',topic:'Product Demo',speaker:'Training Team',desc:'Quick start session covering setup, masters, and first transactions.'},
+    {id:6,type:'past',title:'Accounting Basics and Financial Reports',date:'18 Sep 2026',time:'Recording',mode:'On-demand',topic:'Accounting',speaker:'Finance Experts',desc:'Understand ledgers, vouchers, and key financial reports in DotERP.'}
+  ];
+  var state={tab:'upcoming', selected:null};
+  var grid=document.getElementById('evGrid'), empty=document.getElementById('empty'), modal=document.getElementById('regModal');
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show');},2400);}
+  function filtered(){
+    var q=(document.getElementById('search').value||'').toLowerCase().trim();
+    var topic=document.getElementById('topic').value;
+    return events.filter(function(e){
+      var hay=(e.title+' '+e.desc+' '+e.speaker+' '+e.topic).toLowerCase();
+      return e.type===state.tab && (!q||hay.indexOf(q)>-1) && (!topic||e.topic===topic);
+    });
+  }
+  function render(){
+    var list=filtered(); grid.innerHTML='';
+    list.forEach(function(e){
+      var card=document.createElement('div'); card.className='ev-card';
+      var action = e.type==='upcoming' ? '<button class="primary" data-reg="'+e.id+'">Register</button><button data-share="'+e.id+'">Share</button>' : '<a class="primary" href="video-tutorials.html">Watch Resources</a><a href="learning-hub.html">Learning Hub</a>';
+      card.innerHTML='<div class="ev-top"><div><h3>'+esc(e.title)+'</h3><p class="ev-meta">'+esc(e.date)+' · '+esc(e.time)+' · '+esc(e.mode)+'</p></div><div class="ev-date">'+esc(e.date.split(' ')[0]+' '+(e.date.split(' ')[1]||''))+'</div></div>'
+        +'<p style="color:var(--mut);margin:0">'+esc(e.desc)+'</p><div class="ev-tags"><span>'+esc(e.topic)+'</span><span>'+esc(e.speaker)+'</span></div><div class="ev-actions">'+action+'</div>';
+      grid.appendChild(card);
+    });
+    empty.style.display = list.length? 'none':'block';
+  }
+  document.querySelectorAll('.tab').forEach(function(btn){ btn.addEventListener('click', function(){ state.tab=btn.getAttribute('data-tab'); document.querySelectorAll('.tab').forEach(function(b){b.classList.toggle('active',b===btn);}); render(); }); });
+  document.getElementById('apply').addEventListener('click', render);
+  document.getElementById('search').addEventListener('input', render);
+  document.getElementById('topic').addEventListener('change', render);
+  grid.addEventListener('click', function(e){
+    var reg=e.target.closest('[data-reg]'), share=e.target.closest('[data-share]');
+    if(reg){ var ev=events.find(function(x){return String(x.id)===reg.getAttribute('data-reg');}); state.selected=ev; document.getElementById('regTitle').textContent='Register: '+ev.title; document.getElementById('regMeta').textContent=ev.date+' · '+ev.time+' · '+ev.mode+' · '+ev.topic; modal.classList.add('open'); }
+    if(share){ toast('Event link copied/shared (demo).'); }
+  });
+  function closeModal(){ modal.classList.remove('open'); }
+  document.getElementById('regClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  document.getElementById('regForm').addEventListener('submit', function(e){ e.preventDefault(); toast('Registration confirmed for '+(state.selected?state.selected.title:'event')+'. Details will be shared on email.'); e.target.reset(); closeModal(); });
+  render();
+})();
+</script>
+</body>
+</html>

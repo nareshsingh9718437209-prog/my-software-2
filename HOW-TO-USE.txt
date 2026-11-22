@@ -1,0 +1,13 @@
+HOW TO OPEN THE WEBSITE
+1. Unzip this folder.
+2. Double-click index.html - it opens in your browser.
+
+WHERE THINGS ARE
+index.html   -> home page content (text, links)
+css/style.css -> colours, fonts, layout, animations
+js/main.js    -> slider, menus, scroll effects
+images/       -> your pictures
+pages/        -> other pages
+
+TO CHANGE COLOURS: open css/style.css and edit the first block (":root").
+Text in [square brackets] in index.html is placeholder text to replace.

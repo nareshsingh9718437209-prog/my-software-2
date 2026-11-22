@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Invoice Generator - Create GST Invoices Free | DotERP</title>
+  <meta property="og:site_name" content="DotERP">
+  <meta name="twitter:description" content="Create GST invoices online with DotERP free invoice generator. Add items, calculate tax, and download invoice instantly.">
+  <meta name="twitter:title" content="Free Online Invoice Generator - Create GST Invoices Free | DotERP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://www.doterp.com/pages/tools-invoice-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Create GST invoices online with DotERP free invoice generator. Add items, calculate tax, and download invoice instantly.">
+  <meta property="og:title" content="Free Online Invoice Generator - Create GST Invoices Free | DotERP">
+  <link rel="canonical" href="https://www.doterp.com/pages/tools-invoice-generator.html">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="description" content="Create GST invoices online with DotERP free invoice generator. Add items, calculate tax, and download invoice instantly.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1A2B3C;
+    background: #EAF2F8;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== Top utility bar ===== */
+  .utility-bar {
+    background: #FDF6E3;
+    border-bottom: 1px solid #ECE2C4;
+    padding: 6px 0;
+    font-size: 12px;
+  }
+  .utility-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .util-left { display: flex; align-items: center; gap: 18px; }
+  .util-logo {
+    display: flex; align-items: center; gap: 8px;
+    color: #1A2B3C; font-weight: 600;
+  }
+  .util-logo .tally-script {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 22px; color: #1E6A9E; font-weight: 700;
+  }
+  .util-logo small { font-size: 9px; color: #6b7280; letter-spacing: 0.5px; }
+  .util-left .company-dd { color: #1A2B3C; cursor: pointer; }
+  .util-left .company-dd::after { content: " ⌄"; color: #6b7280; }
+  .util-right { display: flex; gap: 22px; }
+  .util-right a { color: #1A2B3C; }
+  .util-right a.active { color: #1E6A9E; font-weight: 600; border-bottom: 2px solid #F7B32B; padding-bottom: 2px; }
+  .util-right a:hover { color: #1E6A9E; }
+
+  /* ===== Main navbar ===== */
+  .navbar {
+    background: #1E6A9E;
+    color: #fff;
+    padding: 10px 0;
+  }
+  .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+  .nav-links { display: flex; gap: 26px; align-items: center; flex: 1; }
+  .nav-links a { color: #fff; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .nav-links a:hover { color: #F7B32B; }
+  .nav-links a::after { content: " ⌄"; font-size: 10px; opacity: 0.7; }
+  .nav-links a.no-chevron::after { content: ""; }
+  .nav-brand {
+    text-align: center; color: #fff; flex: 0 0 auto;
+    padding: 0 30px;
+  }
+  .nav-brand .brand-name {
+    font-size: 22px; font-weight: 800; letter-spacing: 1px; line-height: 1;
+  }
+  .nav-brand .brand-name span { color: #F7B32B; }
+  .nav-brand small { font-size: 9px; letter-spacing: 2px; color: #D6E8F5; }
+  .nav-actions { display: flex; gap: 18px; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-actions .icon-btn {
+    background: transparent; border: none; color: #fff;
+    cursor: pointer; font-size: 16px; position: relative;
+  }
+  .nav-actions .cart-badge {
+    position: absolute; top: -6px; right: -8px;
+    background: #F7B32B; color: #1A2B3C;
+    font-size: 9px; width: 16px; height: 16px;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-weight: 700;
+  }
+  .nav-actions .login-link { color: #fff; font-size: 14px; }
+  .btn-download {
+    background: #F7B32B; color: #1A2B3C;
+    border: none; padding: 8px 18px;
+    border-radius: 4px; font-weight: 700; cursor: pointer;
+    font-size: 13px;
+  }
+  .btn-download:hover { background: #F9C44B; }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: #1E6A9E;
+    padding: 50px 0 130px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before, .hero::after {
+    content: ""; position: absolute; top: 50%;
+    width: 220px; height: 280px;
+    background: rgba(255,255,255,0.04);
+    transform: translateY(-50%) rotate(-8deg);
+    border-radius: 8px;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .hero::before { left: -40px; }
+  .hero::after { right: -40px; transform: translateY(-50%) rotate(8deg); }
+  .hero h1 {
+    color: #fff; font-size: 38px; font-weight: 600;
+    margin-bottom: 10px; position: relative; z-index: 2;
+  }
+  .hero p {
+    color: #D6E8F5; font-size: 15px; position: relative; z-index: 2;
+  }
+
+  /* ===== Invoice form card ===== */
+  .invoice-card-wrap { margin-top: -90px; position: relative; z-index: 5; }
+  .invoice-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 30px 36px;
+  }
+  .invoice-title {
+    text-align: center; font-size: 24px; font-weight: 700;
+    color: #1D3A5F; margin-bottom: 24px;
+  }
+
+  /* Top form row: 2-column fields + logo box */
+  .top-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 280px;
+    gap: 30px;
+    margin-bottom: 24px;
+  }
+  .field-col { display: flex; flex-direction: column; gap: 18px; }
+  .field {
+    border-bottom: 1px solid #E0E5EA;
+    padding-bottom: 6px;
+  }
+  .field label {
+    display: block;
+    font-size: 11px; color: #8A94A6;
+    margin-bottom: 2px;
+  }
+  .field input, .field select {
+    border: none; outline: none;
+    width: 100%; background: transparent;
+    font-size: 13px; color: #1A2B3C;
+    padding: 2px 0;
+  }
+  .field input::placeholder { color: #1A2B3C; opacity: 0.7; }
+
+  /* Logo dropzone */
+  .logo-box {
+    border: 1px dashed #B5C2D1;
+    border-radius: 8px;
+    padding: 18px 12px;
+    text-align: center;
+    background: #FAFCFE;
+    cursor: pointer;
+  }
+  .logo-box .upload-icon {
+    width: 32px; height: 32px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background: #EAF2F8;
+    display: flex; align-items: center; justify-content: center;
+    color: #1E6A9E; font-size: 18px;
+  }
+  .logo-box p {
+    font-size: 11px; color: #8A94A6; line-height: 1.4;
+  }
+  .logo-box .dest-label {
+    display: block; text-align: left;
+    border-bottom: 1px solid #E0E5EA;
+    margin-top: 12px; padding-bottom: 4px;
+    font-size: 11px; color: #8A94A6;
+  }
+  .logo-box .dest-input {
+    border: none; outline: none; width: 100%;
+    font-size: 13px; background: transparent;
+  }
+  .logo-preview {
+    max-height: 60px; margin: 0 auto 8px; display: none;
+  }
+
+  /* From / For cards */
+  .party-cards {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; margin-bottom: 24px;
+  }
+  .party-card {
+    background: #F5F8FA;
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .party-card h4 {
+    font-size: 13px; color: #1D3A5F; margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .party-card h4 small {
+    font-weight: 400; color: #8A94A6; font-size: 11px;
+  }
+  .party-card .pfield {
+    background: #fff; border: 1px solid #E0E5EA;
+    border-radius: 4px; padding: 6px 10px;
+    margin-bottom: 8px;
+  }
+  .party-card .pfield label {
+    display: block; font-size: 10px; color: #8A94A6;
+  }
+  .party-card .pfield input {
+    border: none; outline: none; width: 100%;
+    font-size: 13px; background: transparent;
+  }
+  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .add-links {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6px 14px; margin-top: 8px;
+  }
+  .add-link {
+    color: #1E6A9E; font-size: 12px; cursor: pointer;
+    font-weight: 500;
+  }
+  .add-link:hover { text-decoration: underline; }
+  .extra-field {
+    background: #fff; border: 1px solid #E0E5EA;
+    border-radius: 4px; padding: 6px 10px;
+    margin-top: 6px; display: none;
+  }
+  .extra-field.show{display:block !important;}
+  .extra-field label { display: block; font-size: 10px; color: #8A94A6; }
+  .extra-field input {
+    border: none; outline: none; width: 100%;
+    font-size: 13px; background: transparent;
+  }
+
+  /* Product table */
+  .product-table {
+    width: 100%; border-collapse: collapse;
+    margin-bottom: 12px;
+  }
+  .product-table thead th {
+    background: #1E6A9E; color: #fff;
+    font-size: 11px; font-weight: 600;
+    padding: 8px 6px; text-align: left;
+  }
+  .product-table thead th:first-child { border-radius: 4px 0 0 0; }
+  .product-table thead th:last-child { border-radius: 0 4px 0 0; text-align: right; }
+  .product-table tbody td {
+    padding: 6px 4px; border-bottom: 1px solid #E0E5EA;
+    vertical-align: bottom;
+  }
+  .product-table tbody tr{display:table-row !important;visibility:visible !important}
+  .product-table tbody td .cell-field {
+    border-bottom: 1px solid #E0E5EA;
+    padding-bottom: 4px;
+  }
+  .product-table tbody td .cell-field label {
+    display: block; font-size: 10px; color: #8A94A6;
+  }
+  .product-table tbody td .cell-field input {
+    border: none; outline: none; width: 100%;
+    font-size: 13px; background: transparent;
+  }
+  .product-table tbody td .unit {
+    font-size: 11px; color: #8A94A6; margin-top: 4px;
+  }
+  .product-table tbody td.amount-cell {
+    text-align: right; font-weight: 600;
+    color: #1D3A5F; font-size: 14px;
+  }
+  .product-table tbody td .del-row {
+    color: #c0392b; cursor: pointer; font-size: 14px;
+    text-align: center; display: block; margin-top: 4px;
+  }
+
+  .table-add-links {
+    display: flex; gap: 24px; margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .table-add-links .add-link { font-size: 12px; }
+
+  .state-row {
+    display: flex; gap: 30px; align-items: center;
+    margin-bottom: 16px; padding: 10px 0;
+  }
+  .state-row { gap:14px; }
+  .radio-pill {
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer; font-size: 13px; font-weight:600;
+    padding:8px 14px; border:1px solid #D7E3F0; border-radius:999px; background:#fff; color:#1D3A5F;
+    transition:.2s;
+  }
+  .radio-pill input { accent-color: #1E6A9E; }
+  .radio-pill.active-intra{background:#E6F4EA;border-color:#2E7D32;color:#1B5E20}
+  .radio-pill.active-intra input{accent-color:#2E7D32}
+  .radio-pill.active-inter{background:#FFF4E5;border-color:#F59E0B;color:#9A6700}
+  .radio-pill.active-inter input{accent-color:#F59E0B}
+  .gst-note{font-size:12px;color:#5a6878;margin-left:auto}
+
+  .terms-row { margin-bottom: 20px; }
+  .terms-input {
+    width: 100%; border: 1px solid #E0E5EA;
+    border-radius: 6px; padding: 10px 12px;
+    font-size: 13px; outline: none;
+    background: #FAFCFE; color: #1A2B3C;
+    min-height: 40px;
+  }
+
+  .cta-row {
+    display: flex; gap: 14px; justify-content: center;
+    margin-top: 10px;
+  }
+  .btn-primary {
+    background: #F7B32B; color: #1A2B3C;
+    border: none; padding: 12px 36px;
+    border-radius: 4px; font-weight: 700;
+    font-size: 14px; cursor: pointer;
+  }
+  .btn-primary:hover { background: #F9C44B; }
+  .btn-secondary {
+    background: #fff; color: #1A2B3C;
+    border: 1px solid #E0E5EA;
+    padding: 12px 28px; border-radius: 4px;
+    font-weight: 600; font-size: 14px; cursor: pointer;
+  }
+  .btn-secondary:hover { background: #F5F8FA; }
+
+  /* ===== Guide section ===== */
+  .section-guide {
+    background: #FBF3DA;
+    padding: 70px 0;
+  }
+  .section-guide h2 {
+    text-align: center; font-size: 30px;
+    color: #1D3A5F; margin-bottom: 30px; font-weight: 700;
+  }
+  .guide-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 40px; align-items: start;
+  }
+  .guide-list { display: flex; flex-direction: column; gap: 16px; }
+  .guide-item {
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .guide-num {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #1E6A9E; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; flex-shrink: 0;
+  }
+  .guide-item p { font-size: 14px; color: #1A2B3C; padding-top: 4px; }
+  .guide-screenshot {
+    background: #fff; border-radius: 8px;
+    padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  .guide-screenshot .ss-img {
+    background: #EAF2F8; border-radius: 4px;
+    padding: 20px; color: #8A94A6;
+    text-align: center; font-size: 12px;
+    min-height: 240px;
+    background-image:
+      linear-gradient(rgba(30,106,158,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,106,158,0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .marker {
+    position: absolute; width: 22px; height: 22px;
+    background: #1E6A9E; color: #fff;
+    border-radius: 50%; font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  /* ===== Feature highlights ===== */
+  .section-features {
+    background: #EAF2F8; padding: 70px 0;
+  }
+  .section-features h2 {
+    text-align: center; font-size: 30px; color: #1D3A5F;
+    margin-bottom: 8px; font-weight: 700;
+  }
+  .section-features .sub {
+    text-align: center; color: #8A94A6;
+    margin-bottom: 40px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .feature-card {
+    background: #D6E8F5; border-radius: 8px;
+    padding: 24px 18px; text-align: center;
+  }
+  .feature-card .f-icon {
+    width: 50px; height: 50px; margin: 0 auto 14px;
+    background: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: #1E6A9E;
+  }
+  .feature-card h4 { font-size: 14px; color: #1D3A5F; margin-bottom: 6px; }
+  .feature-card p { font-size: 12px; color: #5a6878; line-height: 1.5; }
+
+  /* ===== HSN section ===== */
+  .section-hsn { background: #FBF3DA; padding: 70px 0; }
+  .section-hsn h2 {
+    text-align: center; font-size: 30px; color: #1D3A5F;
+    margin-bottom: 18px; font-weight: 700;
+  }
+  .section-hsn .lead {
+    max-width: 820px; margin: 0 auto 30px;
+    text-align: center; color: #5a6878; font-size: 14px;
+  }
+  .hsn-table {
+    max-width: 760px; margin: 0 auto;
+    background: #fff; border-radius: 8px;
+    overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .hsn-table table { width: 100%; border-collapse: collapse; }
+  .hsn-table th {
+    background: #1E6A9E; color: #fff;
+    padding: 10px 14px; font-size: 13px; text-align: left;
+  }
+  .hsn-table td {
+    padding: 10px 14px; border-bottom: 1px solid #E0E5EA;
+    font-size: 13px; color: #1A2B3C;
+  }
+  .hsn-table tr:last-child td { border-bottom: none; }
+
+  /* ===== Comparison table ===== */
+  .section-compare { background: #EAF2F8; padding: 70px 0; }
+  .section-compare h2 {
+    text-align: center; font-size: 28px; color: #1D3A5F;
+    margin-bottom: 8px; font-weight: 700;
+  }
+  .section-compare .sub {
+    text-align: center; color: #8A94A6; margin-bottom: 30px;
+  }
+  .compare-card {
+    max-width: 920px; margin: 0 auto;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  .compare-card table { width: 100%; border-collapse: collapse; }
+  .compare-card thead th {
+    background: #fff; padding: 16px 18px;
+    font-size: 14px; color: #1D3A5F; text-align: left;
+    border-bottom: 2px solid #1E6A9E;
+  }
+  .compare-card thead th:nth-child(2) { color: #8A94A6; }
+  .compare-card thead th:nth-child(3) { color: #1E6A9E; }
+  .compare-card tbody td {
+    padding: 14px 18px; border-bottom: 1px solid #E0E5EA;
+    font-size: 13px; color: #1A2B3C;
+  }
+  .compare-card tbody td:nth-child(2),
+  .compare-card tbody td:nth-child(3) { text-align: center; }
+  .icon-x { color: #c0392b; font-weight: 700; }
+  .icon-check { color: #1E6A9E; font-weight: 700; }
+
+  /* ===== FAQ ===== */
+  .section-faq { background: #FBF3DA; padding: 70px 0; }
+  .section-faq h2 {
+    text-align: center; font-size: 30px; color: #1D3A5F;
+    margin-bottom: 30px; font-weight: 700;
+  }
+  .faq-list { max-width: 820px; margin: 0 auto; }
+  .faq-item {
+    background: #fff; border-radius: 6px;
+    margin-bottom: 10px; overflow: hidden;
+  }
+  .faq-q {
+    padding: 16px 20px; display: flex;
+    justify-content: space-between; align-items: center;
+    cursor: pointer; font-size: 14px; font-weight: 600;
+    color: #1D3A5F;
+  }
+  .faq-q .faq-icon {
+    font-size: 20px; color: #1E6A9E; transition: transform 0.2s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px; color: #5a6878; font-size: 13px;
+  }
+  .faq-item.open .faq-a {
+    max-height: 200px; padding-bottom: 16px;
+  }
+
+  /* ===== Footer ===== */
+  .footer { background: #1D3A5F; color: #D6E8F5; padding: 50px 0 20px; }
+  .footer-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 30px; margin-bottom: 30px;
+  }
+  .footer-col h5 {
+    color: #F7B32B; font-size: 13px;
+    margin-bottom: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-col ul li a {
+    color: #D6E8F5; font-size: 13px; cursor: pointer;
+  }
+  .footer-col ul li a:hover { color: #F7B32B; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px; text-align: center;
+    font-size: 12px; color: #8FA4BD;
+  }
+  .footer-bottom .cin { margin-top: 6px; }
+
+  /* ===== Toast ===== */
+  .toast {
+    position: fixed; bottom: 30px; right: 30px;
+    background: #1D3A5F; color: #fff;
+    padding: 14px 22px; border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    font-size: 13px; opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 9999;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .top-form-row { grid-template-columns: 1fr 1fr; }
+    .top-form-row .logo-box { grid-column: 1 / -1; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .product-table { font-size: 11px; }
+    .product-table thead th { padding: 6px 4px; }
+  }
+  @media (max-width: 640px) {
+    .top-form-row { grid-template-columns: 1fr; }
+    .party-cards { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .util-right { display: none; }
+    .invoice-card { padding: 20px 16px; }
+    .product-table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+
+  .hero{padding-top:40px;position:relative;z-index:1}
+  nav{z-index:200}
+  nav .wrap{max-width:1180px}
+  .invoice-card-wrap .container,.hero .container,.section-guide .container,.section-features .container,.section-hsn .container,.section-compare .container,.section-faq .container{max-width:1180px;margin:0 auto;padding:0 20px}
+  body{background:#EAF2F8}
+  .hero::before,.hero::after{pointer-events:none !important;z-index:0 !important}
+  .hero .container{position:relative;z-index:2}
+  .invoice-card-wrap{position:relative;z-index:20 !important;pointer-events:auto !important;isolation:isolate}
+  .invoice-card{position:relative;z-index:21 !important;pointer-events:auto !important}
+  .invoice-card-wrap *{pointer-events:auto}
+  .invoice-card input,.invoice-card textarea,.invoice-card select,.invoice-card button,.invoice-card label,.invoice-card span,.invoice-card div,.invoice-card td,.invoice-card th{pointer-events:auto !important}
+  .invoice-card input,.invoice-card textarea,.invoice-card select{user-select:text !important;-webkit-user-select:text !important;position:relative;z-index:22 !important;background:#fff !important;color:#1A2B3C !important;opacity:1 !important}
+  .pfield,.cell-field,.extra-field{position:relative;z-index:22}
+  .mega{z-index:150}
+  .toast{pointer-events:none;z-index:99999}
+  .toast.show{pointer-events:auto}
+</style>
+  <link rel="stylesheet" href="../css/style.css">
+  <style id="ig-fix">
+    .invoice-card-wrap,.invoice-card,.party-cards,.party-card,.product-table,#productBody{visibility:visible !important;opacity:1 !important}
+    .invoice-card .extra-field.show,.invoice-card .extra-field[style*="display: block"]{display:block !important;visibility:visible !important;opacity:1 !important;height:auto !important;overflow:visible !important}
+    #productBody tr{display:table-row !important;visibility:visible !important;opacity:1 !important}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Free Online Invoice Generator - Create GST Invoices Free | DotERP", "url": "https://www.doterp.com/pages/tools-invoice-generator.html"}</script>
+</head>
+<body>
+
+<div class="pg" id="pg"></div>
+<nav><div class="wrap"><button class="links mm-t" aria-expanded="false" aria-controls="mega">Products <i>▾</i></button><a class="links" href="pricing.html">Pricing</a><button class="links mm-t cm-t" aria-expanded="false" aria-controls="cmega">Community <i>▾</i></button><button class="links mm-t ch-t" aria-expanded="false" aria-controls="chmega">Customer Hub <i>▾</i></button><a class="links" href="compare.html">Compare</a><a class="links" href="blogs.html">DotERP blog</a><a class="logo" href="../index.html">Dot<b>ERP</b></a><span class="sp"></span><a class="links" href="login.html">Log In</a><a class="btn" href="download.html">Download</a></div>
+<div class="mega" id="mega"><div class="mg">
+<div class="mc"><div class="mh"><span class="ic">◆</span><div><b>DotERP</b><small>Our flagship business software</small></div></div><a href="product-overview.html">Product Overview</a><a href="whats-new.html">What’s New</a><a href="free-trial.html">Instant Demo</a><div class="mb"><a class="btn" href="free-trial.html">Take a Free Trial</a><a class="btn o" href="pricing.html">Buy Now</a></div></div>
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Features</b><small>What you can do with DotERP</small></div></div><a href="taxation-compliance.html">Taxation &amp; Compliance</a><a href="accounting.html">Accounting</a><a href="inventory.html">Inventory</a><a href="banking.html">Banking</a><a href="connected-services.html">Connected Services</a><a class="all" href="features.html">View All Features ↗</a></div>
+<div class="mc"><div class="mh"><span class="ic">▤</span><div><b>Do More with DotERP</b><small>Extend and access it your way</small></div></div><a href="mobile-app.html">DotERP Mobile App</a><a href="server.html">DotERP Server</a><a href="business-reports.html">Business Reports</a></div>
+<div class="mc"><div class="mh"><span class="ic">&lt;/&gt;</span><div><b>Developers</b><small>Build and integrate with DotERP</small></div></div><a href="developer-hub.html">Developer Hub</a><a href="customization.html">Customization &amp; Integration</a><a href="api-explorer.html">API Explorer</a></div>
+<div class="mc"><div class="mh"><span class="ic">◇</span><div><b>More from DotERP</b><small>Software for every business need</small></div></div><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="q2dot.html">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a class="all" href="products.html">View All Software ↗</a></div>
+</div></div>
+<div class="mega" id="pmega"><div class="mg c4">
+<div class="mc"><div class="mh"><span class="ic">◆</span><div><b>DotERP</b><small>Plans & pricing</small></div></div><a href="pricing.html#doterp">DotERP Pricing<small>Business management software</small></a><a href="pricing.html#compare"><b>Compare Plans</b><small>Compare features & pricing side by side</small></a><a href="free-trial.html">Free Trial<small>Try before you buy</small></a><a class="btn" href="pricing.html">View Pricing ↗</a></div>
+<div class="mc"><div class="mh"><span class="ic">◇</span><div><b>Other Products</b><small>Pricing by product</small></div></div><a href="pricing.html#UdyamApp">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="pricing.html#q2dot">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a href="products.html">All Products<small>Explore our software</small></a></div>
+<div class="mc"><div class="mh"><span class="ic">₹</span><div><b>Customer Plans</b><small>For existing customers</small></div></div><a href="pricing.html">Monthly Subscription</a><a href="pricing.html">Lifetime License</a><a href="login.html">Renew Subscription</a><a href="software-services.html">Software Services</a></div>
+<div class="spot"><div class="mh"><span class="ic">★</span><div><b>Need help?</b><small>Find the right plan</small></div></div><a href="contact.html"><b>Talk to Sales</b><small>Get plan recommendations for your business</small></a><a href="pricing.html#compare"><b>Compare</b><small>See plan differences at a glance</small></a><a href="free-trial.html"><b>Start Free Trial</b><small>Experience DotERP features first</small></a></div>
+</div></div>
+<div class="mega" id="cmega"><div class="mg c4">
+<div class="mc"><div class="mh"><span class="ic">✎</span><div><b>Learn</b><small>Grow your knowledge</small></div></div><a href="free-trial.html">Instant Demo</a><a href="blogs.html">Blogs</a><a href="learning-hub.html">Learning Hub</a><a href="roadmap.html">Product Roadmap</a><a href="first-60-minutes.html">First 60 Minutes in DotERP</a></div>
+<div class="mc"><div class="mh"><span class="ic">✉</span><div><b>Connect</b><small>Engage with the ecosystem</small></div></div><a href="community.html">DotERP Community</a><a href="partners.html">Locate a Partner</a><a href="events.html">Events &amp; Webinars</a><a href="customer-stories.html">Customer Stories</a></div>
+<div class="mc"><div class="mh"><span class="ic">★</span><div><b>Featured</b><small>Recognitions &amp; programs</small></div></div><a href="awards.html">Awards &amp; Recognition</a><a href="startup-offer.html">Startup Offer</a><a href="partner-program.html">Partner Program</a><a href="careers.html">Careers</a></div>
+<div class="spot"><div class="mh"><span class="ic">◆</span><div><b>Spotlight</b><small>Explore what’s new</small></div></div><a href="first-60-minutes.html"><b>First 60 minutes in DotERP</b><small>New to DotERP? Experience everything right away</small></a><a href="customer-stories.html"><b>Customer stories</b><small>Real businesses, real outcomes</small></a><a href="learning-hub.html"><b>Tips and tutorials</b><small>Practical tips from our experts</small></a></div>
+</div></div>
+<div class="mega" id="chmega"><div class="mg ch">
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Plugins</b><small>Extend what DotERP can do</small></div></div><a class="btn" href="plugins.html">View all Plug-ins ↗</a></div>
+<div class="mc"><div class="mh"><span class="ic">₹</span><div><b>Customer Pricing</b><small>Plans for existing customers</small></div></div><a class="btn" href="customer-pricing.html">View Plans ↗</a></div>
+<div class="mc"><div class="mh"><span class="ic">☎</span><div><b>Reach Us</b><small>Talk to our support team</small></div></div><a href="help.html">❓ DotERP Help</a><a href="whatsapp.html">✆ WhatsApp</a><a href="call-us.html">☎ Call us</a><a href="email-us.html">✉ Email</a><a class="btn o" href="support.html">Support ↗</a></div>
+<div class="mc"><div class="mh"><span class="ic">↻</span><div><b>Subscriptions &amp; Services</b><small>Keep your DotERP up to date</small></div></div><a class="sr" href="software-services.html">DotERP Software Services<em>View Now ↗</em></a><a class="sr" href="pricing.html">DotERP Monthly Plan<em>View Now ↗</em></a></div>
+<div class="mng"><h4>Manage Subscriptions</h4><p>View, renew or upgrade your active DotERP subscriptions in one place.</p><a class="btn w" href="login.html">Manage my Subscriptions ↗</a></div>
+</div></div></nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="container">
+    <h1>Invoice Generator</h1>
+    <p>Generate instantly downloadable invoices for free with our online generator</p>
+  </div>
+</section>
+
+<!-- ===== Invoice form card ===== -->
+<div class="invoice-card-wrap">
+  <div class="container">
+    <div class="invoice-card">
+      <h2 class="invoice-title">Invoice</h2>
+
+      <!-- Top form row -->
+      <div class="top-form-row">
+        <div class="field-col">
+          <div class="field">
+            <label>Invoice Number*</label>
+            <input type="text" id="invNo" placeholder="INV-0001" value="INV-0001">
+          </div>
+          <div class="field">
+            <label>Dispatched through</label>
+            <input type="text" placeholder="Enter dispatch mode">
+          </div>
+          <div class="field">
+            <label>Mode/Terms of Payment</label>
+            <input type="text" placeholder="e.g. Net 30 / Bank Transfer">
+          </div>
+        </div>
+        <div class="field-col">
+          <div class="field">
+            <label>Buyer's Ref./Order No.</label>
+            <input type="text" placeholder="PO-0001">
+          </div>
+          <div class="field">
+            <label>Invoice Date*</label>
+            <input type="date" id="invDate">
+          </div>
+          <div class="field">
+            <label>Other References</label>
+            <input type="text" placeholder="Reference no.">
+          </div>
+        </div>
+        <div class="logo-box" id="logoBox">
+          <img class="logo-preview" id="logoPreview" alt="Logo">
+          <div class="upload-icon" id="uploadIcon">&#8682;</div>
+          <p>Add company's logo<br>(Dimensions: 160X80px)</p>
+          <span class="dest-label">Destination</span>
+          <input type="text" class="dest-input" placeholder="Enter destination">
+          <input type="file" id="logoInput" accept="image/*" style="display:none">
+        </div>
+      </div>
+
+      <!-- From / For -->
+      <div class="party-cards">
+        <div class="party-card">
+          <h4>Invoice From <small>(Your Details)</small></h4>
+          <div class="pfield"><label>Business Name*</label><input type="text" placeholder="Your Business Name"></div>
+          <div class="pfield"><label>Address Line 1</label><input type="text" placeholder="Street address"></div>
+          <div class="pfield"><label>Address Line 2</label><input type="text" placeholder="Area / Landmark"></div>
+          <div class="two-up">
+            <div class="pfield"><label>City</label><input type="text" placeholder="City"></div>
+            <div class="pfield"><label>Postal Code/Zip</label><input type="text" placeholder="PIN"></div>
+          </div>
+          <div class="pfield"><label>State</label><input type="text" placeholder="State"></div>
+          <div class="add-links">
+            <span class="add-link" data-target="fromEmail">+ Add Email</span>
+            <span class="add-link" data-target="fromPhone">+ Add Phone Number</span>
+            <span class="add-link" data-target="fromGst">+ Add GST</span>
+            <span class="add-link" data-target="fromPan">+ Add PAN</span>
+          </div>
+          <div class="extra-field" id="fromEmail"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+          <div class="extra-field" id="fromPhone"><label>Phone Number</label><input type="tel" placeholder="+91 ..."></div>
+          <div class="extra-field" id="fromGst"><label>GST</label><input type="text" placeholder="22AAAAA0000A1Z5"></div>
+          <div class="extra-field" id="fromPan"><label>PAN</label><input type="text" placeholder="AAAAA0000A"></div>
+        </div>
+
+        <div class="party-card">
+          <h4>Invoice For <small>(Client's Details)</small></h4>
+          <div class="pfield"><label>Business Name*</label><input type="text" placeholder="Client Business Name"></div>
+          <div class="pfield"><label>Address Line 1</label><input type="text" placeholder="Street address"></div>
+          <div class="pfield"><label>Address Line 2</label><input type="text" placeholder="Area / Landmark"></div>
+          <div class="two-up">
+            <div class="pfield"><label>City</label><input type="text" placeholder="City"></div>
+            <div class="pfield"><label>Postal Code/Zip</label><input type="text" placeholder="PIN"></div>
+          </div>
+          <div class="pfield"><label>State</label><input type="text" placeholder="State"></div>
+          <div class="add-links">
+            <span class="add-link" data-target="toEmail">+ Add Email</span>
+            <span class="add-link" data-target="toPhone">+ Add Phone Number</span>
+            <span class="add-link" data-target="toGst">+ Add GST</span>
+            <span class="add-link" data-target="toPan">+ Add PAN</span>
+          </div>
+          <div class="extra-field" id="toEmail"><label>Email</label><input type="email" placeholder="client@example.com"></div>
+          <div class="extra-field" id="toPhone"><label>Phone Number</label><input type="tel" placeholder="+91 ..."></div>
+          <div class="extra-field" id="toGst"><label>GST</label><input type="text" placeholder="22BBBBB1111B1Z5"></div>
+          <div class="extra-field" id="toPan"><label>PAN</label><input type="text" placeholder="BBBBB1111B"></div>
+        </div>
+      </div>
+
+      <!-- Product table -->
+      <table class="product-table" id="productTable">
+        <thead>
+          <tr>
+            <th style="width:50px">Sl. No.</th>
+            <th>Product Name</th>
+            <th style="width:110px">HSN Code</th>
+            <th style="width:90px">GST Rate (%)</th>
+            <th style="width:90px">Quantity</th>
+            <th style="width:90px">Rate</th>
+            <th style="width:90px">Discount</th>
+            <th style="width:110px; text-align:right">Amount</th>
+            <th style="width:30px"></th>
+          </tr>
+        </thead>
+        <tbody id="productBody">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+
+      <div class="table-add-links">
+        <span class="add-link" id="addRowLink">+ Add more fields</span>
+        <span class="add-link" id="addDiscountLink">+ Give discount on total</span>
+        <span class="add-link" id="addChargesLink">+ Add additional charges</span>
+      </div>
+
+      <div class="state-row" id="stateRow">
+        <label class="radio-pill active-intra" id="pillIntra"><input type="radio" name="gstType" value="intra" checked> Intra-state (CGST + SGST)</label>
+        <label class="radio-pill" id="pillInter"><input type="radio" name="gstType" value="inter"> Inter-state (IGST)</label>
+        <span class="gst-note" id="gstNote">Selected: Intra-state (CGST + SGST)</span>
+      </div>
+
+      <div class="terms-row">
+        <input type="text" class="terms-input" placeholder="Terms and conditions" id="terms">
+      </div>
+
+      <div class="cta-row">
+        <button class="btn-primary" id="downloadBtn">Download</button>
+        <button class="btn-secondary" id="newBtn">Create New</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Guide section ===== -->
+<section class="section-guide">
+  <div class="container">
+    <h2>Invoice Creation Guide</h2>
+    <div class="guide-grid">
+      <div class="guide-list">
+        <div class="guide-item"><span class="guide-num">1</span><p>Enter invoice number, date and other reference details in the top row of the form.</p></div>
+        <div class="guide-item"><span class="guide-num">2</span><p>Upload your company logo in the dashed box (recommended size 160×80 px).</p></div>
+        <div class="guide-item"><span class="guide-num">3</span><p>Fill in your business details under "Invoice From" — name, address, city, state.</p></div>
+        <div class="guide-item"><span class="guide-num">4</span><p>Add your client's details under "Invoice For" using the same field layout.</p></div>
+        <div class="guide-item"><span class="guide-num">5</span><p>Optionally click "+ Add Email / Phone / GST / PAN" to attach tax info to either party.</p></div>
+        <div class="guide-item"><span class="guide-num">6</span><p>Add product rows with HSN code, GST rate, quantity and rate — amount is auto-calculated.</p></div>
+        <div class="guide-item"><span class="guide-num">7</span><p>Choose Intra-state or Inter-state to apply the correct GST breakdown.</p></div>
+        <div class="guide-item"><span class="guide-num">8</span><p>Add terms &amp; conditions in the bottom field if required by your business.</p></div>
+        <div class="guide-item"><span class="guide-num">9</span><p>Click "Download" to save the invoice or "Create New" to start over.</p></div>
+      </div>
+      <div class="guide-screenshot">
+        <div class="ss-img">Invoice Preview</div>
+        <div class="marker" style="top:40px; left:30px;">1</div>
+        <div class="marker" style="top:80px; right:30px;">2</div>
+        <div class="marker" style="top:130px; left:50px;">3</div>
+        <div class="marker" style="top:130px; right:50px;">4</div>
+        <div class="marker" style="top:200px; left:90px;">6</div>
+        <div class="marker" style="bottom:30px; right:90px;">7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Feature highlights ===== -->
+<section class="section-features">
+  <div class="container">
+    <h2>Why Use Our Invoice <span style="border-bottom:3px solid #F7B32B;">Generator</span>?</h2>
+    <p class="sub">Everything you need to create professional GST invoices in seconds.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="f-icon">&#9889;</div>
+        <h4>Quick &amp; Easy</h4>
+        <p>Generate invoices in under a minute with pre-built GST-ready fields.</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">&#128274;</div>
+        <h4>Secure</h4>
+        <p>Your data stays in your browser. Nothing is uploaded to any server.</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">&#129518;</div>
+        <h4>Auto Calculation</h4>
+        <p>Amounts, discounts and GST totals are computed automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">&#128196;</div>
+        <h4>GST Format</h4>
+        <p>Follows the standard GST invoice layout accepted across India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HSN section ===== -->
+<section class="section-hsn">
+  <div class="container">
+    <h2>What is HSN Code?</h2>
+    <p class="lead">HSN (Harmonised System of Nomenclature) is an internationally standardized system of names and numbers to classify traded products. GST invoices in India require HSN codes for goods.</p>
+    <div class="hsn-table">
+      <table>
+        <thead>
+          <tr><th>HSN Code</th><th>Product Category</th><th>GST Rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0101</td><td>Live animals: horses, asses, mules</td><td>0%</td></tr>
+          <tr><td>1006</td><td>Rice</td><td>0%</td></tr>
+          <tr><td>1701</td><td>Cane or beet sugar</td><td>5%</td></tr>
+          <tr><td>3004</td><td>Pharmaceutical medicines</td><td>12%</td></tr>
+          <tr><td>6109</td><td>T-shirts, singlets and other vests</td><td>5%</td></tr>
+          <tr><td>8517</td><td>Telephone sets; smartphones</td><td>18%</td></tr>
+          <tr><td>8703</td><td>Motor cars and other motor vehicles</td><td>28%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Comparison ===== -->
+<section class="section-compare">
+  <div class="container">
+    <h2>Enhance Your Billing Process with DotERP</h2>
+    <p class="sub">Free online generator vs. DotERP — see what you unlock.</p>
+    <div class="compare-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free Generator</th>
+            <th>DotERP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Create GST invoices</td><td><span class="icon-check">&#10003;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+          <tr><td>Auto-calc tax &amp; totals</td><td><span class="icon-check">&#10003;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+          <tr><td>Save &amp; manage party masters</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+          <tr><td>Inventory &amp; stock reports</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+          <tr><td>GSTR-1 / GSTR-3B filing</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+          <tr><td>Multi-user &amp; multi-company</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+          <tr><td>Banking &amp; cheque printing</td><td><span class="icon-x">&#10007;</span></td><td><span class="icon-check">&#10003;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section-faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is the online invoice generator really free?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes. You can create and download unlimited invoices at no cost. No login or registration is required.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to install any software?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>No. The generator runs entirely in your web browser. For advanced features like inventory and GST filing, you can use DotERP.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my data stored on your servers?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>No. All the details you type stay on your device. Nothing is uploaded — making it safe for sensitive business data.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I add GST and PAN to the invoice?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes. Under both "Invoice From" and "Invoice For" panels click "+ Add GST" and "+ Add PAN" to include the tax identifiers.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does it support intra-state and inter-state GST?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes. Choose Intra-state (CGST + SGST) or Inter-state (IGST) using the radio buttons below the product table.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="about"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP is a complete business management platform for billing, accounting, inventory, GST, payroll, and reporting. <a href="about.html" style="color:var(--acc)">Read More</a></span></div>
+  <div class="cols">
+    <div><h5>Our Products</h5><a href="product-overview.html">DotERP Service</a><a href="server.html">DotERP Server</a><a href="developer-hub.html">DotERP Developer</a><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b></a><a href="q2dot.html">Q2Dot</a><a href="dotcapital.html">DotCapital</a></div>
+    <div><h5>Product Subscription</h5><a href="login.html">Renew Subscription</a><a href="pricing.html">Monthly Subscription</a><a href="pricing.html">Pricing &amp; Purchase</a><a href="download.html">Download DotERP</a></div>
+    <div><h5>DotERP's Features</h5><a href="banking.html">Banking</a><a href="banking.html">Credit &amp; Cashflow</a><a href="business-reports.html">Dashboards &amp; Reports</a><a href="inventory.html">Inventory Management</a><a href="features.html">Business Operations</a></div>
+    <div><h5>Solutions for Startups</h5><a href="accounting.html">Invoicing and Accounting</a><a href="features.html">Payroll Management</a><a href="taxation-compliance.html">Taxation and Compliance</a></div>
+    <div><h5>Solutions for SMBs</h5><a href="accounting.html">Accounting Software</a><a href="accounting.html">Billing Software</a><a href="inventory.html">Inventory Software</a><a href="taxation-compliance.html">GST Software</a></div>
+    <div><h5>Free Business Tools</h5><a href="tools-invoice-generator.html">Invoice Generator</a><a href="tools-gst-calculator.html">GST Calculator</a><a href="tools-quotation-generator.html">Quotation Generator</a><a href="tools-cashflow-generator.html">Cashflow Generator</a></div>
+    <div><h5>Get GST-Compliant</h5><a href="gst-registration.html">GST Registration</a><a href="gst-returns.html">File GST Returns</a><a href="gstr-1.html">GSTR 1</a><a href="gstr-3b.html">GSTR 3B</a></div>
+    <div><h5>Contact Info</h5><a href="contact.html">Office No. 1, 33 Feet Road, New Industrial Area, Ballabgarh, Faridabad 121004</a><a href="tel:+918001234567">Customer Care: 9718437209 & 9354412061</a><a href="mailto:support@doterp.example">support@doterp.example</a><a href="contact.html">Contact Us</a></div>
+    <div><h5>Resources</h5><a href="blogs.html">Blogs</a><a href="learning-hub.html">Learning Hub</a><a href="customer-stories.html">Customer Stories</a><a href="help.html#faq">FAQs</a></div>
+    <div><h5>Our Network</h5><a href="partners.html">Partners</a><a href="careers.html">Careers</a><a href="blogs.html">Media &amp; News</a></div>
+  </div>
+  <div class="copy">Copyright © 2026 DotERP Solutions Pvt. Ltd. · <a href="privacy.html" style="color:inherit">Privacy Policy</a> · <a href="terms.html" style="color:inherit">Terms of Use</a></div>
+</div></footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ===== Default date =====
+  document.getElementById('invDate').valueAsDate = new Date();
+
+  // ===== Toast helper =====
+  const toast = document.getElementById('toast');
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  // ===== Logo upload =====
+  const logoBox = document.getElementById('logoBox');
+  const logoInput = document.getElementById('logoInput');
+  const logoPreview = document.getElementById('logoPreview');
+  const uploadIcon = document.getElementById('uploadIcon');
+  logoBox.addEventListener('click', (e) => {
+    if (e.target.classList.contains('dest-input') || e.target.tagName === 'INPUT') return;
+    logoInput.click();
+  });
+  logoInput.addEventListener('change', () => {
+    const file = logoInput.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      logoPreview.src = ev.target.result;
+      logoPreview.style.display = 'block';
+      uploadIcon.style.display = 'none';
+      showToast('Logo uploaded');
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ===== Add extra fields (email/phone/gst/pan) =====
+  document.querySelectorAll('.add-link[data-target]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = link.dataset.target;
+      const field = document.getElementById(id);
+      if (field) {
+        field.classList.add('show');
+        field.style.setProperty('display','block','important');
+        field.style.setProperty('visibility','visible','important');
+        field.style.setProperty('opacity','1','important');
+        field.style.setProperty('height','auto','important');
+        link.style.display = 'none';
+        showToast('Added');
+      } else {
+        showToast('Field not found: ' + id);
+      }
+    });
+  });
+
+  // ===== Product rows =====
+  const productBody = document.getElementById('productBody');
+  let rowCounter = 0;
+
+  function calcRow(row) {
+    const qty = parseFloat(row.querySelector('.qty-in').value) || 0;
+    const rate = parseFloat(row.querySelector('.rate-in').value) || 0;
+    const disc = parseFloat(row.querySelector('.disc-in').value) || 0;
+    const gross = qty * rate;
+    const amt = gross - (gross * disc / 100);
+    row.querySelector('.amt-out').textContent = amt.toFixed(2);
+  }
+
+  function addRow() {
+    rowCounter++;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${rowCounter}</td>
+      <td><div class="cell-field"><input type="text" placeholder="Product Name*"></div></td>
+      <td><div class="cell-field"><input type="text" placeholder="HSN Code*"></div></td>
+      <td><div class="cell-field"><input type="number" placeholder="GST Rate(%)*" value="18"></div></td>
+      <td>
+        <div class="cell-field"><input type="number" class="qty-in" placeholder="Quantity*" value="1"></div>
+        <div class="unit">nos</div>
+      </td>
+      <td><div class="cell-field"><input type="number" class="rate-in" placeholder="Rate*" value="0"></div></td>
+      <td><div class="cell-field"><input type="number" class="disc-in" placeholder="Discount(%)*" value="0"></div></td>
+      <td class="amount-cell"><span class="amt-out">0.00</span></td>
+      <td><span class="del-row" title="Delete row">&times;</span></td>
+    `;
+    tr.style.setProperty('display','table-row','important');
+    tr.style.setProperty('visibility','visible','important');
+    tr.style.setProperty('opacity','1','important');
+    productBody.appendChild(tr);
+    tr.querySelectorAll('input').forEach(inp => inp.addEventListener('input', () => calcRow(tr)));
+    tr.querySelector('.del-row').addEventListener('click', () => {
+      tr.remove();
+      renumberRows();
+    });
+  }
+
+  function renumberRows() {
+    const rows = productBody.querySelectorAll('tr');
+    rows.forEach((r, i) => { r.querySelector('td').textContent = i + 1; });
+    rowCounter = rows.length;
+  }
+
+  addRow();
+  document.getElementById('addRowLink').addEventListener('click', function(){ addRow(); showToast('Item row added'); });
+
+  // ===== Discount on total / additional charges (toggle placeholder rows) =====
+  let extraDiscountShown = false, extraChargesShown = false;
+  document.getElementById('addDiscountLink').addEventListener('click', () => {
+    if (extraDiscountShown) return;
+    extraDiscountShown = true;
+    const tr = document.createElement('tr');
+    tr.id = 'totalDiscountRow';
+    tr.innerHTML = `
+      <td colspan="6" style="text-align:right; color:#8A94A6; font-size:12px;">Discount on total (%)</td>
+      <td><div class="cell-field"><input type="number" id="totalDisc" placeholder="0" value="0"></div></td>
+      <td class="amount-cell"><span id="totalDiscAmt">0.00</span></td>
+      <td><span class="del-row" title="Remove">&times;</span></td>
+    `;
+    productBody.appendChild(tr);
+    tr.querySelector('.del-row').addEventListener('click', () => { tr.remove(); extraDiscountShown = false; });
+    tr.querySelector('#totalDisc').addEventListener('input', recalcGrand);
+  });
+  document.getElementById('addChargesLink').addEventListener('click', () => {
+    if (extraChargesShown) return;
+    extraChargesShown = true;
+    const tr = document.createElement('tr');
+    tr.id = 'chargesRow';
+    tr.innerHTML = `
+      <td colspan="6" style="text-align:right; color:#8A94A6; font-size:12px;">Additional charges</td>
+      <td><div class="cell-field"><input type="number" id="extraChg" placeholder="0" value="0"></div></td>
+      <td class="amount-cell"><span id="extraChgAmt">0.00</span></td>
+      <td><span class="del-row" title="Remove">&times;</span></td>
+    `;
+    productBody.appendChild(tr);
+    tr.querySelector('.del-row').addEventListener('click', () => { tr.remove(); extraChargesShown = false; });
+    tr.querySelector('#extraChg').addEventListener('input', recalcGrand);
+  });
+
+  function recalcGrand() {
+    // recompute the additional row outputs only
+    const td = document.getElementById('totalDisc');
+    const tdAmt = document.getElementById('totalDiscAmt');
+    if (td && tdAmt) {
+      let subtotal = 0;
+      productBody.querySelectorAll('.amt-out').forEach(s => {
+        if (!s.closest('#totalDiscountRow') && !s.closest('#chargesRow')) {
+          subtotal += parseFloat(s.textContent) || 0;
+        }
+      });
+      const pct = parseFloat(td.value) || 0;
+      tdAmt.textContent = (-subtotal * pct / 100).toFixed(2);
+    }
+    const ec = document.getElementById('extraChg');
+    const ecAmt = document.getElementById('extraChgAmt');
+    if (ec && ecAmt) ecAmt.textContent = (parseFloat(ec.value) || 0).toFixed(2);
+  }
+  // ===== GST type colors =====
+  function syncGstPills(){
+    var v=(document.querySelector('input[name="gstType"]:checked')||{}).value||'intra';
+    var a=document.getElementById('pillIntra'), b=document.getElementById('pillInter'), n=document.getElementById('gstNote');
+    if(a) a.classList.toggle('active-intra', v==='intra');
+    if(b) b.classList.toggle('active-inter', v==='inter');
+    if(n) n.textContent = 'Selected: ' + (v==='intra' ? 'Intra-state (CGST + SGST)' : 'Inter-state (IGST)');
+  }
+  document.querySelectorAll('input[name="gstType"]').forEach(function(r){ r.addEventListener('change', syncGstPills); });
+  syncGstPills();
+
+  function valByLabel(root, labelText){
+    var labels = root.querySelectorAll('label');
+    for(var i=0;i<labels.length;i++){
+      var t=(labels[i].textContent||'').trim();
+      if(t.indexOf(labelText)===0){ var inp=labels[i].parentElement.querySelector('input,textarea,select'); return inp?inp.value:''; }
+    }
+    return '';
+  }
+  function partyDetails(card){
+    var d={};
+    d.business = valByLabel(card,'Business Name') || '';
+    d.addr1 = valByLabel(card,'Address Line 1') || '';
+    d.addr2 = valByLabel(card,'Address Line 2') || '';
+    d.city = valByLabel(card,'City') || '';
+    d.pin = valByLabel(card,'Postal Code') || '';
+    d.state = valByLabel(card,'State') || '';
+    card.querySelectorAll('.extra-field').forEach(function(ef){ if(getComputedStyle(ef).display!=='none'){ var lab=ef.querySelector('label'); var inp=ef.querySelector('input'); if(lab&&inp&&inp.value) d[(lab.textContent||'').trim()]=inp.value; }});
+    return d;
+  }
+  function buildInvoiceHtml(){
+    var invNo=(document.getElementById('invNo')||{}).value||'INV-0001';
+    var invDate=(document.getElementById('invDate')||{}).value||'';
+    var dispatch=(valByLabel(document,'Dispatched through')||'');
+    var termsPay=(valByLabel(document,'Mode/Terms of Payment')||'');
+    var bref=(valByLabel(document,"Buyer's Ref")||'');
+    var other=(valByLabel(document,'Other References')||'');
+    var dest=(document.querySelector('.dest-input')||{}).value||'';
+    var terms=(document.getElementById('terms')||{}).value||'';
+    var gstType=(document.querySelector('input[name="gstType"]:checked')||{}).value||'intra';
+    var cards=document.querySelectorAll('.party-card');
+    var from=cards[0]?partyDetails(cards[0]):{};
+    var to=cards[1]?partyDetails(cards[1]):{};
+    var rows=[];
+    productBody.querySelectorAll('tr').forEach(function(tr){
+      if(tr.id==='totalDiscountRow'||tr.id==='chargesRow') return;
+      var ins=tr.querySelectorAll('input');
+      if(!ins.length) return;
+      rows.push({
+        name:(ins[0]&&ins[0].value)||'', hsn:(ins[1]&&ins[1].value)||'', gst:(ins[2]&&ins[2].value)||'',
+        qty:(tr.querySelector('.qty-in')||{}).value||'', rate:(tr.querySelector('.rate-in')||{}).value||'',
+        disc:(tr.querySelector('.disc-in')||{}).value||'', amt:(tr.querySelector('.amt-out')||{}).textContent||'0.00'
+      });
+    });
+    var subtotal=0, totalGst=0;
+    rows.forEach(function(r){ var q=parseFloat(r.qty)||0, rate=parseFloat(r.rate)||0, d=parseFloat(r.disc)||0, g=parseFloat(r.gst)||0; var base=q*rate*(1-d/100); subtotal+=base; totalGst+=base*g/100; });
+    var totalDisc = parseFloat((document.getElementById('totalDisc')||{}).value)||0;
+    var discAmt = subtotal*totalDisc/100;
+    var extra = parseFloat((document.getElementById('extraChg')||{}).value)||0;
+    var grand = subtotal - discAmt + extra + totalGst;
+    function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function block(d,title){ var extra=''; Object.keys(d).forEach(function(k){ if(['business','addr1','addr2','city','pin','state'].indexOf(k)>-1) return; extra+='<div><b>'+esc(k)+':</b> '+esc(d[k])+'</div>'; }); return '<div class="box"><h3>'+title+'</h3><div><b>'+esc(d.business||'')+'</b></div><div>'+esc(d.addr1||'')+'</div><div>'+esc(d.addr2||'')+'</div><div>'+esc([d.city,d.state,d.pin].filter(Boolean).join(', '))+'</div>'+extra+'</div>'; }
+    var gstBreak = gstType==='intra' ? ('<tr><td colspan="7">CGST</td><td>Rs. '+(totalGst/2).toFixed(2)+'</td></tr><tr><td colspan="7">SGST</td><td>Rs. '+(totalGst/2).toFixed(2)+'</td></tr>') : ('<tr><td colspan="7">IGST</td><td>Rs. '+(totalGst).toFixed(2)+'</td></tr>');
+    var html='<!DOCTYPE html><html><head><meta charset="utf-8"><title>Invoice '+esc(invNo)+'</title><style>body{font-family:Arial,sans-serif;color:#1A2B3C;margin:24px}h1{margin:0 0 6px;color:#1D3A5F}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}.box{border:1px solid #D7E3F0;border-radius:8px;padding:12px}table{width:100%;border-collapse:collapse;margin-top:12px}th,td{border:1px solid #D7E3F0;padding:8px;font-size:13px;text-align:left}th{background:#EAF2F8}td.num,th.num{text-align:right}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0;font-size:13px}.tot{width:340px;margin-left:auto;margin-top:10px}.tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;'+(gstType==='intra'?'background:#E6F4EA;color:#1B5E20;border:1px solid #2E7D32':'background:#FFF4E5;color:#9A6700;border:1px solid #F59E0B')+'} .small{color:#5a6878;font-size:12px;margin-top:10px}</style></head><body>';
+    html+='<h1>Tax Invoice</h1><div><b>Invoice No:</b> '+esc(invNo)+' &nbsp; <b>Date:</b> '+esc(invDate)+' &nbsp; <span class="tag">'+(gstType==='intra'?'Intra-state (CGST + SGST)':'Inter-state (IGST)')+'</span></div>';
+    html+='<div class="meta"><div><b>Buyer\'s Ref/Order No:</b> '+esc(bref)+'</div><div><b>Dispatch Through:</b> '+esc(dispatch)+'</div><div><b>Destination:</b> '+esc(dest)+'</div><div><b>Mode/Terms of Payment:</b> '+esc(termsPay)+'</div><div><b>Other References:</b> '+esc(other)+'</div></div>';
+    html+='<div class="grid">'+block(from,'Invoice From')+block(to,'Invoice For')+'</div>';
+    html+='<table><thead><tr><th>Sl.</th><th>Product</th><th>HSN</th><th class="num">GST %</th><th class="num">Qty</th><th class="num">Rate</th><th class="num">Disc %</th><th class="num">Amount</th></tr></thead><tbody>';
+    rows.forEach(function(r,i){ html+='<tr><td>'+(i+1)+'</td><td>'+esc(r.name)+'</td><td>'+esc(r.hsn)+'</td><td class="num">'+esc(r.gst)+'</td><td class="num">'+esc(r.qty)+'</td><td class="num">'+esc(r.rate)+'</td><td class="num">'+esc(r.disc)+'</td><td class="num">Rs. '+esc(r.amt)+'</td></tr>'; });
+    html+='</tbody></table>';
+    html+='<table class="tot"><tr><td>Subtotal</td><td class="num">Rs. '+subtotal.toFixed(2)+'</td></tr>'+(totalDisc?'<tr><td>Discount on total ('+totalDisc+'%)</td><td class="num">- Rs. '+discAmt.toFixed(2)+'</td></tr>':'')+(extra?'<tr><td>Additional charges</td><td class="num">Rs. '+extra.toFixed(2)+'</td></tr>':'')+gstBreak+'<tr><th>Grand Total</th><th class="num">Rs. '+grand.toFixed(2)+'</th></tr></table>';
+    if(terms) html+='<div class="small"><b>Terms & Conditions:</b> '+esc(terms)+'</div>';
+    html+='<div class="small">Generated with DotERP Invoice Generator</div></body></html>';
+    return {html:html, invNo:invNo, grand:grand};
+  }
+
+  // ===== Download / Create New =====
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    try{
+      var out=buildInvoiceHtml();
+      var blob=new Blob([out.html],{type:'text/html;charset=utf-8'});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=url; a.download=(out.invNo||'invoice').replace(/[^a-z0-9-_]/gi,'_')+'.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+      showToast('Invoice downloaded: '+out.invNo+' (Rs. '+out.grand.toFixed(2)+')');
+    }catch(e){
+      console.error(e);
+      try{ var out2=buildInvoiceHtml(); var w=window.open('','_blank'); if(w){ w.document.write(out2.html); w.document.close(); w.focus(); w.print(); showToast('Print window opened for invoice'); } else { showToast('Download failed. Please allow popups.'); } }
+      catch(e2){ showToast('Download failed: '+e2.message); }
+    }
+  });
+  document.getElementById('newBtn').addEventListener('click', () => {
+    document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"]').forEach(i => {
+      if (i.classList.contains('qty-in')) i.value = 1;
+      else if (i.classList.contains('disc-in') || i.id === 'totalDisc') i.value = 0;
+      else if (i.id === 'extraChg') i.value = 0;
+      else i.value = '';
+    });
+    document.querySelectorAll('.extra-field').forEach(f => { f.style.display = 'none'; f.classList.remove('show'); });
+    document.querySelectorAll('.add-link[data-target]').forEach(l => l.style.display = 'inline');
+    var tdRow=document.getElementById('totalDiscountRow'); if(tdRow) tdRow.remove();
+    var chRow=document.getElementById('chargesRow'); if(chRow) chRow.remove();
+    extraDiscountShown=false; extraChargesShown=false;
+    productBody.innerHTML = '';
+    rowCounter = 0;
+    addRow();
+    var intra=document.querySelector('input[name="gstType"][value="intra"]'); if(intra) intra.checked=true;
+    syncGstPills();
+    showToast('New invoice started');
+  });
+
+
+  // ===== FAQ accordion =====
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('open');
+    });
+  });
+
+  // ===== Nav button =====
+  var bdl=document.querySelector('.btn-download'); if(bdl) bdl.addEventListener('click', () => { showToast('DotERP download will begin shortly'); });
+</script>
+<script>
+// ensure invoice form fields stay editable and interactive
+(function(){
+  function unlock(){
+    document.querySelectorAll('.invoice-card-wrap input,.invoice-card-wrap textarea,.invoice-card-wrap select,.invoice-card input,.invoice-card textarea,.invoice-card select').forEach(function(el){
+      el.disabled=false; el.readOnly=false;
+      el.removeAttribute('disabled'); el.removeAttribute('readonly');
+      el.style.pointerEvents='auto'; el.style.userSelect='text'; el.style.webkitUserSelect='text';
+    });
+    document.querySelectorAll('.mega').forEach(function(m){ m.style.pointerEvents = m.classList.contains('open') ? 'auto' : 'none'; });
+    var wrap=document.querySelector('.invoice-card-wrap'); if(wrap){ wrap.style.position='relative'; wrap.style.zIndex='50'; }
+  }
+  unlock();
+  document.addEventListener('DOMContentLoaded', unlock);
+  window.addEventListener('load', function(){ setTimeout(unlock,50); setTimeout(unlock,300); setTimeout(unlock,800); });
+  document.addEventListener('click', function(e){
+    var card=e.target && e.target.closest && e.target.closest('.invoice-card-wrap');
+    if(card){
+      unlock();
+      var field=e.target.closest('.pfield,.cell-field,.extra-field,.field');
+      if(field){ var inp=field.querySelector('input,textarea,select'); if(inp){ inp.disabled=false; inp.readOnly=false; try{inp.focus();}catch(_){}} }
+      var el=e.target.closest('input,textarea,select'); if(el){ el.disabled=false; el.readOnly=false; try{el.focus();}catch(_){} }
+    }
+  }, true);
+  // delegated add handlers as fallback
+  document.addEventListener('click', function(e){
+    var link=e.target && e.target.closest && e.target.closest('.add-link[data-target]');
+    if(link){
+      e.preventDefault(); e.stopPropagation();
+      var id=link.getAttribute('data-target'), field=document.getElementById(id);
+      if(field){ field.classList.add('show'); field.style.setProperty('display','block','important'); field.style.setProperty('visibility','visible','important'); field.style.setProperty('opacity','1','important'); link.style.display='none'; var inp=field.querySelector('input,textarea,select'); if(inp){ inp.disabled=false; inp.readOnly=false; try{inp.focus();}catch(_){} } if(typeof showToast==='function') showToast('Added'); }
+    }
+    var addRowLink=e.target && e.target.closest && e.target.closest('#addRowLink');
+    if(addRowLink){ /* original handler also runs; keep safe */ }
+  }, true);
+})();
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

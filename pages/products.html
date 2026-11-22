@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Products - DotERP</title>
+<meta name="description" content="Explore DotERP software products: DotERP, UdyamApp, and Q2Dot for billing, accounting, inventory, GST, and data entry.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.prod-wrap{padding:50px 0 64px}
+.prod-head{text-align:center;margin-bottom:30px}
+.prod-head h1{font-size:clamp(32px,4.5vw,46px);margin:0 0 10px}
+.prod-head p{color:var(--mut);margin:0;font-size:17px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 10px 24px rgba(0,0,0,.08);display:flex;flex-direction:column}
+.prod-card.featured{border:2px solid var(--acc);background:var(--bg)}
+.prod-badge{display:inline-block;font-size:12px;font-weight:700;color:var(--accink);background:var(--acc);padding:4px 10px;border-radius:999px;margin-bottom:10px;width:max-content}
+.prod-card h2{margin:0 0 8px;font-size:28px;text-align:left}
+.prod-card p{color:var(--mut);margin:0 0 14px}
+.prod-card ul{margin:0 0 18px 18px;padding:0;color:var(--mut)}
+.prod-card li{margin:6px 0}
+.prod-actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:900px){.prod-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="pg" id="pg"></div><nav><div class="wrap"><button class="links mm-t" aria-expanded="false" aria-controls="mega">Products <i>▾</i></button><a class="links" href="pricing.html">Pricing</a><button class="links mm-t cm-t" aria-expanded="false" aria-controls="cmega">Community <i>▾</i></button><button class="links mm-t ch-t" aria-expanded="false" aria-controls="chmega">Customer Hub <i>▾</i></button><a class="links" href="compare.html">Compare</a><a class="links" href="blogs.html">DotERP blog</a><a class="logo" href="../index.html">Dot<b>ERP</b></a><span class="sp"></span><a class="links" href="login.html" data-login-link>Log In</a><a class="btn" href="download.html">Download</a></div>
+  <div class="mega" id="mega"><div class="mg">
+    <div class="mc"><div class="mh"><span class="ic">◆</span><div><b>DotERP</b><small>Our flagship business software</small></div></div><a href="product-overview.html">Product Overview</a><a href="features.html">Features</a><a href="free-trial.html">Instant Demo</a><div class="mb"><a class="btn" href="free-trial.html">Take a Free Trial</a><a class="btn o" href="pricing.html">Buy Now</a></div></div>
+    <div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Features</b></div></div><a href="smart-billing.html">Smart Billing</a><a href="gst-e-invoicing.html">GST &amp; e-Invoicing</a><a href="inventory-control.html">Inventory Control</a><a href="banking-payments.html">Banking &amp; Payments</a><a href="reports-dashboards.html">Reports &amp; Dashboards</a><a href="payroll.html">Payroll</a></div>
+    <div class="mc"><div class="mh"><span class="ic">▤</span><div><b>Do More with DotERP</b></div></div><a href="mobile-app.html">DotERP Mobile App</a><a href="server.html">DotERP Server</a></div>
+    <div class="mc"><div class="mh"><span class="ic">&lt;/&gt;</span><div><b>Developers</b></div></div><a href="developer-hub.html">Developer Hub</a><a href="customization.html">Customization &amp; Integration</a><a href="api-explorer.html">API Explorer</a></div>
+    <div class="mc"><div class="mh"><span class="ic">◇</span><div><b>More from DotERP</b></div></div><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="q2dot.html">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a class="all" href="products.html">View All Software ↗</a></div>
+  </div></div>
+  <div class="mega" id="cmega"><div class="mg c4"><div class="mc"><div class="mh"><span class="ic">✎</span><div><b>Learn</b></div></div><a href="learning-hub.html">Learning Hub</a><a href="blogs.html">Blogs</a></div><div class="mc"><div class="mh"><span class="ic">✉</span><div><b>Connect</b></div></div><a href="community.html">Community</a><a href="customer-stories.html">Customer Stories</a></div><div class="mc"><div class="mh"><span class="ic">★</span><div><b>Featured</b></div></div><a href="events.html">Events</a></div><div class="spot"><div class="mh"><span class="ic">◆</span><div><b>Spotlight</b></div></div><a href="first-60-minutes.html"><b>First 60 minutes in DotERP</b></a></div></div></div>
+  <div class="mega" id="chmega"><div class="mg ch"><div class="mc"><div class="mh"><span class="ic">☎</span><div><b>Reach Us</b></div></div><a href="help.html">Help</a><a href="support.html">Support</a><a href="contact.html">Contact</a></div><div class="mng"><h4>Manage Subscriptions</h4><p>View, renew or upgrade your active DotERP subscriptions.</p><a class="btn w" href="login.html" data-login-link>Manage my Subscriptions ↗</a></div></div></div>
+</nav>
+
+<main class="prod-wrap"><div class="wrap">
+  <div class="prod-head">
+    <h1>Our <span style="color:var(--acc,#f59e0b)">Products</span></h1>
+    <p>Choose the right software for your business — from complete business management to simple billing and bulk data entry.</p>
+  </div>
+
+  <div class="prod-grid">
+    <article class="prod-card featured">
+      <span class="prod-badge">Flagship</span>
+      <h2>Dot<b style="color:var(--acc,#f59e0b)">ERP</b></h2>
+      <p>Complete business management software for accounting, billing, inventory, GST, payroll, and reporting.</p>
+      <ul>
+        <li>Smart billing, quotations & payment tracking</li>
+        <li>GST, e-invoicing & compliance-ready reports</li>
+        <li>Inventory control, banking & dashboards</li>
+        <li>Payroll and business insights</li>
+      </ul>
+      <div class="prod-actions">
+        <a class="btn" href="product-overview.html">Explore DotERP</a>
+        <a class="btn o" href="pricing.html#doterp">Pricing</a>
+        <a class="btn o" href="download.html">Download</a>
+      </div>
+    </article>
+
+    <article class="prod-card">
+      <span class="prod-badge" style="background:var(--sky);color:var(--navy)">For Small Business</span>
+      <h2>Udyam<b style="color:var(--acc)">App</b></h2>
+      <p>Simple billing and accounting solution designed for small businesses that need fast, easy day-to-day operations.</p>
+      <ul>
+        <li>Quick GST-ready invoicing & bills</li>
+        <li>Expense and party/ledger tracking</li>
+        <li>Basic reports for sales, purchase & profit</li>
+        <li>Easy setup and simple interface</li>
+      </ul>
+      <div class="prod-actions">
+        <a class="btn" href="UdyamApp.html">Explore Udyam<b style="color:var(--acc)">App</b></a>
+        <a class="btn o" href="pricing.html#UdyamApp">Pricing</a>
+        <a class="btn o" href="download.html">Download</a>
+      </div>
+    </article>
+
+    <article class="prod-card">
+      <span class="prod-badge" style="background:var(--sky);color:var(--navy)">Data Entry Tool</span>
+      <h2>Q2<b style="color:var(--acc,#f59e0b)">Dot</b></h2>
+      <p>Excel to Tally/DotERP bulk data entry tool for faster posting, imports, and high-volume voucher/master workflows.</p>
+      <ul>
+        <li>Bulk data entry from Excel</li>
+        <li>Reusable templates & flexible mapping</li>
+        <li>Validation checks to reduce errors</li>
+        <li>Faster imports and time savings</li>
+      </ul>
+      <div class="prod-actions">
+        <a class="btn" href="q2dot.html">Explore Q2Dot</a>
+        <a class="btn o" href="pricing.html#q2dot">Pricing</a>
+        <a class="btn o" href="download.html">Download</a>
+      </div>
+    </article>
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  <div class="copy">Copyright © 2026 DotERP Solutions Pvt. Ltd. · <a href="privacy.html" style="color:inherit">Privacy Policy</a> · <a href="terms.html" style="color:inherit">Terms of Use</a></div>
+</div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

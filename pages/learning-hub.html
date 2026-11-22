@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Learning Hub: DotERP Videos & Resources | DotERP</title>
+
+  <meta property="og:site_name" content="DotERP">
+
+  <meta name="twitter:description" content="DotERP Learning Hub with videos and resources to learn billing, inventory, banking, GST, reporting, and more.">
+
+  <meta name="twitter:title" content="Learning Hub: DotERP Videos &amp; Resources | DotERP">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta property="og:url" content="https://www.doterp.com/pages/learning-hub.html">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:description" content="DotERP Learning Hub with videos and resources to learn billing, inventory, banking, GST, reporting, and more.">
+
+  <meta property="og:title" content="Learning Hub: DotERP Videos &amp; Resources | DotERP">
+
+  <link rel="canonical" href="https://www.doterp.com/pages/learning-hub.html">
+
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <meta name="description" content="DotERP Learning Hub with videos and resources to learn billing, inventory, banking, GST, reporting, and more.">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+
+
+html { scroll-behavior: smooth; }
+
+  .lh-page {
+
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    color: #1A2B3C; background: #fff; font-size: 14px; line-height: 1.5;
+
+  }
+
+  .lh-page a { text-decoration: none; color: inherit; }
+
+  .lh-page img { max-width: 100%; display: block; }
+
+  .lh-page .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+
+
+
+  /* ===== Utility bar ===== */
+
+  .utility-bar { background: #FDF6E3; padding: 14px 0; font-size: 14px; }
+
+  .utility-bar .lh-page .container { display: flex; justify-content: space-between; align-items: center; }
+
+  .util-left { display: flex; align-items: center; gap: 22px; }
+
+  .util-logo { display: flex; flex-direction: column; }
+
+  .util-logo .tally-script {
+
+    font-family: 'Brush Script MT', cursive;
+
+    font-size: 26px; color: #1A2B3C; font-weight: 700; line-height: 1;
+
+  }
+
+  .util-logo small { font-size: 9px; color: #6b7280; letter-spacing: 1px; margin-top: 2px; }
+
+  .company-dd { color: #1A2B3C; cursor: pointer; font-size: 15px; }
+
+  .company-dd::after { content: " \25BE"; color: #6b7280; }
+
+  .util-right { display: flex; gap: 24px; }
+
+  .util-right a { color: #1A2B3C; font-size: 15px; }
+
+  .util-right a.active { color: #1A2B3C; font-weight: 600; border-bottom: 2px solid #1A2B3C; padding-bottom: 2px; }
+
+  .util-right a:hover { color: #1B5E8C; }
+
+
+
+  /* ===== Navbar ===== */
+
+  .navbar { background: #1B5E8C; color: #fff; padding: 14px 0; }
+
+  .navbar .lh-page .container { display: flex; align-items: center; justify-content: space-between; }
+
+  .nav-links { display: flex; gap: 28px; align-items: center; flex: 1; }
+
+  .nav-links a { color: #fff; font-size: 16px; font-weight: 500; cursor: pointer; }
+
+  .nav-links a:hover { color: #F5B301; }
+
+  .nav-links a::after { content: " \25BE"; font-size: 11px; opacity: 0.7; }
+
+  .nav-links a.no-chevron::after { content: ""; }
+
+  .nav-brand {
+
+    text-align: center; color: #fff; flex: 0 0 auto;
+
+    padding: 0 30px;
+
+  }
+
+  .nav-brand .brand-name {
+
+    font-family: 'Brush Script MT', cursive;
+
+    font-size: 28px; font-weight: 700; line-height: 1;
+
+  }
+
+  .nav-brand .brand-name span {
+
+    font-family: 'Inter', sans-serif;
+
+    display: block; font-size: 14px;
+
+    font-weight: 700; letter-spacing: 3px;
+
+    margin-top: 2px;
+
+  }
+
+  .nav-actions { display: flex; gap: 20px; align-items: center; flex: 1; justify-content: flex-end; }
+
+  .nav-actions .icon-btn {
+
+    background: transparent; border: none; color: #fff;
+
+    cursor: pointer; font-size: 17px; position: relative;
+
+  }
+
+  .nav-actions .cart-badge {
+
+    position: absolute; top: -6px; right: -8px;
+
+    background: #F5B301; color: #1A2B3C;
+
+    font-size: 10px; width: 17px; height: 17px;
+
+    border-radius: 50%; display: flex;
+
+    align-items: center; justify-content: center; font-weight: 700;
+
+  }
+
+  .nav-actions .login-link { color: #fff; font-size: 15px; }
+
+  .btn-download {
+
+    background: #F5B301; color: #1A2B3C;
+
+    border: none; padding: 10px 22px;
+
+    font-weight: 700; cursor: pointer;
+
+    font-size: 14px;
+
+  }
+
+  .btn-download:hover { background: #FFC843; }
+
+
+
+  /* ===== Hero ===== */
+
+  .hero {
+
+    background: #1B5E8C;
+
+    background-image:
+
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.04) 1px, transparent 1px),
+
+      radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04) 1px, transparent 1px);
+
+    background-size: 50px 50px, 40px 40px;
+
+    color: #fff;
+
+    padding: 30px 0 110px;
+
+    position: relative;
+
+    overflow: hidden;
+
+  }
+
+  .hero::before {
+
+    content: "";
+
+    position: absolute; inset: 0;
+
+    background-image:
+
+      linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.03) 49%, rgba(255,255,255,0.03) 51%, transparent 51%),
+
+      linear-gradient(-45deg, transparent 49%, rgba(255,255,255,0.03) 49%, rgba(255,255,255,0.03) 51%, transparent 51%);
+
+    background-size: 80px 80px;
+
+    pointer-events: none;
+
+  }
+
+  .hero-grid {
+
+    display: grid; grid-template-columns: 1fr 1fr;
+
+    gap: 40px; align-items: center;
+
+    position: relative; z-index: 2;
+
+  }
+
+  .hero-text h1 {
+
+    font-size: 46px; font-weight: 700;
+
+    line-height: 1.1; margin-bottom: 14px;
+
+  }
+
+  .hero-text p {
+
+    font-size: 19px; font-weight: 400;
+
+    opacity: 0.95;
+
+  }
+
+  .hero-illustration {
+
+    text-align: center; font-size: 0;
+
+    position: relative;
+
+    height: 280px;
+
+  }
+
+  /* Hand-drawn style illustration built with CSS */
+
+  .ill-person {
+
+    display: inline-block; position: relative;
+
+    width: 280px; height: 240px; vertical-align: middle;
+
+  }
+
+  .ill-monitor {
+
+    position: absolute; bottom: 0; left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 180px; height: 130px;
+
+    background: #fff; border-radius: 8px;
+
+    border: 3px solid #F5B301;
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+
+  }
+
+  .ill-monitor::after {
+
+    content: ""; position: absolute;
+
+    bottom: -20px; left: 50%; transform: translateX(-50%);
+
+    width: 60px; height: 14px;
+
+    background: #F5B301; border-radius: 3px;
+
+  }
+
+  .ill-monitor::before {
+
+    content: "="; position: absolute;
+
+    top: 20px; left: 50%; transform: translateX(-50%);
+
+    color: #1B5E8C; font-size: 40px; font-weight: 700;
+
+  }
+
+  .ill-head {
+
+    position: absolute; top: 30px; left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 60px; height: 60px;
+
+    background: #FCE4B5; border-radius: 50%;
+
+    border: 3px solid #fff;
+
+  }
+
+  .ill-head::before {
+
+    content: ""; position: absolute;
+
+    top: -10px; left: -8px; right: -8px;
+
+    height: 22px;
+
+    background: #1A2B3C;
+
+    border-radius: 30px 30px 0 0;
+
+  }
+
+  .ill-head::after {
+
+    content: ""; position: absolute;
+
+    top: 22px; left: 12px;
+
+    width: 6px; height: 6px;
+
+    background: #1A2B3C;
+
+    border-radius: 50%;
+
+    box-shadow: 22px 0 0 #1A2B3C;
+
+  }
+
+  .ill-.lh-page {
+
+    position: absolute; top: 80px; left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100px; height: 50px;
+
+    background: #fff;
+
+    border-radius: 20px 20px 0 0;
+
+  }
+
+  .ill-icon {
+
+    position: absolute;
+
+    background: #fff;
+
+    border: 2px solid #F5B301;
+
+    border-radius: 6px;
+
+    color: #1B5E8C;
+
+    font-size: 11px; font-weight: 700;
+
+    display: flex; align-items: center; justify-content: center;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+
+  }
+
+  .ill-icon.gst { top: 10px; left: 10px; width: 50px; height: 30px; background: #F5B301; color: #1A2B3C; transform: rotate(-8deg); }
+
+  .ill-icon.bank { top: 0; right: 20px; width: 40px; height: 36px; transform: rotate(6deg); }
+
+  .ill-icon.doc { top: 80px; right: 0; width: 36px; height: 44px; transform: rotate(8deg); background: #FCE4B5; border-color: #fff; }
+
+  .ill-icon.list { top: 130px; left: 0; width: 36px; height: 44px; transform: rotate(-6deg); background: #fff; }
+
+
+
+  /* ===== Filter pill (overlapping hero bottom) ===== */
+
+  .filter-wrap {
+
+    margin-top: -60px; position: relative; z-index: 5;
+
+    padding: 0 20px;
+
+  }
+
+  .filter-pill {
+
+    background: #fff; border-radius: 50px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+    padding: 10px 10px 10px 28px;
+
+    display: flex; align-items: center; gap: 20px;
+
+    max-width: 1100px; margin: 0 auto;
+
+  }
+
+  .filter-cat {
+
+    flex: 1; display: flex; align-items: center;
+
+    gap: 10px; cursor: pointer; position: relative;
+
+  }
+
+  .filter-cat-label { font-size: 16px; color: #1A2B3C; font-weight: 500; }
+
+  .filter-cat::after { content: "\25BE"; color: #6b7280; font-size: 14px; }
+
+  .filter-cat-menu {
+
+    position: absolute; top: calc(100% + 10px); left: 0;
+
+    background: #fff; min-width: 280px;
+
+    border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+
+    padding: 8px 0; z-index: 10;
+
+    display: none; max-height: 320px; overflow-y: auto;
+
+  }
+
+  .filter-cat-menu.open { display: block; }
+
+  .filter-cat-item {
+
+    padding: 9px 18px; font-size: 14px; color: #1A2B3C;
+
+    cursor: pointer;
+
+  }
+
+  .filter-cat-item:hover { background: #F2F7FA; color: #1B5E8C; }
+
+  .filter-cat-item.active { background: #EAF2F8; color: #1B5E8C; font-weight: 600; }
+
+  .filter-search {
+
+    flex: 1; position: relative;
+
+    background: #fff;
+
+    border: 1px solid #E0E5EA;
+
+    border-radius: 50px;
+
+    padding: 8px 18px 8px 44px;
+
+  }
+
+  .filter-search::before {
+
+    content: "\1F50D";
+
+    position: absolute; left: 18px; top: 50%;
+
+    transform: translateY(-50%); font-size: 14px;
+
+    color: #6b7280; pointer-events: none;
+
+  }
+
+  .filter-search input {
+
+    width: 100%; border: none; outline: none;
+
+    background: transparent; font-size: 15px;
+
+    color: #1A2B3C;
+
+  }
+
+  .filter-search input::placeholder { color: #9CA3AF; }
+
+
+
+  /* ===== Cards grid ===== */
+
+  .cards-.lh-page section { padding: 60px 0 80px; }
+
+  .cards-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+  }
+
+  .learn-card {
+
+    background: #fff; border-radius: 12px;
+
+    overflow: hidden; cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+    border: 1px solid #EAEEF2;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    display: flex; flex-direction: column;
+
+  }
+
+  .learn-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(27,94,140,0.18);
+
+  }
+
+  .learn-card:hover .card-ill {
+
+    background: #1B5E8C;
+
+  }
+
+  .learn-card:hover .card-ill .ill-emoji {
+
+    filter: grayscale(0) brightness(1.1);
+
+  }
+
+
+
+  .card-ill {
+
+    background: #FDF6DF;
+
+    height: 200px;
+
+    display: flex; align-items: center; justify-content: center;
+
+    position: relative; overflow: hidden;
+
+    transition: background 0.3s;
+
+  }
+
+  .card-ill::before {
+
+    content: ""; position: absolute; inset: 0;
+
+    background-image:
+
+      radial-gradient(circle at 30% 30%, rgba(245,179,1,0.08) 1px, transparent 1px),
+
+      radial-gradient(circle at 70% 70%, rgba(27,94,140,0.08) 1px, transparent 1px);
+
+    background-size: 24px 24px;
+
+  }
+
+  .ill-emoji {
+
+    font-size: 78px;
+
+    line-height: 1;
+
+    position: relative; z-index: 1;
+
+    transition: filter 0.3s;
+
+  }
+
+  .card-ill .play-overlay {
+
+    position: absolute; top: 50%; left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.5);
+
+    width: 56px; height: 56px; border-radius: 50%;
+
+    background: #F5B301; color: #1A2B3C;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 22px; padding-left: 4px;
+
+    opacity: 0; transition: all 0.25s;
+
+    z-index: 2;
+
+  }
+
+  .learn-card:hover .play-overlay {
+
+    opacity: 1; transform: translate(-50%, -50%) scale(1);
+
+  }
+
+
+
+  .card-.lh-page { padding: 18px 22px 22px; flex: 1; }
+
+  .card-title {
+
+    font-size: 19px; font-weight: 700;
+
+    color: #1A2B3C; line-height: 1.3;
+
+    margin-bottom: 6px;
+
+  }
+
+  .card-count {
+
+    font-size: 15px; color: #6b7280;
+
+  }
+
+  .card-count b { color: #1B5E8C; font-weight: 700; }
+
+
+
+  .no-results {
+
+    grid-column: 1 / -1; text-align: center;
+
+    padding: 60px 20px; color: #6b7280;
+
+    font-size: 16px;
+
+  }
+
+  .no-results b { color: #1A2B3C; }
+
+
+
+  /* ===== Footer ===== */
+
+  .footer {
+
+    background: #1B5E8C; color: #fff;
+
+    padding: 50px 0 20px;
+
+  }
+
+  .footer-top {
+
+    display: flex; justify-content: space-between; align-items: flex-start;
+
+    margin-bottom: 30px; padding-bottom: 26px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+
+    gap: 40px; flex-wrap: wrap;
+
+  }
+
+  .footer-brand .fb-logo {
+
+    font-family: 'Brush Script MT', cursive;
+
+    color: #fff; font-size: 26px;
+
+    font-weight: 700; margin-bottom: 4px;
+
+  }
+
+  .footer-brand small { font-size: 9px; color: #F5B301; letter-spacing: 2px; }
+
+  .footer-brand p {
+
+    color: #D6E5F5; font-size: 13px;
+
+    max-width: 580px; line-height: 1.6; margin-top: 12px;
+
+  }
+
+  .footer-brand p a { color: #F5B301; font-weight: 600; }
+
+  .footer-brand p a:hover { text-decoration: underline; }
+
+
+
+  .footer-grid {
+
+    display: grid; grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px; margin-bottom: 30px;
+
+  }
+
+  .footer-col h5 {
+
+    color: #F5B301; font-size: 14px;
+
+    margin-bottom: 14px; font-weight: 700;
+
+    text-transform: uppercase; letter-spacing: 0.5px;
+
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 9px; }
+
+  .footer-col ul li a {
+
+    color: #D6E5F5; font-size: 13px; cursor: pointer;
+
+  }
+
+  .footer-col ul li a:hover { color: #F5B301; text-decoration: none; }
+
+  .footer-col .sub-h {
+
+    color: #F5B301; font-size: 14px;
+
+    font-weight: 700; margin-top: 18px;
+
+    margin-bottom: 10px; text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+  }
+
+  .footer-bottom {
+
+    border-top: 1px solid rgba(255,255,255,0.18);
+
+    padding-top: 20px;
+
+    display: flex; justify-content: space-between;
+
+    align-items: center; font-size: 13px;
+
+    color: #D6E5F5; flex-wrap: wrap; gap: 14px;
+
+  }
+
+  .footer-bottom a { color: #D6E5F5; }
+
+  .footer-bottom a:hover { color: #F5B301; text-decoration: none; }
+
+  .footer-bottom .social { display: flex; gap: 10px; }
+
+  .footer-bottom .social a {
+
+    width: 30px; height: 30px; border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    display: flex; align-items: center; justify-content: center;
+
+    color: #fff; font-size: 12px; cursor: pointer;
+
+  }
+
+  .footer-bottom .social a:hover {
+
+    background: #F5B301; color: #1A2B3C;
+
+    border-color: #F5B301;
+
+  }
+
+
+
+  /* ===== Toast ===== */
+
+  .toast {
+
+    position: fixed; bottom: 30px; right: 30px;
+
+    background: #1A2B3C; color: #fff;
+
+    padding: 14px 22px; border-radius: 6px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+
+    font-size: 14px; opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: opacity 0.3s, transform 0.3s;
+
+    z-index: 9999; max-width: 320px;
+
+  }
+
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+
+
+  /* ===== Responsive ===== */
+
+  @media (max-width: 980px) {
+
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .nav-links { display: none; }
+
+    .hero-grid { grid-template-columns: 1fr; }
+
+    .hero-illustration { display: none; }
+
+    .hero-text h1 { font-size: 36px; }
+
+  }
+
+  @media (max-width: 640px) {
+
+    .cards-grid { grid-template-columns: 1fr; }
+
+    .filter-pill { flex-direction: column; border-radius: 16px; padding: 14px; }
+
+    .filter-cat, .filter-search { width: 100%; }
+
+    .footer-grid { grid-template-columns: 1fr; }
+
+    .footer-top { flex-direction: column; }
+
+    .footer-bottom { flex-direction: column; }
+
+    .util-right { display: none; }
+
+    .hero-text h1 { font-size: 28px; }
+
+  }
+
+
+
+
+
+.lh-page{background:#fff;color:#1A2B3C}
+
+.lh-page .utility-bar,.lh-page .navbar{display:none!important}
+
+.lh-page .container{max-width:1280px;margin:0 auto;padding:0 20px}
+
+.lh-page .toast{position:fixed;z-index:99999}
+
+.lh-page .hero{padding:30px 0 110px}
+
+
+
+</style>
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Learning Hub: DotERP Videos & Resources | DotERP", "url": "https://www.doterp.com/pages/learning-hub.html"}</script>
+
+</head>
+
+<body>
+
+<div class="pg" id="pg"></div><nav><div class="wrap"><button class="links mm-t" aria-expanded="false" aria-controls="mega">Products <i>▾</i></button><a class="links" href="pricing.html">Pricing</a><button class="links mm-t cm-t" aria-expanded="false" aria-controls="cmega">Community <i>▾</i></button><button class="links mm-t ch-t" aria-expanded="false" aria-controls="chmega">Customer Hub <i>▾</i></button><a class="links" href="compare.html">Compare</a><a class="links" href="blogs.html">DotERP blog</a><a class="logo" href="../index.html">Dot<b>ERP</b></a><span class="sp"></span><a class="links" href="login.html">Log In</a><a class="btn" href="download.html">Download</a></div>
+
+<div class="mega" id="mega"><div class="mg">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>DotERP</b><small>Our flagship business software</small></div></div><a href="product-overview.html">Product Overview</a><a href="whats-new.html">Whatâs New</a><a href="pricing.html#compare">Compare Plans<small>Find the right plan for your business</small></a><a href="free-trial.html">Instant Demo</a><div class="mb"><a class="btn" href="free-trial.html">Take a Free Trial</a><a class="btn o" href="pricing.html">Buy Now</a></div></div>
+
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Features</b><small>What you can do with DotERP</small></div></div><a href="taxation-compliance.html">Taxation &amp; Compliance</a><a href="accounting.html">Accounting</a><a href="inventory.html">Inventory</a><a href="banking.html">Banking</a><a href="connected-services.html">Connected Services</a><a class="all" href="features.html">View All Features ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â¤</span><div><b>Do More with DotERP</b><small>Extend and access it your way</small></div></div><a href="mobile-app.html">DotERP Mobile App</a><a href="server.html">DotERP Server</a><a href="business-reports.html">Business Reports</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">&lt;/&gt;</span><div><b>Developers</b><small>Build and integrate with DotERP</small></div></div><a href="developer-hub.html">Developer Hub</a><a href="customization.html">Customization &amp; Integration</a><a href="api-explorer.html">API Explorer</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>More from DotERP</b><small>Software for every business need</small></div></div><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="q2dot.html">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a class="all" href="products.html">View All Software ↗</a></div>
+
+</div></div>
+
+<div class="mega" id="pmega"><div class="mg c4">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>DotERP</b><small>Plans & pricing</small></div></div><a href="pricing.html#doterp">DotERP Pricing<small>Business management software</small></a><a href="pricing.html#compare"><b>Compare Plans</b><small>Compare features & pricing side by side</small></a><a href="free-trial.html">Free Trial<small>Try before you buy</small></a><a class="btn" href="pricing.html">View Pricing ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Other Products</b><small>Pricing by product</small></div></div><a href="pricing.html#UdyamApp">Udyam<b style="color:var(--acc)">App</b><small>Simple billing for small businesses</small></a><a href="pricing.html#q2dot">Q2Dot<small>Excel to Tally/DotERP bulk data entry</small></a><a href="products.html">All Products<small>Explore our software</small></a></div>
+
+<div class="mc"><div class="mh"><span class="ic">₹</span><div><b>Customer Plans</b><small>For existing customers</small></div></div><a href="pricing.html">Monthly Subscription</a><a href="pricing.html">Lifetime License</a><a href="login.html">Renew Subscription</a><a href="software-services.html">Software Services</a></div>
+
+<div class="spot"><div class="mh"><span class="ic">â</span><div><b>Need help?</b><small>Find the right plan</small></div></div><a href="contact.html"><b>Talk to Sales</b><small>Get plan recommendations for your business</small></a><a href="pricing.html#compare"><b>Compare</b><small>See plan differences at a glance</small></a><a href="free-trial.html"><b>Start Free Trial</b><small>Experience DotERP features first</small></a></div>
+
+</div></div><div class="mega" id="cmega"><div class="mg c4">
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Learn</b><small>Grow your knowledge</small></div></div><a href="free-trial.html">Instant Demo</a><a href="blogs.html">Blogs</a><a href="learning-hub.html">Learning Hub</a><a href="roadmap.html">Product Roadmap</a><a href="first-60-minutes.html">First 60 Minutes in DotERP</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">✉</span><div><b>Connect</b><small>Engage with the ecosystem</small></div></div><a href="community.html">DotERP Community</a><a href="partners.html">Locate a Partner</a><a href="events.html">Events &amp; Webinars</a><a href="customer-stories.html">Customer Stories</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">â</span><div><b>Featured</b><small>Recognitions &amp; programs</small></div></div><a href="awards.html">Awards &amp; Recognition</a><a href="startup-offer.html">Startup Offer</a><a href="partner-program.html">Partner Program</a><a href="careers.html">Careers</a></div>
+
+<div class="spot"><div class="mh"><span class="ic">â</span><div><b>Spotlight</b><small>Explore whatâs new</small></div></div><a href="first-60-minutes.html"><b>First 60 minutes in DotERP</b><small>New to DotERP? Experience everything right away</small></a><a href="customer-stories.html"><b>Customer stories</b><small>Real businesses, real outcomes</small></a><a href="blogs.html"><b>Tips and tutorials</b><small>Practical tips from our experts</small></a></div>
+
+</div></div>
+
+<div class="mega" id="chmega"><div class="mg ch">
+
+<div class="mc"><div class="mh"><span class="ic">⚙</span><div><b>Plugins</b><small>Extend what DotERP can do</small></div></div><a class="btn" href="plugins.html">View all Plug-ins ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">₹</span><div><b>Customer Pricing</b><small>Plans for existing customers</small></div></div><a class="btn" href="customer-pricing.html">View Plans ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">☎</span><div><b>Reach Us</b><small>Talk to our support team</small></div></div><a href="help.html">❓ DotERP Help</a><a href="whatsapp.html">✆ WhatsApp</a><a href="call-us.html">☎ Call us</a><a href="email-us.html">✉ Email</a><a class="btn o" href="support.html">Support ↗</a></div>
+
+<div class="mc"><div class="mh"><span class="ic">↻</span><div><b>Subscriptions &amp; Services</b><small>Keep your DotERP up to date</small></div></div><a class="sr" href="software-services.html">DotERP Software Services<em>View Now ↗</em></a><a class="sr" href="pricing.html">DotERP Monthly Plan<em>View Now ↗</em></a></div>
+
+<div class="mng"><h4>Manage Subscriptions</h4><p>View, renew or upgrade your active DotERP subscriptions in one place.</p><a class="btn w" href="login.html">Manage my Subscriptions ↗</a></div>
+
+</div></div></nav>
+
+
+
+<div class="lh-page">
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <div class="hero-text">
+
+        <h1>DotERP<br>Learning Hub</h1>
+
+        <p>Learn DotERP your way</p>`n        <div style="margin-top:18px"><a href="video-tutorials.html" style="display:inline-block;background:#F5B301;color:#1A2B3C;font-weight:700;padding:10px 18px;border-radius:6px;text-decoration:none;">Watch Video Tutorials â</a></div>
+
+      </div>
+
+      <div class="hero-illustration">
+
+        <div class="ill-person">
+
+          <div class="ill-head"></div>
+
+          <div class="ill-body"></div>
+
+          <div class="ill-monitor"></div>
+
+          <div class="ill-icon gst">GST</div>
+
+          <div class="ill-icon bank">&#127974;</div>
+
+          <div class="ill-icon doc">&#128196;</div>
+
+          <div class="ill-icon list">&#9745;</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===== Filter pill ===== -->
+
+<div class="filter-wrap">
+
+  <div class="filter-pill">
+
+    <div class="filter-cat" id="filterCat">
+
+      <span class="filter-cat-label" id="catLabel">Select Category</span>
+
+      <div class="filter-cat-menu" id="catMenu">
+
+        <div class="filter-cat-item active" data-cat="all">All Categories</div>
+
+        <div class="filter-cat-item" data-cat="getting-started">Getting Started Videos</div>
+
+        <div class="filter-cat-item" data-cat="invoicing">Billing &amp; Invoicing</div>
+
+        <div class="filter-cat-item" data-cat="inventory">Inventory Management</div>
+
+        <div class="filter-cat-item" data-cat="banking">Banking</div>
+
+        <div class="filter-cat-item" data-cat="gst">GST</div>
+
+        <div class="filter-cat-item" data-cat="security">Security Management</div>
+
+        <div class="filter-cat-item" data-cat="business-ops">Business Operations</div>
+
+        <div class="filter-cat-item" data-cat="audit">Audit and Compliance</div>
+
+        <div class="filter-cat-item" data-cat="doterp-assist">DotERP Assist</div>
+
+        <div class="filter-cat-item" data-cat="credit">Credit &amp; Cash Flow Management</div>
+
+        <div class="filter-cat-item" data-cat="vas">VAS</div>
+
+        <div class="filter-cat-item" data-cat="reporting">Reporting</div>
+
+      </div>
+
+    </div>
+
+    <div class="filter-search">
+
+      <input type="text" id="searchInput" placeholder="Search">
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ===== Cards grid ===== -->
+
+<section class="cards-section">
+
+  <div class="container">
+
+    <div class="cards-grid" id="cardsGrid">
+
+
+
+      <div class="learn-card" data-cat="getting-started" data-title="Start Learning DotERP with Step-by-Step Videos">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128242;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Start Learning DotERP with Step-by-Step Videos</div>
+
+          <div class="card-count"><b>7</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="invoicing" data-title="Billing and Invoicing">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#129534;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Billing &amp; Invoicing</div>
+
+          <div class="card-count"><b>4</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="inventory" data-title="Inventory Management">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128230;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Inventory Management</div>
+
+          <div class="card-count"><b>6</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="banking" data-title="Banking">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#127974;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Banking</div>
+
+          <div class="card-count"><b>4</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="gst" data-title="GST">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128176;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">GST</div>
+
+          <div class="card-count"><b>14</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="security" data-title="Security Management">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128737;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Security Management</div>
+
+          <div class="card-count"><b>1</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="business-ops" data-title="Business Operations">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128640;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Business Operations</div>
+
+          <div class="card-count"><b>2</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="audit" data-title="Audit and Compliance">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128203;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Audit and Compliance</div>
+
+          <div class="card-count"><b>2</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="doterp-assist" data-title="DotERP Assist">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#129302;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">DotERP Assist</div>
+
+          <div class="card-count"><b>3</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="credit" data-title="Credit and Cash Flow Management">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#8377;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Credit &amp; Cash Flow Management</div>
+
+          <div class="card-count"><b>2</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="vas" data-title="VAS">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128230;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">VAS</div>
+
+          <div class="card-count"><b>3</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="learn-card" data-cat="reporting" data-title="Reporting">
+
+        <div class="card-ill">
+
+          <span class="ill-emoji">&#128202;</span>
+
+          <div class="play-overlay">&#9654;</div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-title">Reporting</div>
+
+          <div class="card-count"><b>3</b> Videos</div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</section>
+
+</div>
+
+<footer><div class="wrap">
+
+<div class="about"><strong style="font-size:20px">Dot<span style="color:var(--acc)">ERP</span></strong><span>DotERP is a complete business management platform for billing, accounting, inventory, GST, payroll, and reporting. <a href="about.html" style="color:var(--acc)">Read More</a></span></div>
+
+<div class="cols">
+
+<div><h5>Our Products</h5><a href="product-overview.html">DotERP Service</a><a href="server.html">DotERP Server</a><a href="developer-hub.html">DotERP Developer</a><a href="UdyamApp.html">Udyam<b style="color:var(--acc)">App</b></a><a href="q2dot.html">Q2Dot</a><a href="dotcapital.html">DotCapital</a></div>
+
+<div><h5>Product Subscription</h5><a href="login.html">Renew Subscription</a><a href="pricing.html">Monthly Subscription</a><a href="pricing.html">Pricing &amp; Purchase</a><a href="download.html">Download DotERP</a></div>
+
+<div><h5>DotERP's Features</h5><a href="banking.html">Banking</a><a href="accounting.html">Credit &amp; Cashflow</a><a href="business-reports.html">Dashboards &amp; Reports</a><a href="inventory.html">Inventory Management</a><a href="features.html">Business Operations</a></div>
+
+<div><h5>Solutions for Startups</h5><a href="accounting.html">Invoicing and Accounting</a><a href="features.html">Payroll Management</a><a href="taxation-compliance.html">Taxation and Compliance</a></div>
+
+<div><h5>Solutions for SMBs</h5><a href="accounting.html">Accounting Software</a><a href="features.html">Billing Software</a><a href="inventory.html">Inventory Software</a><a href="taxation-compliance.html">GST Software</a></div>
+
+<div><h5>Free Business Tools</h5><a href="tools-invoice-generator.html">Invoice Generator</a><a href="tools-gst-calculator.html">GST Calculator</a><a href="tools-quotation-generator.html">Quotation Generator</a><a href="tools-cashflow-generator.html">Cashflow Generator</a></div>
+
+<div><h5>Get GST-Compliant</h5><a href="gst-registration.html">GST Registration</a><a href="gst-returns.html">File GST Returns</a><a href="gstr-1.html">GSTR 1</a><a href="gstr-3b.html">GSTR 3B</a></div>
+
+<div><h5>Contact Info</h5><a href="contact.html">Office No. 1, 33 Feet Road, New Industrial Area, Ballabgarh, Faridabad 121004</a><a href="call-us.html">Customer Care: 9718437209 & 9354412061</a><a href="email-us.html">support@doterp.example</a><a href="contact.html">Contact Us</a></div>
+
+<div><h5>Resources</h5><a href="blogs.html">Blogs</a><a href="learning-hub.html">Learning Hub</a><a href="customer-stories.html">Customer Stories</a><a href="help.html">FAQs</a></div>
+
+<div><h5>Our Network</h5><a href="partners.html">Partners</a><a href="careers.html">Careers</a><a href="events.html">Media &amp; News</a></div>
+
+</div>
+
+<div class="copy">Copyright © 2026 DotERP Solutions Pvt. Ltd. · · <a href="privacy.html" style="color:inherit">Privacy Policy</a> · <a href="terms.html" style="color:inherit">Terms of Use</a></div>
+
+</div></footer>
+
+<script src="../js/main.js"></script>
+
+<script>
+
+try{
+
+
+
+  // ===== Toast =====
+
+  const toast = document.getElementById('toast');
+
+  function showToast(msg) {
+
+    toast.textContent = msg;
+
+    toast.classList.add('show');
+
+    clearTimeout(toast._t);
+
+    toast._t = setTimeout(() => toast.classList.remove('show'), 2400);
+
+  }
+
+
+
+  // ===== Category dropdown =====
+
+  const filterCat = document.getElementById('filterCat');
+
+  const catMenu = document.getElementById('catMenu');
+
+  const catLabel = document.getElementById('catLabel');
+
+  const catItems = document.querySelectorAll('.filter-cat-item');
+
+
+
+  filterCat.addEventListener('click', (e) => {
+
+    e.stopPropagation();
+
+    catMenu.classList.toggle('open');
+
+  });
+
+  document.addEventListener('click', (e) => {
+
+    if (!filterCat.contains(e.target)) catMenu.classList.remove('open');
+
+  });
+
+  catItems.forEach(item => {
+
+    item.addEventListener('click', (e) => {
+
+      e.stopPropagation();
+
+      catItems.forEach(i => i.classList.remove('active'));
+
+      item.classList.add('active');
+
+      catLabel.textContent = item.textContent;
+
+      catMenu.classList.remove('open');
+
+      filterCards();
+
+    });
+
+  });
+
+
+
+  // ===== Search + filter =====
+
+  const searchInput = document.getElementById('searchInput');
+
+  const cards = document.querySelectorAll('.learn-card');
+
+  const cardsGrid = document.getElementById('cardsGrid');
+
+
+
+  function getActiveCategory() {
+
+    const active = document.querySelector('.filter-cat-item.active');
+
+    return active ? active.dataset.cat : 'all';
+
+  }
+
+
+
+  function filterCards() {
+
+    const term = searchInput.value.toLowerCase().trim();
+
+    const cat = getActiveCategory();
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+      const matchCat = (cat === 'all') || (card.dataset.cat === cat);
+
+      const matchSearch = !term || card.dataset.title.toLowerCase().includes(term);
+
+      const show = matchCat && matchSearch;
+
+      card.style.display = show ? '' : 'none';
+
+      if (show) visible++;
+
+    });
+
+    let noRes = document.getElementById('noResults');
+
+    if (visible === 0) {
+
+      if (!noRes) {
+
+        noRes = document.createElement('div');
+
+        noRes.id = 'noResults';
+
+        noRes.className = 'no-results';
+
+        noRes.innerHTML = 'No videos found for <b>"' + (term || catLabel.textContent) + '"</b>. Try a different search.';
+
+        cardsGrid.appendChild(noRes);
+
+      } else {
+
+        noRes.innerHTML = 'No videos found for <b>"' + (term || catLabel.textContent) + '"</b>. Try a different search.';
+
+      }
+
+    } else if (noRes) {
+
+      noRes.remove();
+
+    }
+
+  }
+
+
+
+  searchInput.addEventListener('input', filterCards);
+
+
+
+  // ===== Card click =====
+
+  cards.forEach(card => {
+
+    card.addEventListener('click', () => {
+
+      const cat = card.dataset.cat || 'getting-started';
+
+      const title = (card.querySelector('.card-title')||{}).textContent || '';
+
+      window.location.href = 'video-tutorials.html?cat=' + encodeURIComponent(cat) + '&title=' + encodeURIComponent(title);
+
+    });
+
+  });
+
+
+
+  // ===== Nav download =====
+
+  var _dl=document.querySelector('.lh-page .btn-download, .btn-download'); if(_dl) _dl.addEventListener('click', () => {
+
+    showToast('DotERP download will begin shortly');
+
+  });
+
+
+
+}catch(e){console.error('Learning hub init error',e);}
+
+
+
+</script>
+
+</body>
+
+</html>
+
